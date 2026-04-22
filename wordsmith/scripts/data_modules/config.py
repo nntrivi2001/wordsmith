@@ -95,16 +95,16 @@ class DataModulesConfig:
     project_root: Path = field(default_factory=lambda: Path.cwd())
 
     @property
-    def webnovel_dir(self) -> Path:
-        return self.project_root / ".webnovel"
+    def wordsmith_dir(self) -> Path:
+        return self.project_root / ".wordsmith"
 
     @property
     def state_file(self) -> Path:
-        return self.webnovel_dir / "state.json"
+        return self.wordsmith_dir / "state.json"
 
     @property
     def index_db(self) -> Path:
-        return self.webnovel_dir / "index.db"
+        return self.wordsmith_dir / "index.db"
 
     # v5.1 introduced: alias_index_file is deprecated; aliases stored in index.db aliases table
 
@@ -304,14 +304,14 @@ class DataModulesConfig:
     # ================= RAG Storage =================
     @property
     def rag_db(self) -> Path:
-        return self.webnovel_dir / "rag.db"
+        return self.wordsmith_dir / "rag.db"
 
     @property
     def vector_db(self) -> Path:
-        return self.webnovel_dir / "vectors.db"
+        return self.wordsmith_dir / "vectors.db"
 
     def ensure_dirs(self):
-        self.webnovel_dir.mkdir(parents=True, exist_ok=True)
+        self.wordsmith_dir.mkdir(parents=True, exist_ok=True)
 
     @classmethod
     def from_project_root(cls, project_root: str | Path) -> "DataModulesConfig":
@@ -333,7 +333,7 @@ def get_config(project_root: Optional[Path] = None) -> DataModulesConfig:
         # Use unified project_locator for auto-detection:
         # - Supports WEBNOVEL_PROJECT_ROOT
         # - Supports `.claude/.wordsmith-current-project` pointer file
-        # - Supports searching for `.webnovel/state.json` from current/parent directories
+        # - Supports searching for `.wordsmith/state.json` from current/parent directories
         from project_locator import resolve_project_root
 
         root = resolve_project_root()

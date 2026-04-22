@@ -113,7 +113,7 @@ Vietnamese modal particles:
 - rồi, like, mà, vậy (connectives)
 - seriously?, no way, chết tiệt (casual expressions)
 
-Vietnamese examples from webnovel:
+Vietnamese examples from wordsmith:
 - "Thật vậy sao?" (BNsr)
 - "Hả?" (UH)
 - "Ừ thì..." (connective)

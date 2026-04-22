@@ -25,8 +25,8 @@ model: inherit
 ```json
 {
   "project_root": "{PROJECT_ROOT}",
-  "storage_path": ".webnovel/",
-  "state_file": ".webnovel/state.json",
+  "storage_path": ".wordsmith/",
+  "state_file": ".wordsmith/state.json",
   "chapter_file": "Main/Ch{NNNN}-{title_safe}.md"
 }
 ```
@@ -35,7 +35,7 @@ model: inherit
 
 **Parallel reading**:
 1. Target chapters under `Main text/`
-2. `{project_root}/.webnovel/state.json` (protagonist's current state)
+2. `{project_root}/.wordsmith/state.json` (protagonist's current state)
 3. `Settings collection/` (world-building bible)
 4. `Outline/` (context reference)
 
@@ -201,7 +201,7 @@ Chapter {N} - Chapter {M}
 For critical severity issues found, automatically mark in `invalid_facts` (status `pending`):
 
 ```bash
-python -X utf8 "${CLAUDE_PLUGIN_ROOT:?CLAUDE_PLUGIN_ROOT is required}/scripts/webnovel.py" --project-root "{PROJECT_ROOT}" index mark-invalid \
+python -X utf8 "${CLAUDE_PLUGIN_ROOT:?CLAUDE_PLUGIN_ROOT is required}/scripts/wordsmith.py" --project-root "{PROJECT_ROOT}" index mark-invalid \
   --source-type entity \
   --source-id {entity_id} \
   --reason "{Issue description}" \

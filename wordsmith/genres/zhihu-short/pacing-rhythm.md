@@ -64,7 +64,7 @@ Short story rhythm = Hook (10%) + Warm-up (30%) + Climax (40%) + Conclusion (20%
 
 ### Vietnamese-Specific Rhythm Patterns
 
-**Sentence Length Patterns (from VN webnovel analysis):**
+**Sentence Length Patterns (from VN wordsmith analysis):**
 - **Action scenes**: Use extremely short sentences with strong verbs
   ```
   "Jack xông ra!"

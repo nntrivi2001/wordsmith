@@ -13,15 +13,15 @@ def _ensure_scripts_on_path() -> None:
         sys.path.insert(0, str(scripts_dir))
 
 
-def _load_webnovel_module():
+def _load_wordsmith_module():
     _ensure_scripts_on_path()
-    import data_modules.webnovel as webnovel_module
+    import data_modules.wordsmith as wordsmith_module
 
-    return webnovel_module
+    return wordsmith_module
 
 
 def test_init_does_not_resolve_existing_project_root(monkeypatch):
-    module = _load_webnovel_module()
+    module = _load_wordsmith_module()
 
     called = {}
 
@@ -36,7 +36,7 @@ def test_init_does_not_resolve_existing_project_root(monkeypatch):
     monkeypatch.setenv("WEBNOVEL_PROJECT_ROOT", r"D:\invalid\root")
     monkeypatch.setattr(module, "_run_script", _fake_run_script)
     monkeypatch.setattr(module, "_resolve_root", _fail_resolve)
-    monkeypatch.setattr(sys, "argv", ["webnovel", "init", "proj-dir", "Test book", "Cultivation"])
+    monkeypatch.setattr(sys, "argv", ["wordsmith", "init", "proj-dir", "Test book", "Cultivation"])
 
     with pytest.raises(SystemExit) as exc:
         module.main()
@@ -47,7 +47,7 @@ def test_init_does_not_resolve_existing_project_root(monkeypatch):
 
 
 def test_extract_context_forwards_with_resolved_project_root(monkeypatch, tmp_path):
-    module = _load_webnovel_module()
+    module = _load_wordsmith_module()
 
     book_root = (tmp_path / "book").resolve()
     called = {}
@@ -66,7 +66,7 @@ def test_extract_context_forwards_with_resolved_project_root(monkeypatch, tmp_pa
         sys,
         "argv",
         [
-            "webnovel",
+            "wordsmith",
             "--project-root",
             str(tmp_path),
             "extract-context",
@@ -93,13 +93,13 @@ def test_extract_context_forwards_with_resolved_project_root(monkeypatch, tmp_pa
 
 
 def test_preflight_succeeds_for_valid_project_root(monkeypatch, tmp_path, capsys):
-    module = _load_webnovel_module()
+    module = _load_wordsmith_module()
 
     project_root = tmp_path / "book"
-    (project_root / ".webnovel").mkdir(parents=True, exist_ok=True)
-    (project_root / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")
+    (project_root / ".wordsmith").mkdir(parents=True, exist_ok=True)
+    (project_root / ".wordsmith" / "state.json").write_text("{}", encoding="utf-8")
 
-    monkeypatch.setattr(sys, "argv", ["webnovel", "--project-root", str(project_root), "preflight"])
+    monkeypatch.setattr(sys, "argv", ["wordsmith", "--project-root", str(project_root), "preflight"])
 
     with pytest.raises(SystemExit) as exc:
         module.main()
@@ -111,17 +111,17 @@ def test_preflight_succeeds_for_valid_project_root(monkeypatch, tmp_path, capsys
 
 
 def test_preflight_fails_when_required_scripts_are_missing(monkeypatch, tmp_path, capsys):
-    module = _load_webnovel_module()
+    module = _load_wordsmith_module()
 
     project_root = tmp_path / "book"
-    (project_root / ".webnovel").mkdir(parents=True, exist_ok=True)
-    (project_root / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")
+    (project_root / ".wordsmith").mkdir(parents=True, exist_ok=True)
+    (project_root / ".wordsmith" / "state.json").write_text("{}", encoding="utf-8")
 
     fake_scripts_dir = tmp_path / "fake-scripts"
     fake_scripts_dir.mkdir(parents=True, exist_ok=True)
 
     monkeypatch.setattr(module, "_scripts_dir", lambda: fake_scripts_dir)
-    monkeypatch.setattr(sys, "argv", ["webnovel", "--project-root", str(project_root), "preflight", "--format", "json"])
+    monkeypatch.setattr(sys, "argv", ["wordsmith", "--project-root", str(project_root), "preflight", "--format", "json"])
 
     with pytest.raises(SystemExit) as exc:
         module.main()
@@ -142,8 +142,8 @@ def test_quality_trend_report_writes_to_book_root_when_input_is_workspace_root(t
     (workspace_root / ".claude").mkdir(parents=True, exist_ok=True)
     (workspace_root / ".claude" / ".wordsmith-current-project").write_text(str(book_root), encoding="utf-8")
 
-    (book_root / ".webnovel").mkdir(parents=True, exist_ok=True)
-    (book_root / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")
+    (book_root / ".wordsmith").mkdir(parents=True, exist_ok=True)
+    (book_root / ".wordsmith" / "state.json").write_text("{}", encoding="utf-8")
 
     output_path = workspace_root / "report.md"
 
@@ -164,5 +164,5 @@ def test_quality_trend_report_writes_to_book_root_when_input_is_workspace_root(t
     quality_trend_report_module.main()
 
     assert output_path.is_file()
-    assert (book_root / ".webnovel" / "index.db").is_file()
-    assert not (workspace_root / ".webnovel" / "index.db").exists()
+    assert (book_root / ".wordsmith" / "index.db").is_file()
+    assert not (workspace_root / ".wordsmith" / "index.db").exists()

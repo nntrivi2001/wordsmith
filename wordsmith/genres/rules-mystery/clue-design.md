@@ -558,7 +558,7 @@ Chương 20: Thám tử: "Đồng hồ bị thủ phạm cố tình làm chậm!
 | Mô tả bí ẩn | Văn chương, ẩn dụ | *"Bóng ma của sự thật lướt qua..."* |
 | Đối thoại căng thẳng | Câu cắt ngang, ít chủ ngữ | *"—Giết ai? —Tao đéo biết."* |
 
-**Pattern cho manh mối trong webnovel VN:**
+**Pattern cho manh mối trong wordsmith VN:**
 
 ```markdown
 # Khi phát hiện manh mối:
@@ -767,7 +767,7 @@ Hai mươi phút trước, tại hiện trường:
 ---
 
 *Cập nhật: 2026-04-21*
-*Pattern từ STYLE_GUIDE_VN.md - Vietnamese webnovel conventions*
+*Pattern từ STYLE_GUIDE_VN.md - Vietnamese wordsmith conventions*
 
 ---
 

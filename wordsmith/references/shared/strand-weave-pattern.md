@@ -12,7 +12,7 @@ Note: This file is the shared single source of truth; copying or modifying it in
 
 ## Vietnamese Writing Patterns
 
-> Adapted from STYLE_GUIDE_VN.md for strand balance in Vietnamese webnovels.
+> Adapted from STYLE_GUIDE_VN.md for strand balance in Vietnamese wordsmiths.
 
 ### VN.1 Pronoun Usage in Three-Strand Context
 

@@ -79,7 +79,7 @@ class StyleSampler:
     @contextmanager
     def _get_conn(self):
         """Get database connection (ensure close, avoid Windows file handle leak preventing temp dir cleanup)"""
-        db_path = self.config.webnovel_dir / "style_samples.db"
+        db_path = self.config.wordsmith_dir / "style_samples.db"
         conn = sqlite3.connect(str(db_path))
         try:
             yield conn
@@ -347,7 +347,7 @@ def main():
     # Initialize
     config = None
     if args.project_root:
-        # Allow passing "workspace root", resolve to actual book project_root (must contain .webnovel/state.json)
+        # Allow passing "workspace root", resolve to actual book project_root (must contain .wordsmith/state.json)
         from project_locator import resolve_project_root
         from .config import DataModulesConfig
 

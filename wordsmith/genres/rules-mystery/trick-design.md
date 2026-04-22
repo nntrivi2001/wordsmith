@@ -543,7 +543,7 @@ Nhớ rằng: Mục đích của mưu kế không phải để "khoe kỹ năng,
 | Mô tả bí ẩn | Văn chương, ẩn dụ | *"Bóng ma of sự thật lướt qua..."* |
 | Đối thoại căng thẳng | Câu cắt ngang, ít chủ ngữ | *"—Giết ai? —Tao đéo biết."* |
 
-**Pattern cho mưu kế trong webnovel VN:**
+**Pattern cho mưu kế trong wordsmith VN:**
 
 ```markdown
 # Khi tiết lộ mưu kế:
@@ -750,4 +750,4 @@ Hai mươi phút trước, tại hiện trường:
 ---
 
 *Cập nhật: 2026-04-21*
-*Pattern từ STYLE_GUIDE_VN.md - Vietnamese webnovel conventions*
+*Pattern từ STYLE_GUIDE_VN.md - Vietnamese wordsmith conventions*

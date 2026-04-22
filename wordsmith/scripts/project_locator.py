@@ -3,7 +3,7 @@
 Project location helpers for wordsmith scripts.
 
 Problem this solves:
-- Many scripts assumed CWD is the project root and used relative paths like `.webnovel/state.json`.
+- Many scripts assumed CWD is the project root and used relative paths like `.wordsmith/state.json`.
 - In this repo, commands/scripts are often invoked from the repo root, while the actual project lives
   in a subdirectory (default: `wordsmith-project/`).
 
@@ -204,7 +204,7 @@ def update_global_registry_current_project(
     except Exception:
         root = root
     if not _is_project_root(root):
-        raise FileNotFoundError(f"Not a webnovel project root (missing .webnovel/state.json): {root}")
+        raise FileNotFoundError(f"Not a wordsmith project root (missing .wordsmith/state.json): {root}")
 
     ws = workspace_root
     if ws is None:
@@ -250,7 +250,7 @@ def _candidate_roots(cwd: Path, *, stop_at: Optional[Path] = None) -> Iterable[P
 
 
 def _is_project_root(path: Path) -> bool:
-    return (path / ".webnovel" / "state.json").is_file()
+    return (path / ".wordsmith" / "state.json").is_file()
 
 
 def _pointer_candidates(cwd: Path, *, stop_at: Optional[Path] = None) -> Iterable[Path]:
@@ -299,7 +299,7 @@ def write_current_project_pointer(project_root: Path, *, workspace_root: Optiona
     """
     root = normalize_windows_path(project_root).expanduser().resolve()
     if not _is_project_root(root):
-        raise FileNotFoundError(f"Not a webnovel project root (missing .webnovel/state.json): {root}")
+        raise FileNotFoundError(f"Not a wordsmith project root (missing .wordsmith/state.json): {root}")
 
     ws_root = Path(workspace_root).expanduser().resolve() if workspace_root else _find_workspace_root_with_claude(root)
     if ws_root is None:
@@ -332,7 +332,7 @@ def write_current_project_pointer(project_root: Path, *, workspace_root: Optiona
 
 def resolve_project_root(explicit_project_root: Optional[str] = None, *, cwd: Optional[Path] = None) -> Path:
     """
-    Resolve the webnovel project root directory (the directory containing `.webnovel/state.json`).
+    Resolve the wordsmith project root directory (the directory containing `.wordsmith/state.json`).
 
     Resolution order:
     1) explicit_project_root (if provided)
@@ -367,14 +367,14 @@ def resolve_project_root(explicit_project_root: Optional[str] = None, *, cwd: Op
         if reg_root is not None:
             return reg_root
 
-        raise FileNotFoundError(f"Not a webnovel project root (missing .webnovel/state.json): {root}")
+        raise FileNotFoundError(f"Not a wordsmith project root (missing .wordsmith/state.json): {root}")
 
     env_root = os.environ.get("WEBNOVEL_PROJECT_ROOT")
     if env_root:
         root = normalize_windows_path(env_root).expanduser().resolve()
         if _is_project_root(root):
             return root
-        raise FileNotFoundError(f"WEBNOVEL_PROJECT_ROOT is set but invalid (missing .webnovel/state.json): {root}")
+        raise FileNotFoundError(f"WEBNOVEL_PROJECT_ROOT is set but invalid (missing .wordsmith/state.json): {root}")
 
     base = (cwd or Path.cwd()).resolve()
     git_root = _find_git_root(base)
@@ -401,7 +401,7 @@ def resolve_project_root(explicit_project_root: Optional[str] = None, *, cwd: Op
             return candidate.resolve()
 
     raise FileNotFoundError(
-        "Unable to locate webnovel project root. Expected `.webnovel/state.json` under the current directory, "
+        "Unable to locate wordsmith project root. Expected `.wordsmith/state.json` under the current directory, "
         "a parent directory, or `wordsmith-project/`. Run /wordsmith-init first or pass --project-root / set "
         "WEBNOVEL_PROJECT_ROOT."
     )
@@ -414,7 +414,7 @@ def resolve_state_file(
     cwd: Optional[Path] = None,
 ) -> Path:
     """
-    Resolve `.webnovel/state.json` path.
+    Resolve `.wordsmith/state.json` path.
 
     If explicit_state_file is provided, returns it as-is (resolved to absolute if relative).
     Otherwise derives it from resolve_project_root().
@@ -425,4 +425,4 @@ def resolve_state_file(
         return (base / p).resolve() if not p.is_absolute() else p.resolve()
 
     root = resolve_project_root(explicit_project_root, cwd=base)
-    return root / ".webnovel" / "state.json"
+    return root / ".wordsmith" / "state.json"

@@ -28,9 +28,9 @@ def test_extract_state_summary_accepts_dominant_key(tmp_path):
         },
     }
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
-    (webnovel_dir / "state.json").write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
+    (wordsmith_dir / "state.json").write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
 
     text = extract_state_summary(tmp_path)
     assert "Ch10:quest" in text
@@ -60,8 +60,8 @@ def test_extract_chapter_outline_prefers_state_volume_mapping(tmp_path):
 
     from extract_chapter_context import extract_chapter_outline
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
     state = {
         "progress": {
             "volumes_planned": [
@@ -70,7 +70,7 @@ def test_extract_chapter_outline_prefers_state_volume_mapping(tmp_path):
             ]
         }
     }
-    (webnovel_dir / "state.json").write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
+    (wordsmith_dir / "state.json").write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
 
     outline_dir = tmp_path / "Outline"
     outline_dir.mkdir(parents=True, exist_ok=True)
@@ -88,10 +88,10 @@ def test_extract_chapter_outline_falls_back_when_state_has_no_match(tmp_path):
 
     from extract_chapter_context import extract_chapter_outline
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
     state = {"progress": {"volumes_planned": [{"volume": 1, "chapters_range": "1-10"}]}}
-    (webnovel_dir / "state.json").write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
+    (wordsmith_dir / "state.json").write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
 
     outline_dir = tmp_path / "Outline"
     outline_dir.mkdir(parents=True, exist_ok=True)
@@ -127,9 +127,9 @@ def test_build_chapter_context_payload_includes_contract_sections(tmp_path):
         "disambiguation_warnings": [],
         "disambiguation_pending": [],
     }
-    (cfg.webnovel_dir / "state.json").write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
+    (cfg.wordsmith_dir / "state.json").write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
 
-    summaries_dir = cfg.webnovel_dir / "summaries"
+    summaries_dir = cfg.wordsmith_dir / "summaries"
     summaries_dir.mkdir(parents=True, exist_ok=True)
     (summaries_dir / "ch0002.md").write_text("## Plot summary\nPrevious chapter summary", encoding="utf-8")
 

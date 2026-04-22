@@ -1,6 +1,6 @@
 ---
 name: wordsmith-plan
-description: Builds volume and chapter outlines for Vietnamese webnovels from the total outline, inherits creative constraints, and prepares writing-ready chapter plans. Use when the user asks for outlining or runs /wordsmith-plan. Strand/Cool-point methodology follows STYLE_GUIDE_VN.md patterns.
+description: Builds volume and chapter outlines for Vietnamese wordsmiths from the total outline, inherits creative constraints, and prepares writing-ready chapter plans. Use when the user asks for outlining or runs /wordsmith-plan. Strand/Cool-point methodology follows STYLE_GUIDE_VN.md patterns.
 ---
 
 # Outline Planning
@@ -32,7 +32,7 @@ The STYLE_GUIDE_VN.md contains authoritative Vietnamese writing patterns that MU
 
 ## Vietnamese Methodology
 
-Vietnamese webnovel planning follows STYLE_GUIDE_VN.md patterns:
+Vietnamese wordsmith planning follows STYLE_GUIDE_VN.md patterns:
 
 ### Strand Distribution (VN Webnovel)
 - **Quest Strand** (55-65%): Mainline progress - breakthrough, complete mission, obtain treasure
@@ -60,7 +60,7 @@ Setting policy: First build the setting baseline from master outline + worldview
 
 ## Project Root Guard
 - Claude Code's "workspace root directory" does not necessarily equal "book project root". Common structure: workspace is `D:/wk/novels`, book project is `D:/wk/novels/mortal-capital-theory`.
-- Must first resolve `PROJECT_ROOT` to the actual book project root (must contain `.webnovel/state.json`), all subsequent read/write paths are relative to this directory.
+- Must first resolve `PROJECT_ROOT` to the actual book project root (must contain `.wordsmith/state.json`), all subsequent read/write paths are relative to this directory.
 
 Environment setup (before bash command execution):
 ```bash
@@ -78,7 +78,7 @@ if [ -z "${CLAUDE_PLUGIN_ROOT}" ] || [ ! -d "${CLAUDE_PLUGIN_ROOT}/scripts" ]; t
 fi
 export SCRIPTS_DIR="${CLAUDE_PLUGIN_ROOT}/scripts"
 
-export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/webnovel.py" --project-root "${WORKSPACE_ROOT}" where)"
+export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${WORKSPACE_ROOT}" where)"
 ```
 
 ## References (Step-by-Step Navigation)
@@ -114,7 +114,7 @@ Use progressive disclosure and load only what current step requires:
 
 ## 1) Load project data
 ```bash
-cat "$PROJECT_ROOT/.webnovel/state.json"
+cat "$PROJECT_ROOT/.wordsmith/state.json"
 cat "$PROJECT_ROOT/Outline/Master.md"
 ```
 
@@ -125,7 +125,7 @@ Optional (only if they exist):
 - `Settings/Worldview.md`
 - `Settings/PowerSystem.md`
 - `Settings/ProtagonistCard.md`
-- `.webnovel/idea_bank.json` (inherit constraints)
+- `.wordsmith/idea_bank.json` (inherit constraints)
 
 If the master outline file lacks volume ranges / core conflict / climax, ask the user to fill those before proceeding.
 
@@ -267,7 +267,7 @@ Based on genre profile:
 ### Constraint Trigger Planning Strategy
 If idea_bank.json exists:
 ```bash
-cat "$PROJECT_ROOT/.webnovel/idea_bank.json"
+cat "$PROJECT_ROOT/.wordsmith/idea_bank.json"
 ```
 
 Calculate trigger frequency:
@@ -488,7 +488,7 @@ Every chapter must have:
 
 Update state (include chapters range):
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" update-state -- \
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" update-state -- \
   --volume-planned {volume_id} \
   --chapters-range "{start}-{end}"
 ```

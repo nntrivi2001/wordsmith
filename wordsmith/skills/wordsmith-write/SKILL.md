@@ -1,6 +1,6 @@
 ---
 name: wordsmith-write
-description: Writes webnovel chapters in Vietnamese style (default 2000-2500 words). Use when the user asks to write a chapter or runs /wordsmith-write. Runs context, drafting, review, polish, and data extraction. Built-in Contract follows Vietnamese webnovel patterns per STYLE_GUIDE_VN.md.
+description: Writes wordsmith chapters in Vietnamese style (default 2000-2500 words). Use when the user asks to write a chapter or runs /wordsmith-write. Runs context, drafting, review, polish, and data extraction. Built-in Contract follows Vietnamese wordsmith patterns per STYLE_GUIDE_VN.md.
 allowed-tools: Read Write Edit Grep Bash Task
 ---
 
@@ -33,7 +33,7 @@ The STYLE_GUIDE_VN.md contains authoritative Vietnamese writing patterns that MU
 
 ## Vietnamese Writing Methodology
 
-This skill produces Vietnamese webnovel content following STYLE_GUIDE_VN.md patterns:
+This skill produces Vietnamese wordsmith content following STYLE_GUIDE_VN.md patterns:
 
 ### Core Vietnamese Patterns
 - **Pronoun system**: Use "mày/tao" between close characters, "tôi/ngài" with strangers, "hắn" for third-person male antagonists
@@ -76,8 +76,8 @@ This skill produces Vietnamese webnovel content following STYLE_GUIDE_VN.md patt
 Minimum deliverables (all modes):
 - `Chapters/Chapter{NNNN}-{title_safe}.md` or `Chapters/Chapter{NNNN}.md`
 - `index.db.review_metrics` new record (including `overall_score`)
-- `.webnovel/summaries/ch{NNNN}.md`
-- `.webnovel/state.json` progress and `chapter_meta` updates
+- `.wordsmith/summaries/ch{NNNN}.md`
+- `.wordsmith/state.json` progress and `chapter_meta` updates
 
 ### Workflow Hard Constraints (Prohibited Items)
 
@@ -157,11 +157,11 @@ Path conventions:
 ### Step 0: Pre-Check and Minimal Context Loading
 
 Required actions:
-- Parse the actual book project root (book project_root): must contain `.webnovel/state.json`.
+- Parse the actual book project root (book project_root): must contain `.wordsmith/state.json`.
 - Validate core inputs: `Outline/Master.md`, `${CLAUDE_PLUGIN_ROOT}/scripts/extract_chapter_context.py` exist.
 - Normalize variables:
   - `WORKSPACE_ROOT`: Claude Code workspace root (may be the parent directory of the book project, e.g., `D:\wk\xiaoshuo`)
-  - `PROJECT_ROOT`: Actual book project root (must contain `.webnovel/state.json`, e.g., `D:/wk/novels/mortal-capital-theory`)
+  - `PROJECT_ROOT`: Actual book project root (must contain `.wordsmith/state.json`, e.g., `D:/wk/novels/mortal-capital-theory`)
   - `SKILL_ROOT`: Skill directory (fixed `${CLAUDE_PLUGIN_ROOT}/skills/wordsmith-write`)
   - `SCRIPTS_DIR`: Scripts directory (fixed `${CLAUDE_PLUGIN_ROOT}/scripts`)
   - `chapter_num`: Current chapter number (integer)
@@ -173,11 +173,11 @@ export WORKSPACE_ROOT="${CLAUDE_PROJECT_DIR:-$PWD}"
 export SCRIPTS_DIR="${CLAUDE_PLUGIN_ROOT:?CLAUDE_PLUGIN_ROOT is required}/scripts"
 export SKILL_ROOT="${CLAUDE_PLUGIN_ROOT:?CLAUDE_PLUGIN_ROOT is required}/skills/wordsmith-write"
 
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "${WORKSPACE_ROOT}" preflight
-export PROJECT_ROOT="$(python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "${WORKSPACE_ROOT}" where)"
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "${WORKSPACE_ROOT}" preflight
+export PROJECT_ROOT="$(python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "${WORKSPACE_ROOT}" where)"
 ```
 
-**Hard threshold**: `preflight` must succeed. It uniformly validates `SKILL_ROOT`/`SCRIPTS_DIR` derived from `CLAUDE_PLUGIN_ROOT`, `webnovel.py`, `extract_chapter_context.py`, and parsed `PROJECT_ROOT`. Any failure immediately blocks and prompts to fix missing items first.
+**Hard threshold**: `preflight` must succeed. It uniformly validates `SKILL_ROOT`/`SCRIPTS_DIR` derived from `CLAUDE_PLUGIN_ROOT`, `wordsmith.py`, `extract_chapter_context.py`, and parsed `PROJECT_ROOT`. Any failure immediately blocks and prompts to fix missing items first.
 
 Output:
 - List of "ready inputs" and "missing inputs"; if missing, block and prompt to complete first.
@@ -185,10 +185,10 @@ Output:
 ### Step 0.5: Workflow Breakpoint Recording (best-effort, non-blocking)
 
 ```bash
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" workflow start-task --command wordsmith-write --chapter {chapter_num} || true
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" workflow start-step --step-id "Step 1" --step-name "Context Agent" || true
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" workflow complete-step --step-id "Step 1" --artifacts '{"ok":true}' || true
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" workflow complete-task --artifacts '{"ok":true}' || true
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" workflow start-task --command wordsmith-write --chapter {chapter_num} || true
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" workflow start-step --step-id "Step 1" --step-name "Context Agent" || true
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" workflow complete-step --step-id "Step 1" --artifacts '{"ok":true}' || true
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" workflow complete-task --artifacts '{"ok":true}' || true
 ```
 
 Requirements:
@@ -201,8 +201,8 @@ Requirements:
 Invoke Task with `context-agent`, parameters:
 - `chapter`
 - `project_root`
-- `storage_path=.webnovel/`
-- `state_file=.webnovel/state.json`
+- `storage_path=.wordsmith/`
+- `state_file=.wordsmith/state.json`
 
 Hard requirements:
 - If `state` or outline is unavailable, immediately block and return missing items.
@@ -279,7 +279,7 @@ Mode descriptions:
 
 Review metrics must be saved to database (required):
 ```bash
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" index save-review-metrics --data "@${PROJECT_ROOT}/.webnovel/tmp/review_metrics.json"
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" index save-review-metrics --data "@${PROJECT_ROOT}/.wordsmith/tmp/review_metrics.json"
 ```
 
 review_metrics field constraints (current workflow agreement only passes the following fields):
@@ -327,8 +327,8 @@ Use Task to invoke `data-agent`, parameters:
 - `chapter_file` must pass actual chapter file path; if detailed outline already has chapter title, prioritize passing `Chapters/Chapter{chapter_padded}-{title_safe}.md`, otherwise pass `Chapters/Chapter{chapter_padded}.md`
 - `review_score=Step 3 overall_score`
 - `project_root`
-- `storage_path=.webnovel/`
-- `state_file=.webnovel/state.json`
+- `storage_path=.wordsmith/`
+- `state_file=.wordsmith/state.json`
 
 Data Agent default sub-steps (all execute):
 - A. Load context
@@ -352,10 +352,10 @@ Step 5 failure isolation rules:
 - Do not rerun the entire writing chain due to RAG/style sub-step failures.
 
 Post-execution checks (minimal whitelist):
-- `.webnovel/state.json`
-- `.webnovel/index.db`
-- `.webnovel/summaries/ch{chapter_padded}.md`
-- `.webnovel/observability/data_agent_timing.jsonl` (observability log)
+- `.wordsmith/state.json`
+- `.wordsmith/index.db`
+- `.wordsmith/summaries/ch{chapter_padded}.md`
+- `.wordsmith/observability/data_agent_timing.jsonl` (observability log)
 
 Performance requirements:
 - Read the latest entry from timing log;
@@ -397,11 +397,11 @@ Before ending the workflow, the following must be satisfied:
 Execution checks:
 
 ```bash
-test -f "${PROJECT_ROOT}/.webnovel/state.json"
+test -f "${PROJECT_ROOT}/.wordsmith/state.json"
 test -f "${PROJECT_ROOT}/Chapters/Chapter${chapter_padded}.md"
-test -f "${PROJECT_ROOT}/.webnovel/summaries/ch${chapter_padded}.md"
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" index get-recent-review-metrics --limit 1
-tail -n 1 "${PROJECT_ROOT}/.webnovel/observability/data_agent_timing.jsonl" || true
+test -f "${PROJECT_ROOT}/.wordsmith/summaries/ch${chapter_padded}.md"
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" index get-recent-review-metrics --limit 1
+tail -n 1 "${PROJECT_ROOT}/.wordsmith/observability/data_agent_timing.jsonl" || true
 ```
 
 Success criteria:

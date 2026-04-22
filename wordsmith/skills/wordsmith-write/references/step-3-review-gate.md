@@ -90,7 +90,7 @@ Review Summary - Chapter {chapter_num}
 ## Review Metrics Storage (Required) - Lưu Review Metrics (Bắt Buộc)
 
 ```bash
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" index save-review-metrics --data "@${PROJECT_ROOT}/.webnovel/tmp/review_metrics.json"
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" index save-review-metrics --data "@${PROJECT_ROOT}/.wordsmith/tmp/review_metrics.json"
 ```
 
 review_metrics file field constraints (current workflow convention only passes following fields):

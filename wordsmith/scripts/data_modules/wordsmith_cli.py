@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-webnovel unified entry point (stable CLI for skills/agents)
+wordsmith unified entry point (stable CLI for skills/agents)
 
 Design goals:
 - Single entry point command, avoids `python -m data_modules.xxx ...` with parameter positions/quotes/paths exploding.
-- Auto-resolves correct book project_root (directory containing `.webnovel/state.json`).
+- Auto-resolves correct book project_root (directory containing `.wordsmith/state.json`).
 - All write commands resolve project_root first, then prepend `--project-root` to specific modules.
 
 Typical usage (recommended, no PYTHONPATH/cd dependency):
-  python "<SCRIPTS_DIR>/webnovel.py" preflight
-  python "<SCRIPTS_DIR>/webnovel.py" where
-  python "<SCRIPTS_DIR>/webnovel.py" use D:\\wk\\xiaoshuo\\mortal-capital-theory
-  python "<SCRIPTS_DIR>/webnovel.py" --project-root D:\\wk\\xiaoshuo index stats
-  python "<SCRIPTS_DIR>/webnovel.py" --project-root D:\\wk\\xiaoshuo state process-chapter --chapter 100 --data @payload.json
-  python "<SCRIPTS_DIR>/webnovel.py" --project-root D:\\wk\\xiaoshuo extract-context --chapter 100 --format json
+  python "<SCRIPTS_DIR>/wordsmith.py" preflight
+  python "<SCRIPTS_DIR>/wordsmith.py" where
+  python "<SCRIPTS_DIR>/wordsmith.py" use D:\\wk\\xiaoshuo\\mortal-capital-theory
+  python "<SCRIPTS_DIR>/wordsmith.py" --project-root D:\\wk\\xiaoshuo index stats
+  python "<SCRIPTS_DIR>/wordsmith.py" --project-root D:\\wk\\xiaoshuo state process-chapter --chapter 100 --data @payload.json
+  python "<SCRIPTS_DIR>/wordsmith.py" --project-root D:\\wk\\xiaoshuo extract-context --chapter 100 --format json
 
 Also supported (not recommended, easy to hit PYTHONPATH/cd/parameter order issues):
-  python -m data_modules.webnovel where
+  python -m data_modules.wordsmith where
 """
 
 from __future__ import annotations
@@ -35,7 +35,7 @@ from project_locator import resolve_project_root, write_current_project_pointer,
 
 
 def _scripts_dir() -> Path:
-    # data_modules/webnovel.py -> data_modules -> scripts
+    # data_modules/wordsmith.py -> data_modules -> scripts
     return Path(__file__).resolve().parent.parent
 
 
@@ -110,7 +110,7 @@ def _build_preflight_report(explicit_project_root: Optional[str]) -> dict:
     scripts_dir = _scripts_dir().resolve()
     plugin_root = scripts_dir.parent
     skill_root = plugin_root / "skills" / "wordsmith-write"
-    entry_script = scripts_dir / "webnovel.py"
+    entry_script = scripts_dir / "wordsmith.py"
     extract_script = scripts_dir / "extract_chapter_context.py"
 
     checks: list[dict[str, object]] = [
@@ -187,7 +187,7 @@ def cmd_use(args: argparse.Namespace) -> int:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="webnovel unified CLI")
+    parser = argparse.ArgumentParser(description="wordsmith unified CLI")
     parser.add_argument("--project-root", help="Book project root or workspace root (optional, auto-detected by default)")
 
     sub = parser.add_subparsers(dest="tool", required=True)
@@ -200,7 +200,7 @@ def main() -> None:
     p_preflight.set_defaults(func=cmd_preflight)
 
     p_use = sub.add_parser("use", help="Bind book project for current workspace (write pointer/registry)")
-    p_use.add_argument("project_root", help="Book project root (must contain .webnovel/state.json)")
+    p_use.add_argument("project_root", help="Book project root (must contain .wordsmith/state.json)")
     p_use.add_argument("--workspace-root", help="Workspace root (optional; inferred from environment by default)")
     p_use.set_defaults(func=cmd_use)
 

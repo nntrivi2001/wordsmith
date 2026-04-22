@@ -42,7 +42,7 @@ class SnapshotManager:
     def __init__(self, config=None, version: str = SNAPSHOT_VERSION):
         self.config = config or get_config()
         self.version = version
-        self.snapshot_dir = self.config.webnovel_dir / "context_snapshots"
+        self.snapshot_dir = self.config.wordsmith_dir / "context_snapshots"
         self.snapshot_dir.mkdir(parents=True, exist_ok=True)
 
     def _snapshot_path(self, chapter: int) -> Path:

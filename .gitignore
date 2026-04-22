@@ -10,7 +10,7 @@ htmlcov/
 venv/
 
 # Local runtime data
-.webnovel/
+.wordsmith/
 
 # OS / editor
 .DS_Store

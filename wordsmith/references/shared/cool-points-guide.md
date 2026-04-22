@@ -263,7 +263,7 @@ Must follow when writing:
 
 ## 12. Con Duong Ba Chu Pacing Patterns
 
-Based on analysis of "Ta Dung Nhin Võ Lâm Toang" (Con Duong Ba Chu) — a Vietnamese webnovel with distinct pacing methodology.
+Based on analysis of "Ta Dung Nhin Võ Lâm Toang" (Con Duong Ba Chu) — a Vietnamese wordsmith with distinct pacing methodology.
 
 ### 12.1 Cool-Point Density Classification
 

@@ -8,8 +8,8 @@ import sys
 def test_update_state_cli_add_review_writes_checkpoint(tmp_path, monkeypatch):
     import update_state as update_state_module
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
 
     state = {
         "project_info": {},
@@ -23,7 +23,7 @@ def test_update_state_cli_add_review_writes_checkpoint(tmp_path, monkeypatch):
         "plot_threads": {},
         "review_checkpoints": [],
     }
-    state_file = webnovel_dir / "state.json"
+    state_file = wordsmith_dir / "state.json"
     state_file.write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
 
     # Avoid creating backup dirs/modifying permissions etc non-core behaviors in tests

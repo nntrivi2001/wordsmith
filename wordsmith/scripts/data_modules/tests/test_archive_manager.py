@@ -20,9 +20,9 @@ def _load_archive_module():
 
 @pytest.fixture
 def archive_env(tmp_path):
-    webnovel = tmp_path / ".webnovel"
-    webnovel.mkdir(parents=True, exist_ok=True)
-    state_path = webnovel / "state.json"
+    wordsmith = tmp_path / ".wordsmith"
+    wordsmith.mkdir(parents=True, exist_ok=True)
+    state_path = wordsmith / "state.json"
     state_path.write_text(
         '{"progress":{"current_chapter":10},"plot_threads":{},"review_checkpoints":[]}',
         encoding="utf-8",

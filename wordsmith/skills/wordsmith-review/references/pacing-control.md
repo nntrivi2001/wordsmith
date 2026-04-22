@@ -186,7 +186,7 @@ Consecutive 500 words pure description = Delete or compress
 
 ### Clue Hiding Patterns (for Mystery)
 
-When placing clues in Vietnamese webnovel context:
+When placing clues in Vietnamese wordsmith context:
 - Use short declarative sentences for obvious clues
 - Use descriptive narration for hidden clues
 - End chapters with `...` or unfinished actions for suspense

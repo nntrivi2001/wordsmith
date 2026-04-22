@@ -33,17 +33,17 @@ The STYLE_GUIDE_VN.md contains authoritative Vietnamese writing patterns that MU
 
 ## Project Root Guard (must confirm first)
 
-- Must be executed from the project root directory (`.webnovel/state.json` must exist)
+- Must be executed from the project root directory (`.wordsmith/state.json` must exist)
 - If the file does not exist in the current directory, ask the user for the project path and `cd` into it
 - After entering, set the variable: `$PROJECT_ROOT = (Resolve-Path ".").Path`
 
 ## Objective
 - Extract reusable writing patterns (hooks / pacing / dialogue / micro-payoffs, etc.)
-- Append them to `.webnovel/project_memory.json`
+- Append them to `.wordsmith/project_memory.json`
 
 ## Vietnamese Style Patterns
 
-When extracting patterns for Vietnamese webnovels, apply these STYLE_GUIDE_VN.md conventions:
+When extracting patterns for Vietnamese wordsmiths, apply these STYLE_GUIDE_VN.md conventions:
 
 ### Vocabulary & Nuances
 
@@ -271,8 +271,8 @@ Sức khỏe: X
 ```
 
 ## Execution Flow
-1. Read `"$PROJECT_ROOT/.webnovel/state.json"` to get the current chapter number (`progress.current_chapter`)
-2. Read `"$PROJECT_ROOT/.webnovel/project_memory.json"`; if it does not exist, initialize with `{"patterns": []}`
+1. Read `"$PROJECT_ROOT/.wordsmith/state.json"` to get the current chapter number (`progress.current_chapter`)
+2. Read `"$PROJECT_ROOT/.wordsmith/project_memory.json"`; if it does not exist, initialize with `{"patterns": []}`
 3. Parse the user input and classify `pattern_type` (hook / pacing / dialogue / payoff / emotion)
 4. Append the record and write the file back
 

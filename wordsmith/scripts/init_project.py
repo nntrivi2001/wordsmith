@@ -5,7 +5,7 @@ Web novel project initialization script
 
 Goals:
 - Generate a runnable project structure (wordsmith-project)
-- Create/update .webnovel/state.json (runtime truth)
+- Create/update .wordsmith/state.json (runtime truth)
 - Generate base settings collection and outline template files (for use by /wordsmith-plan and /wordsmith-write)
 
 Notes:
@@ -269,9 +269,9 @@ def init_project(
 
     # Directory structure (compatible with "volume directories" and future extensions)
     directories = [
-        ".webnovel/backups",
-        ".webnovel/archive",
-        ".webnovel/summaries",
+        ".wordsmith/backups",
+        ".wordsmith/archive",
+        ".wordsmith/summaries",
         "Settings/Characters/Main",
         "Settings/Characters/Secondary",
         "Settings/Characters/Antagonists",
@@ -285,7 +285,7 @@ def init_project(
         (project_path / dir_path).mkdir(parents=True, exist_ok=True)
 
     # state.json (create or incrementally fill)
-    state_path = project_path / ".webnovel" / "state.json"
+    state_path = project_path / ".wordsmith" / "state.json"
     if state_path.exists():
         try:
             state: Dict[str, Any] = json.loads(state_path.read_text(encoding="utf-8"))
@@ -713,11 +713,11 @@ __pycache__/
 .vscode/
 .idea/
 
-# Don't ignore .webnovel (we need to track state.json)
+# Don't ignore .wordsmith (we need to track state.json)
 # But ignore cache files
-.webnovel/context_cache.json
-.webnovel/*.lock
-.webnovel/*.bak
+.wordsmith/context_cache.json
+.wordsmith/*.lock
+.wordsmith/*.bak
 """,
                         encoding="utf-8",
                     )
@@ -745,7 +745,7 @@ __pycache__/
 
     print(f"\nProject initialized at: {project_path}")
     print("Key files:")
-    print(" - .webnovel/state.json")
+    print(" - .wordsmith/state.json")
     print(" - Settings/Worldview.md")
     print(" - Settings/PowerSystem.md")
     print(" - Settings/ProtagonistCard.md")

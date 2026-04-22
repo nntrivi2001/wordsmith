@@ -1,6 +1,6 @@
 # Vietnamese Writing Patterns - Chapter Planning
 
-> Sử dụng các pattern từ STYLE_GUIDE_VN.md để thiết kế chương phù hợp với webnovel tiếng Việt.
+> Sử dụng các pattern từ STYLE_GUIDE_VN.md để thiết kế chương phù hợp với wordsmith tiếng Việt.
 
 ## Vietnamese Pattern Considerations
 

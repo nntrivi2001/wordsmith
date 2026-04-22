@@ -60,8 +60,8 @@ def test_context_manager_build_and_filter(temp_project):
     temp_project.state_file.write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
 
     # preferences and memory
-    (temp_project.webnovel_dir / "preferences.json").write_text(json.dumps({"tone": "Passionate"}, ensure_ascii=False), encoding="utf-8")
-    (temp_project.webnovel_dir / "project_memory.json").write_text(json.dumps({"patterns": []}, ensure_ascii=False), encoding="utf-8")
+    (temp_project.wordsmith_dir / "preferences.json").write_text(json.dumps({"tone": "Passionate"}, ensure_ascii=False), encoding="utf-8")
+    (temp_project.wordsmith_dir / "project_memory.json").write_text(json.dumps({"patterns": []}, ensure_ascii=False), encoding="utf-8")
 
     idx = IndexManager(temp_project)
     idx.upsert_entity(

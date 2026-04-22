@@ -140,7 +140,7 @@ class RAGAdapter:
         db_path = Path(self.config.vector_db)
         if not db_path.exists():
             raise FileNotFoundError(f"vectors.db does not exist: {db_path}")
-        backup_dir = self.config.webnovel_dir / "backups"
+        backup_dir = self.config.wordsmith_dir / "backups"
         backup_dir.mkdir(parents=True, exist_ok=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         backup_path = backup_dir / f"vectors.db.{reason}.v{RAG_SCHEMA_VERSION}.{timestamp}.bak"
@@ -1431,7 +1431,7 @@ def main():
     # Initialize
     config = None
     if args.project_root:
-        # Allows passing "workspace root directory", resolves to actual book project_root (must contain .webnovel/state.json)
+        # Allows passing "workspace root directory", resolves to actual book project_root (must contain .wordsmith/state.json)
         from project_locator import resolve_project_root
         from .config import DataModulesConfig
 
@@ -1480,7 +1480,7 @@ def main():
         # summary chunk
         summary_text = args.summary
         if not summary_text and config:
-            summary_path = config.webnovel_dir / "summaries" / f"ch{args.chapter:04d}.md"
+            summary_path = config.wordsmith_dir / "summaries" / f"ch{args.chapter:04d}.md"
             if summary_path.exists():
                 summary_text = summary_path.read_text(encoding="utf-8")
 

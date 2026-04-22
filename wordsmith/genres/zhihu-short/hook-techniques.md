@@ -197,7 +197,7 @@ Extreme situation + Dialogue + Reversal:
 
 ## 6. Vietnamese Webnovel Hook Adaptations
 
-Based on STYLE_GUIDE_VN.md patterns from Vietnamese webnovels (Biên niên sử rồng, Useless hero from another world):
+Based on STYLE_GUIDE_VN.md patterns from Vietnamese wordsmiths (Biên niên sử rồng, Useless hero from another world):
 
 ### 6.1 Vietnamese Opening Hook Patterns
 
@@ -210,7 +210,7 @@ Based on STYLE_GUIDE_VN.md patterns from Vietnamese webnovels (Biên niên sử 
 
 ### 6.2 Vietnamese Pronoun & Register Adjustments
 
-When adapting hooks for Vietnamese webnovels:
+When adapting hooks for Vietnamese wordsmiths:
 
 | Context | Vietnamese Register | Example |
 |---------|-------------------|---------|

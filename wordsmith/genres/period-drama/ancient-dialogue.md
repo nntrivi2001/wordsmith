@@ -1,6 +1,6 @@
 # Period Drama Dialogue and Writing Style
 
-> The charm of period dramas lies in the language. This document provides methods for writing dialogues with an ancient flair, adapted for Vietnamese webnovels.
+> The charm of period dramas lies in the language. This document provides methods for writing dialogues with an ancient flair, adapted for Vietnamese wordsmiths.
 
 ---
 
@@ -169,7 +169,7 @@ Vietnamese examples:
 
 **Pattern từ BNsr:**
 - Dùng "ta" cho nhân vật quý tộc: "Ta là Vincent..." (BNsr Chương 3)
-- Ngôn ngữ cổ đại nhưng vẫn giữ phong cách webnovel
+- Ngôn ngữ cổ đại nhưng vẫn giữ phong cách wordsmith
 ```
 
 ---

@@ -6,7 +6,7 @@ purpose: Loaded on demand when writing desire/intimacy
 <context>
 This file serves as a reference for desire/intimacy description. Core principles: sensory authenticity + emotional depth + literary beauty + healthy orientation. Sensory description serves emotional expression, suggestion and white space surpass explicit description.
 
-Vietnamese webnovel patterns from Biên niên sử rồng and Useless hero from another world emphasize:
+Vietnamese wordsmith patterns from Biên niên sử rồng and Useless hero from another world emphasize:
 - Colloquial vs Literary register: dialogue uses everyday language, inner monologue uses literary style
 - Pronoun dynamics: mày/tao for intimacy, ngài/tôi for distance
 - Em dash (—) for inner thoughts, ellipsis (...) for emotional pauses

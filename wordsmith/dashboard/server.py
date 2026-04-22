@@ -29,14 +29,14 @@ def _resolve_project_root(cli_root: str | None) -> Path:
         target = pointer.read_text(encoding="utf-8").strip()
         if target:
             p = Path(target)
-            if p.is_dir() and (p / ".webnovel" / "state.json").is_file():
+            if p.is_dir() and (p / ".wordsmith" / "state.json").is_file():
                 return p.resolve()
 
     # Final fallback: current directory
-    if (cwd / ".webnovel" / "state.json").is_file():
+    if (cwd / ".wordsmith" / "state.json").is_file():
         return cwd.resolve()
 
-    print("ERROR: Unable to locate PROJECT_ROOT (requires a directory containing .webnovel/state.json)", file=sys.stderr)
+    print("ERROR: Unable to locate PROJECT_ROOT (requires a directory containing .wordsmith/state.json)", file=sys.stderr)
     sys.exit(1)
 
 

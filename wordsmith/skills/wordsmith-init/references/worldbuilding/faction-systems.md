@@ -30,7 +30,7 @@ Các pattern tiếng Việt áp dụng khi thiết kế hệ thống phái/facti
 
 ---
 
-Trong webnovel tiếng Việt, các phái frac là động cơ chính của cốt truyện. Pattern từ **Biên niên sử rồng** (BNsr) cho thấy xung đột giữa loài rồng và con người tạo nền tảng drama mạnh mẽ. **Useless hero from another world** (UH) thể hiện mô hình học đường/guild với các nhân vật nữ xung quanh main male.
+Trong wordsmith tiếng Việt, các phái frac là động cơ chính của cốt truyện. Pattern từ **Biên niên sử rồng** (BNsr) cho thấy xung đột giữa loài rồng và con người tạo nền tảng drama mạnh mẽ. **Useless hero from another world** (UH) thể hiện mô hình học đường/guild với các nhân vật nữ xung quanh main male.
 
 ---
 
@@ -237,9 +237,9 @@ In the `/wordsmith-plan` phase, check if faction design is qualified:
 
 ---
 
-## 6. Vietnamese Faction Speech Patterns (Pattern từ webnovel Việt)
+## 6. Vietnamese Faction Speech Patterns (Pattern từ wordsmith Việt)
 
-Trong webnovel tiếng Việt, cách xưng hô giữa các phe phái phản ánh mối quan hệ quyền lực và tình cảm. Pattern từ **Biên niên sử rồng** (BNsr) và **Useless hero from another world** (UH).
+Trong wordsmith tiếng Việt, cách xưng hô giữa các phe phái phản ánh mối quan hệ quyền lực và tình cảm. Pattern từ **Biên niên sử rồng** (BNsr) và **Useless hero from another world** (UH).
 
 ### 6.1 Faction Hierarchy Speech Patterns
 

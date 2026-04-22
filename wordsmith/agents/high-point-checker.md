@@ -15,7 +15,7 @@ model: inherit
 
 - **Taxonomy**: `${CLAUDE_PLUGIN_ROOT}/references/reading-power-taxonomy.md`
 - **Genre Profile**: `${CLAUDE_PLUGIN_ROOT}/references/genre-profiles.md`
-- **Vietnamese Style Guide**: `${CLAUDE_PLUGIN_ROOT}/STYLE_GUIDE_VN.md` (Vietnamese webnovel writing patterns, climaxes, cliffhangers)
+- **Vietnamese Style Guide**: `${CLAUDE_PLUGIN_ROOT}/STYLE_GUIDE_VN.md` (Vietnamese wordsmith writing patterns, climaxes, cliffhangers)
 
 ## Scope
 

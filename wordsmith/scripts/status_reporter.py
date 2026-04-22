@@ -14,12 +14,12 @@ Features:
 7. Foreshadowing urgency ranking: Priority calculation based on three-tier system (core/side/decor)
 
 Output format:
-  - Markdown report (.webnovel/health_report.md)
+  - Markdown report (.wordsmith/health_report.md)
   - Contains Mermaid charts (character relationship graph, cool point heatmap)
 
 Usage:
   # Generate complete health report
-  python status_reporter.py --output .webnovel/health_report.md
+  python status_reporter.py --output .wordsmith/health_report.md
 
   # Analyze character activity only
   python status_reporter.py --focus characters
@@ -129,7 +129,7 @@ class StatusReporter:
     def __init__(self, project_root: str):
         self.project_root = Path(project_root)
         self.config = get_config(self.project_root)
-        self.state_file = self.project_root / ".webnovel/state.json"
+        self.state_file = self.project_root / ".wordsmith/state.json"
         self.chapters_dir = self.project_root / "body"
 
         self.state = None
@@ -1144,7 +1144,7 @@ def main():
         epilog="""
 Examples:
   # Generate complete health report
-  python status_reporter.py --output .webnovel/health_report.md
+  python status_reporter.py --output .wordsmith/health_report.md
 
   # Analyze character activity only
   python status_reporter.py --focus characters
@@ -1157,7 +1157,7 @@ Examples:
         “””
     )
 
-    parser.add_argument('--output', default='.webnovel/health_report.md',
+    parser.add_argument('--output', default='.wordsmith/health_report.md',
                        help='Output file path')
     parser.add_argument('--focus', choices=['all', 'basic', 'characters',
                                             'foreshadowing', 'urgency', 'pacing',
@@ -1171,7 +1171,7 @@ Examples:
     try:
         project_root = str(resolve_project_root(args.project_root))
     except FileNotFoundError as exc:
-        print(f”❌ Cannot locate project root (need .webnovel/state.json): {exc}”, file=sys.stderr)
+        print(f”❌ Cannot locate project root (need .wordsmith/state.json): {exc}”, file=sys.stderr)
         sys.exit(1)
 
     # Create report generator
@@ -1193,8 +1193,8 @@ Examples:
 
     # Save report
     output_file = Path(args.output)
-    if args.output == '.webnovel/health_report.md' and project_root != '.':
-        output_file = Path(project_root) / '.webnovel' / 'health_report.md'
+    if args.output == '.wordsmith/health_report.md' and project_root != '.':
+        output_file = Path(project_root) / '.wordsmith' / 'health_report.md'
     output_file.parent.mkdir(parents=True, exist_ok=True)
 
     with open(output_file, 'w', encoding='utf-8') as f:

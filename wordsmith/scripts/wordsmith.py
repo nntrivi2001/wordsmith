@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-webnovel unified entry script (no `cd` required)
+wordsmith unified entry script (no `cd` required)
 
 Usage examples:
-  python "<SCRIPTS_DIR>/webnovel.py" preflight
-  python "<SCRIPTS_DIR>/webnovel.py" where
-  python "<SCRIPTS_DIR>/webnovel.py" index stats
+  python "<SCRIPTS_DIR>/wordsmith.py" preflight
+  python "<SCRIPTS_DIR>/wordsmith.py" where
+  python "<SCRIPTS_DIR>/wordsmith.py" index stats
 
 Notes:
-- This script is only responsible for adding `.claude/scripts` to sys.path, then forwarding to `data_modules.webnovel`.
+- This script is only responsible for adding `.claude/scripts` to sys.path, then forwarding to `data_modules.wordsmith`.
 - Adapted for calling conventions when skills/agents are installed at project level or user level (~/.claude).
 """
 
@@ -26,7 +26,7 @@ def main() -> None:
     sys.path.insert(0, str(scripts_dir))
 
     # Deferred import to avoid sys.path not ready
-    from data_modules.webnovel import main as _main
+    from data_modules.wordsmith_cli import main as _main
 
     _main()
 

@@ -136,19 +136,19 @@ index.db Update Complete
 
 ```bash
 # Query entity
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" index get-entity --id "xiaoyan"
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" index get-entity --id "xiaoyan"
 
 # Query core entities
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" index get-core-entities
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" index get-core-entities
 
 # Find by alias
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" index get-by-alias --alias "xiaoyan"
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" index get-by-alias --alias "xiaoyan"
 
 # Query state change history
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" index get-state-changes --entity "xiaoyan"
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" index get-state-changes --entity "xiaoyan"
 
 # Query relationships
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" index get-relationships --entity "xiaoyan"
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" index get-relationships --entity "xiaoyan"
 ```
 
 ---
@@ -264,10 +264,10 @@ Migrating from the old structure to the current structure:
 
 ```bash
 # Run migration script
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" migrate -- --backup
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" migrate -- --backup
 
 # Verify migration results
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" index stats
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" index stats
 ```
 
 After migration:

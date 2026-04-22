@@ -35,8 +35,8 @@ def _get_project_root() -> Path:
     return _project_root
 
 
-def _webnovel_dir() -> Path:
-    return _get_project_root() / ".webnovel"
+def _wordsmith_dir() -> Path:
+    return _get_project_root() / ".wordsmith"
 
 
 # ---------------------------------------------------------------------------
@@ -51,9 +51,9 @@ def create_app(project_root: str | Path | None = None) -> FastAPI:
 
     @asynccontextmanager
     async def _lifespan(_: FastAPI):
-        webnovel = _webnovel_dir()
-        if webnovel.is_dir():
-            _watcher.start(webnovel, asyncio.get_running_loop())
+        wordsmith = _wordsmith_dir()
+        if wordsmith.is_dir():
+            _watcher.start(wordsmith, asyncio.get_running_loop())
         try:
             yield
         finally:
@@ -75,7 +75,7 @@ def create_app(project_root: str | Path | None = None) -> FastAPI:
     @app.get("/api/project/info")
     def project_info():
         """Return the full contents of state.json (read-only)."""
-        state_path = _webnovel_dir() / "state.json"
+        state_path = _wordsmith_dir() / "state.json"
         if not state_path.is_file():
             raise HTTPException(404, "state.json does not exist")
         return json.loads(state_path.read_text(encoding="utf-8"))
@@ -85,7 +85,7 @@ def create_app(project_root: str | Path | None = None) -> FastAPI:
     # ===========================================================
 
     def _get_db() -> sqlite3.Connection:
-        db_path = _webnovel_dir() / "index.db"
+        db_path = _wordsmith_dir() / "index.db"
         if not db_path.is_file():
             raise HTTPException(404, "index.db does not exist")
         conn = sqlite3.connect(str(db_path))
@@ -381,7 +381,7 @@ def create_app(project_root: str | Path | None = None) -> FastAPI:
 
     @app.get("/api/events")
     async def sse():
-        """Server-Sent Events endpoint — pushes file change notifications from .webnovel/."""
+        """Server-Sent Events endpoint — pushes file change notifications from .wordsmith/."""
         q = _watcher.subscribe()
 
         async def _gen():

@@ -148,8 +148,8 @@ def create_secure_directory(path: str, mode: int = 0o700) -> Path:
         Path object
 
     Example:
-        >>> create_secure_directory('.webnovel')
-        PosixPath('.webnovel')  # drwx------ (700)
+        >>> create_secure_directory('.wordsmith')
+        PosixPath('.wordsmith')  # drwx------ (700)
 
     Security verification:
         - ✅ Owner-only access (0o700)
@@ -372,7 +372,7 @@ def atomic_write_json(
         AtomicWriteError: Raised on write failure
 
     Example:
-        >>> atomic_write_json('.webnovel/state.json', {'progress': {'chapter': 10}})
+        >>> atomic_write_json('.wordsmith/state.json', {'progress': {'chapter': 10}})
 
     Security verification:
         - ✅ Prevents data corruption from write interruption (write to temp file first)
@@ -458,7 +458,7 @@ def read_json_safe(
         Parsed dictionary, or default value
 
     Example:
-        >>> state = read_json_safe('.webnovel/state.json', {})
+        >>> state = read_json_safe('.wordsmith/state.json', {})
     """
     file_path = Path(file_path)
     if default is None:
@@ -486,7 +486,7 @@ def restore_from_backup(file_path: Union[str, Path]) -> bool:
         Whether restore succeeded
 
     Example:
-        >>> restore_from_backup('.webnovel/state.json')
+        >>> restore_from_backup('.wordsmith/state.json')
         True
     """
     file_path = Path(file_path)

@@ -209,7 +209,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=”Generate offline quality trend report (based on index.db)”)
     parser.add_argument(“--project-root”, type=str, help=”Project root directory (optional, auto-detect if not passed)”)
     parser.add_argument(“--limit”, type=int, default=20, help=”Statistics on last N records (default 20)”)
-    parser.add_argument(“--output”, type=str, help=”Output file path (default .webnovel/reports/quality-trend.md)”)
+    parser.add_argument(“--output”, type=str, help=”Output file path (default .wordsmith/reports/quality-trend.md)”)
     args = parser.parse_args()
 
     if args.project_root:
@@ -225,7 +225,7 @@ def main() -> None:
     output_path = (
         Path(args.output).expanduser().resolve()
         if args.output
-        else (cfg.webnovel_dir / “reports” / “quality-trend.md”)
+        else (cfg.wordsmith_dir / “reports” / “quality-trend.md”)
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
 

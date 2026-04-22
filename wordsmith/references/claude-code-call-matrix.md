@@ -22,7 +22,7 @@
 
 | Script | Primary Trigger | Trigger Node | Notes |
 |---|---|---|---|
-| `${CLAUDE_PLUGIN_ROOT}/scripts/webnovel.py` | All Skills / Agents | Any node requiring a CLI call | **Unified entry point**: resolves the true book `project_root` and forwards to `data_modules/*` or `scripts/*.py`, avoiding hidden failures caused by `PYTHONPATH/cd/parameter ordering` |
+| `${CLAUDE_PLUGIN_ROOT}/scripts/wordsmith.py` | All Skills / Agents | Any node requiring a CLI call | **Unified entry point**: resolves the true book `project_root` and forwards to `data_modules/*` or `scripts/*.py`, avoiding hidden failures caused by `PYTHONPATH/cd/parameter ordering` |
 | `${CLAUDE_PLUGIN_ROOT}/scripts/update_state.py` | `wordsmith-plan` Skill | Updates `state.json` after chapter/volume planning is persisted | Can also be called by automation scripts; not a routine manual entry point by default |
 | `${CLAUDE_PLUGIN_ROOT}/scripts/status_reporter.py` | `wordsmith-query` Skill / `pacing-checker` Agent (optional) | During query analysis or pacing review | Produces health reports and urgency analysis |
 | `${CLAUDE_PLUGIN_ROOT}/scripts/workflow_manager.py` | `wordsmith-resume` Skill | Recovery workflow: detect/cleanup/clear | Only triggered in recovery scenarios |

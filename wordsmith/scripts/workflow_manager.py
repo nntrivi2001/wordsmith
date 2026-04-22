@@ -48,13 +48,13 @@ def now_iso() -> str:
 
 
 def find_project_root(override: Optional[Path] = None) -> Path:
-    """Resolve project root (containing .webnovel/state.json).
+    """Resolve project root (containing .wordsmith/state.json).
 
     Args:
         override: If provided, use this path directly instead of auto-detecting.
     """
     if override is not None:
-        # Allow passing “workspace root”, resolve to actual book project_root (must contain .webnovel/state.json)
+        # Allow passing “workspace root”, resolve to actual book project_root (must contain .wordsmith/state.json)
         return resolve_project_root(str(override))
     return resolve_project_root()
 
@@ -73,12 +73,12 @@ def _get_active_project_root() -> Path:
 def get_workflow_state_path() -> Path:
     """Absolute path to workflow_state.json."""
     project_root = _get_active_project_root()
-    return project_root / ".webnovel" / "workflow_state.json"
+    return project_root / ".wordsmith" / "workflow_state.json"
 
 
 def get_call_trace_path() -> Path:
     project_root = _get_active_project_root()
-    return project_root / ".webnovel" / "observability" / "call_trace.jsonl"
+    return project_root / ".wordsmith" / "observability" / "call_trace.jsonl"
 
 
 def append_call_trace(event: str, payload: Optional[Dict[str, Any]] = None):
@@ -566,7 +566,7 @@ def analyze_recovery_options(interrupt_info):
 
 def _backup_chapter_for_cleanup(project_root: Path, chapter_num: int, chapter_path: Path) -> Path:
     """Backup chapter file before destructive cleanup."""
-    backup_dir = project_root / ".webnovel" / "recovery_backups"
+    backup_dir = project_root / ".wordsmith" / "recovery_backups"
     create_secure_directory(str(backup_dir))
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

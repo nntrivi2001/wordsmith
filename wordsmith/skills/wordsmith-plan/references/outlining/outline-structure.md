@@ -1,6 +1,6 @@
 # Vietnamese Writing Patterns - Outline Structure
 
-> Sử dụng các pattern từ STYLE_GUIDE_VN.md để định hướng cấu trúc dàn Ý phù hợp với webnovel tiếng Việt.
+> Sử dụng các pattern từ STYLE_GUIDE_VN.md để định hướng cấu trúc dàn Ý phù hợp với wordsmith tiếng Việt.
 
 ## Vietnamese Pattern Considerations
 

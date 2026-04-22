@@ -27,7 +27,7 @@ This file is for interrupted task recovery. Claude already knows error handling 
 ### Phase 1: Detect Interruption Status
 
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" workflow detect
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" workflow detect
 ```
 
 ### Phase 2: Ask User
@@ -42,15 +42,15 @@ python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" workflow dete
 
 **Option A (recommended)**: Delete half-finished product and restart
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" workflow cleanup --chapter {N} --confirm
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" workflow clear
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" workflow cleanup --chapter {N} --confirm
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" workflow clear
 /wordsmith-write {N}
 ```
 
 **Option B**: Roll back to previous chapter
 ```bash
 git reset --hard ch{N-1:04d}
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" workflow clear
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" workflow clear
 ```
 
 ## Why Delete Instead of Continue?

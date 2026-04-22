@@ -443,7 +443,7 @@ def test_init_db_migrates_legacy_vectors_schema(tmp_path, monkeypatch):
         assert row is not None
         assert row[0] == "scene"
 
-    backup_dir = cfg.webnovel_dir / "backups"
+    backup_dir = cfg.wordsmith_dir / "backups"
     backups = list(backup_dir.glob("vectors.db.schema_migration.v*.bak"))
     assert backups
 

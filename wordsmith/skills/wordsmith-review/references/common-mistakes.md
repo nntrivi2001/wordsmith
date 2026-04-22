@@ -99,7 +99,7 @@ Dialogue stereotyped (antagonist only shouts slogans) = B-level+ antagonists nee
 
 ## Vietnamese Webnovel Quality Checklist (8 Error Types)
 
-Use this checklist when reviewing Vietnamese webnovel content. Flag any violations.
+Use this checklist when reviewing Vietnamese wordsmith content. Flag any violations.
 
 ### 1. Units (Đơn vị đo lường)
 

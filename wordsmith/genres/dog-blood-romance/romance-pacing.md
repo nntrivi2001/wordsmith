@@ -580,7 +580,7 @@ Climax rises continuously
 
 ### Vietnamese Sentence Patterns for Romance
 
-**From VN webnovel analysis (Biên niên sử rồng, Useless hero from another world):**
+**From VN wordsmith analysis (Biên niên sử rồng, Useless hero from another world):**
 
 **Sweet/Emotional Scenes:**
 ```

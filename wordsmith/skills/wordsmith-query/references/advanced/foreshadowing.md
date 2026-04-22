@@ -7,7 +7,7 @@ purpose: Loaded when urgently analyzing and managing foreshadowing
 This file is for foreshadowing management reference. Claude already knows general narrative foreshadowing techniques; this only supplements web novel-specific foreshadowing layers, recovery cycles, and urgency calculations.
 
 **Vietnamese Webnovel Patterns**:
-- Foreshadowing in VN webnovels often uses "duyên" (fate/destiny) connections
+- Foreshadowing in VN wordsmiths often uses "duyên" (fate/destiny) connections
 - Xuanhuan (Fantasy) foreshadowing frequently involves dragon-related mythology
 - Isekai/Game genre commonly uses "thẻ trạng thái" (status card) system hints
 - Cliffhanger patterns: "...", "—0o0—" separator, cliffhanger endings
@@ -164,7 +164,7 @@ Mana: X/Y
 </example>
 
 <example>
-<input>Romance foreshadowing (VN webnovel style)</input>
+<input>Romance foreshadowing (VN wordsmith style)</input>
 <output>
 **Layer**: Sub-line (30-100 chapters)
 

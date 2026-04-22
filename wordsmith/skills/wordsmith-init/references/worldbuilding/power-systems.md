@@ -40,7 +40,7 @@ Sức khỏe: X
 
 ---
 
-Hệ thống sức mạnh trong webnovel tiếng Việt cần đạt được:
+Hệ thống sức mạnh trong wordsmith tiếng Việt cần đạt được:
 - **Rõ ràng**: Người đọc dễ dàng hiểu chỉ số và cấp độ
 - **Cảm giác thưởng**: Level up và loot tạo satisfaction
 - **Cân bằng**: Tránh inflation quá mức
@@ -163,7 +163,7 @@ Sequence 0 (True God): Master authority
 
 ## 5. Vietnamese Status Card Pattern (Pattern Thẻ Trạng thái)
 
-Pattern từ UH - hệ thống game trong webnovel Việt:
+Pattern từ UH - hệ thống game trong wordsmith Việt:
 
 ### 5.1 Status Card Structure
 ```
@@ -277,7 +277,7 @@ Attribute panel + Skill tree + Task system + Shop/Lottery
 
 ## 8. Vietnamese Combat Rhythm Patterns (Pattern Chiến đấu Việt)
 
-Pattern từ **Biên niên sử rồng** (BNsr) và **Useless hero from another world** (UH) cho thấy cách xây dựng nhịp điệu combat trong webnovel tiếng Việt.
+Pattern từ **Biên niên sử rồng** (BNsr) và **Useless hero from another world** (UH) cho thấy cách xây dựng nhịp điệu combat trong wordsmith tiếng Việt.
 
 ### 8.1 Vietnamese Combat Flow
 

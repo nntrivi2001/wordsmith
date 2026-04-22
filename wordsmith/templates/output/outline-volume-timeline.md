@@ -54,7 +54,7 @@ After completing this volume's chapter beat sheets, check the following:
 
 ## Vietnamese Narrative Pacing Notes
 
-When setting timeline beats for Vietnamese webnovels, apply these conventions:
+When setting timeline beats for Vietnamese wordsmiths, apply these conventions:
 
 ### Scene Pacing by Type
 

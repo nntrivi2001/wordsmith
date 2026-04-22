@@ -512,7 +512,7 @@ Mọi người shock: "Thám tử, ngài quá tuyệt vời!" (cool point)
 | Đối thoại căng thẳng | Câu cắt ngang, ít chủ ngữ | *"—Giết ai? —Tao đéo biết."* |
 | Revelation | Câu dài dồn dập rồi kết thúc đột ngột | *"Tất cả đều là... kế hoạch của hắn ta!"* |
 
-**Pattern cho revelation trong webnovel VN:**
+**Pattern cho revelation trong wordsmith VN:**
 
 ```markdown
 # Khi tiết lộ sự thật:
@@ -749,4 +749,4 @@ Tanaka cười lạnh. Hắn ta nhìn xuống kẻ đang quỳ.
 ---
 
 *Cập nhật: 2026-04-21*
-*Pattern từ STYLE_GUIDE_VN.md - Vietnamese webnovel conventions*
+*Pattern từ STYLE_GUIDE_VN.md - Vietnamese wordsmith conventions*

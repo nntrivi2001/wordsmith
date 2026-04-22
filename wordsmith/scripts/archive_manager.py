@@ -72,8 +72,8 @@ class ArchiveManager:
             project_root = Path(project_root)
 
         self.project_root = project_root
-        self.state_file = project_root / ".webnovel" / "state.json"
-        self.archive_dir = project_root / ".webnovel" / "archive"
+        self.state_file = project_root / ".wordsmith" / "state.json"
+        self.archive_dir = project_root / ".wordsmith" / "archive"
 
         # v5.1: IndexManager for reading entities
         self._config = get_config(project_root)
@@ -548,7 +548,7 @@ def main():
     try:
         project_root = str(resolve_project_root(args.project_root) if args.project_root else resolve_project_root())
     except FileNotFoundError as exc:
-        print(f"Cannot locate project root (need .webnovel/state.json): {exc}", file=sys.stderr)
+        print(f"Cannot locate project root (need .wordsmith/state.json): {exc}", file=sys.stderr)
         sys.exit(1)
 
     manager = ArchiveManager(project_root=project_root)

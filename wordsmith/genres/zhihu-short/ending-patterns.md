@@ -263,7 +263,7 @@ Example:
 
 ## 8. Vietnamese Webnovel Ending Adaptations
 
-Based on STYLE_GUIDE_VN.md patterns from Vietnamese webnovels (Biên niên sử rồng, Useless hero from another world):
+Based on STYLE_GUIDE_VN.md patterns from Vietnamese wordsmiths (Biên niên sử rồng, Useless hero from another world):
 
 ### 8.1 Vietnamese Ending Patterns
 

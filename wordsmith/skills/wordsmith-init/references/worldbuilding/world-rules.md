@@ -29,7 +29,7 @@ Các pattern tiếng Việt áp dụng khi xây dựng thế giới (worldbuildi
 
 ---
 
-Trong webnovel tiếng Việt, thế giới được xây dựng để phục vụ xung đột cốt truyện và sự phát triển của nhân vật chính. Theo pattern từ **Biên niên sử rồng** (BNsr), thế giới rồng và sức mạnh là yếu tố trung tâm, trong khi **Useless hero from another world** (UH) thể hiện mô hình isekai game với hệ thống status card.
+Trong wordsmith tiếng Việt, thế giới được xây dựng để phục vụ xung đột cốt truyện và sự phát triển của nhân vật chính. Theo pattern từ **Biên niên sử rồng** (BNsr), thế giới rồng và sức mạnh là yếu tố trung tâm, trong khi **Useless hero from another world** (UH) thể hiện mô hình isekai game với hệ thống status card.
 
 ---
 
@@ -107,7 +107,7 @@ Establish a "conflict network."
 
 ---
 
-## 5. Vietnamese Webnovel World Patterns (Pattern từ webnovel Việt)
+## 5. Vietnamese Webnovel World Patterns (Pattern từ wordsmith Việt)
 
 ### 5.1 Dragon-centric World (Thế giới rồng)
 Pattern từ BNsr - thế giới xoay quanh rồng:
@@ -239,7 +239,7 @@ BNsr Chương 3:
 
 ## Con Duong Ba Chu - World-Building Vocabulary Patterns
 
-Pattern từ **Con Duong Ba Chu** cho Vietnamese webnovel vocabulary:
+Pattern từ **Con Duong Ba Chu** cho Vietnamese wordsmith vocabulary:
 
 ### Tu Chân Giới (Cultivation World) Vocabulary
 

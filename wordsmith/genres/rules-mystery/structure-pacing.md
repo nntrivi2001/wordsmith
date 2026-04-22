@@ -581,7 +581,7 @@ Good structure makes a mystery novel "stand firm," and good pacing makes it "run
 
 ### Vietnamese Pacing Techniques
 
-**From VN webnovel analysis:**
+**From VN wordsmith analysis:**
 
 | Technique | Vietnamese Pattern | Effect |
 |-----------|-------------------|--------|

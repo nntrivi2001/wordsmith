@@ -14,7 +14,7 @@ Used for `wordsmith-plan` Step 3/4: First set volume-level rhythm, then assign c
 
 ## Vietnamese Pacing Patterns
 
-Based on STYLE_GUIDE_VN.md analysis of Vietnamese webnovels (Biên niên sử rồng, Useless hero from another world):
+Based on STYLE_GUIDE_VN.md analysis of Vietnamese wordsmiths (Biên niên sử rồng, Useless hero from another world):
 
 ### Sentence Length Rhythm
 

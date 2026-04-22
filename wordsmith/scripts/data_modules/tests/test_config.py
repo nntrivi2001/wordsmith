@@ -13,14 +13,14 @@ from data_modules.config import DataModulesConfig, get_config, set_project_root
 def test_config_paths_and_defaults(tmp_path):
     cfg = DataModulesConfig.from_project_root(tmp_path)
     assert cfg.project_root == tmp_path
-    assert cfg.webnovel_dir.name == ".webnovel"
+    assert cfg.wordsmith_dir.name == ".wordsmith"
     assert cfg.state_file.name == "state.json"
     assert cfg.index_db.name == "index.db"
     assert cfg.rag_db.name == "rag.db"
     assert cfg.vector_db.name == "vectors.db"
 
     cfg.ensure_dirs()
-    assert cfg.webnovel_dir.exists()
+    assert cfg.wordsmith_dir.exists()
 
 
 def test_get_config_and_set_project_root(tmp_path):

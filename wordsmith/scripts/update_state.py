@@ -425,13 +425,13 @@ Examples:
     parser.add_argument(
         '--project-root',
         default=None,
-        help='Project root directory (containing .webnovel/state.json). Auto-searched if not provided (supports wordsmith-project/ and parent directories).'
+        help='Project root directory (containing .wordsmith/state.json). Auto-searched if not provided (supports wordsmith-project/ and parent directories).'
     )
 
     parser.add_argument(
         '--state-file',
         default=None,
-        help='state.json file path (optional). If not provided, auto-located as .webnovel/state.json from project root.'
+        help='state.json file path (optional). If not provided, auto-located as .wordsmith/state.json from project root.'
     )
 
     parser.add_argument(

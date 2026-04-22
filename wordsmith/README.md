@@ -1,6 +1,6 @@
 # Wordsmith
 
-Long-form webnovel writing system with integrated Vietnamese writing patterns.
+Long-form wordsmith writing system with integrated Vietnamese writing patterns.
 
 ## Features
 

@@ -116,9 +116,9 @@ __pycache__/
 .vscode/
 .idea/
 
-# Don't ignore .webnovel (we need to track state.json)
+# Don't ignore .wordsmith (we need to track state.json)
 # But ignore cache files
-.webnovel/context_cache.json
+.wordsmith/context_cache.json
 """)
 
             # Initial commit
@@ -170,7 +170,7 @@ __pycache__/
 
     def _local_backup(self, chapter_num: int) -> bool:
         """Local backup (degradation solution when Git is unavailable)"""
-        backup_dir = self.project_root / ".webnovel" / "backups"
+        backup_dir = self.project_root / ".wordsmith" / "backups"
         backup_dir.mkdir(parents=True, exist_ok=True)
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -179,7 +179,7 @@ __pycache__/
 
         try:
             # Backup state.json
-            state_file = self.project_root / ".webnovel" / "state.json"
+            state_file = self.project_root / ".wordsmith" / "state.json"
             if state_file.exists():
                 backup_path.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(state_file, backup_path / "state.json")
@@ -324,7 +324,7 @@ __pycache__/
         # Show detailed state.json diff
         print("\nstate.json detailed differences:")
         success, state_diff = self._run_git_command(
-            ["diff", tag_a, tag_b, "--", ".webnovel/state.json"]
+            ["diff", tag_a, tag_b, "--", ".wordsmith/state.json"]
         )
 
         if success and state_diff:
@@ -438,7 +438,7 @@ Examples:
     try:
         project_root = str(resolve_project_root(args.project_root))
     except FileNotFoundError as exc:
-        print(f"Cannot locate project root (need .webnovel/state.json): {exc}", file=sys.stderr)
+        print(f"Cannot locate project root (need .wordsmith/state.json): {exc}", file=sys.stderr)
         sys.exit(1)
 
     # Create manager

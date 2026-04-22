@@ -17,8 +17,8 @@ def test_resolve_project_root_prefers_cwd_project(tmp_path):
     from project_locator import resolve_project_root
 
     project_root = tmp_path / "workspace"
-    (project_root / ".webnovel").mkdir(parents=True, exist_ok=True)
-    (project_root / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")
+    (project_root / ".wordsmith").mkdir(parents=True, exist_ok=True)
+    (project_root / ".wordsmith" / "state.json").write_text("{}", encoding="utf-8")
 
     resolved = resolve_project_root(cwd=project_root)
     assert resolved == project_root.resolve()
@@ -36,8 +36,8 @@ def test_resolve_project_root_stops_at_git_root(tmp_path):
     nested.mkdir(parents=True, exist_ok=True)
 
     outside_project = tmp_path / "outside_project"
-    (outside_project / ".webnovel").mkdir(parents=True, exist_ok=True)
-    (outside_project / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")
+    (outside_project / ".wordsmith").mkdir(parents=True, exist_ok=True)
+    (outside_project / ".wordsmith" / "state.json").write_text("{}", encoding="utf-8")
 
     try:
         resolve_project_root(cwd=nested)
@@ -55,8 +55,8 @@ def test_resolve_project_root_finds_default_subdir_within_git_root(tmp_path):
     (repo_root / ".git").mkdir(parents=True, exist_ok=True)
 
     default_project = repo_root / "wordsmith-project"
-    (default_project / ".webnovel").mkdir(parents=True, exist_ok=True)
-    (default_project / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")
+    (default_project / ".wordsmith").mkdir(parents=True, exist_ok=True)
+    (default_project / ".wordsmith" / "state.json").write_text("{}", encoding="utf-8")
 
     nested = repo_root / "sub" / "dir"
     nested.mkdir(parents=True, exist_ok=True)
@@ -74,8 +74,8 @@ def test_resolve_project_root_uses_workspace_pointer(tmp_path):
     (workspace / ".claude").mkdir(parents=True, exist_ok=True)
 
     project_root = workspace / "Ordinary Capital Theory"
-    (project_root / ".webnovel").mkdir(parents=True, exist_ok=True)
-    (project_root / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")
+    (project_root / ".wordsmith").mkdir(parents=True, exist_ok=True)
+    (project_root / ".wordsmith" / "state.json").write_text("{}", encoding="utf-8")
 
     pointer_file = write_current_project_pointer(project_root, workspace_root=workspace)
     assert pointer_file is not None
@@ -98,8 +98,8 @@ def test_resolve_project_root_ignores_stale_pointer_and_fallbacks(tmp_path):
     )
 
     default_project = workspace / "wordsmith-project"
-    (default_project / ".webnovel").mkdir(parents=True, exist_ok=True)
-    (default_project / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")
+    (default_project / ".wordsmith").mkdir(parents=True, exist_ok=True)
+    (default_project / ".wordsmith" / "state.json").write_text("{}", encoding="utf-8")
 
     resolved = resolve_project_root(cwd=workspace)
     assert resolved == default_project.resolve()

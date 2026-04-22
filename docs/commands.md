@@ -6,7 +6,7 @@ Purpose: Initialize a novel project (directory structure, setting templates, sta
 
 Output:
 
-- `.webnovel/state.json`
+- `.wordsmith/state.json`
 - `Settings/`
 - `Outline/general-outline.md`
 
@@ -98,4 +98,4 @@ Examples:
 
 Output:
 
-- `.webnovel/project_memory.json`
+- `.wordsmith/project_memory.json`

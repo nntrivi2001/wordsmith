@@ -1,6 +1,6 @@
 # Genre Template Guide
 
-The system includes 37+ built-in webnovel genre templates, supporting both single-genre and composite-genre modes.
+The system includes 37+ built-in wordsmith genre templates, supporting both single-genre and composite-genre modes.
 
 ## Fantasy & Cultivation (Examples)
 

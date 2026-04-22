@@ -338,7 +338,7 @@ def main():
 
     args = parser.parse_args()
 
-    # Allows passing “workspace root directory”, resolves to actual book project_root (must contain .webnovel/state.json)
+    # Allows passing “workspace root directory”, resolves to actual book project_root (must contain .wordsmith/state.json)
     from project_locator import resolve_project_root
 
     resolved_root = resolve_project_root(args.project_root)

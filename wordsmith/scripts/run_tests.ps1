@@ -37,7 +37,7 @@ from pathlib import Path
 import sys
 
 try:
-    d = Path(tempfile.mkdtemp(prefix=”webnovel_writer_pytest_”))
+    d = Path(tempfile.mkdtemp(prefix=”wordsmith_writer_pytest_”))
     # Must be able to list directories and write files; otherwise pytest will fail.
     list(d.iterdir())
     (d / “probe.txt”).write_text(“ok”, encoding=”utf-8”)

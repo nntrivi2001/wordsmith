@@ -14,7 +14,7 @@ model: inherit
 **Command examples are the ultimate standard**: All CLI command examples in this document are aligned with current repository actual interfaces. Script invocation method follows this document's examples; when commands fail, check error logs to locate problems, don't broadly search source code to learn invocation methods.
 
 **Current conventions**:
-- Chapter summary no longer appended to body, changed to `.webnovel/summaries/ch{NNNN}.md`
+- Chapter summary no longer appended to body, changed to `.wordsmith/summaries/ch{NNNN}.md`
 - Write `chapter_meta` (hook/pattern/ending state) to state.json
 
 ## Input
@@ -25,14 +25,14 @@ model: inherit
   "chapter_file": "Main text/Chapter0100-ChapterTitle.md",
   "review_score": 85,
   "project_root": "D:/wk/Battle Through the Heavens",
-  "storage_path": ".webnovel/",
-  "state_file": ".webnovel/state.json"
+  "storage_path": ".wordsmith/",
+  "state_file": ".wordsmith/state.json"
 }
 ```
 
 `chapter_file` must pass actual chapter file path. If detailed outline has chapter name, prefer titled filename; old `Main text/Chapter0100.md` still compatible.
 
-**Important**: All data writes to `{project_root}/.webnovel/` directory:
+**Important**: All data writes to `{project_root}/.wordsmith/` directory:
 - index.db → entities, aliases, state changes, relationships, chapter index (SQLite)
 - state.json → progress, config, strand tracking + chapter_meta
 - vectors.db → RAG vectors (SQLite)
@@ -67,12 +67,12 @@ model: inherit
 ### Step -1: CLI Entry and Script Directory Verification (Required)
 
 To avoid `PYTHONPATH` / `cd` / parameter order causing hidden failures, all CLI calls unified through:
-- `${SCRIPTS_DIR}/webnovel.py`
+- `${SCRIPTS_DIR}/wordsmith.py`
 
 ```bash
 export SCRIPTS_DIR="${CLAUDE_PLUGIN_ROOT:?CLAUDE_PLUGIN_ROOT is required}/scripts"
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" preflight
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" where
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" preflight
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" where
 ```
 
 ### Step A: Load Context (SQL Query)
@@ -82,10 +82,10 @@ Use Read tool to read chapter body:
 
 Use Bash tool to query existing entities from index.db:
  ```bash
-  python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index get-core-entities
-  python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index get-aliases --entity "xiaoyan"
-  python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index recent-appearances --limit 20
-  python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index get-by-alias --alias "XiaoYan"
+  python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index get-core-entities
+  python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index get-aliases --entity "xiaoyan"
+  python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index recent-appearances --limit 20
+  python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index get-by-alias --alias "XiaoYan"
  ```
 
 ### Step B: AI Entity Extraction
@@ -106,15 +106,15 @@ Use Bash tool to query existing entities from index.db:
 
  **Write to index.db (entities/aliases/state changes/relationships)**:
  ```bash
-  python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index upsert-entity --data '{...}'
-  python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index register-alias --alias "Red-clothed girl" --entity "hongyi_girl" --type "Character"
-  python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index record-state-change --data '{...}'
-  python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index upsert-relationship --data '{...}'
+  python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index upsert-entity --data '{...}'
+  python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index register-alias --alias "Red-clothed girl" --entity "hongyi_girl" --type "Character"
+  python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index record-state-change --data '{...}'
+  python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index upsert-relationship --data '{...}'
  ```
 
  **Update simplified state.json**:
  ```bash
-  python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" state process-chapter --chapter 100 --data '{...}'
+  python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" state process-chapter --chapter 100 --data '{...}'
  ```
 
 Write content:
@@ -126,7 +126,7 @@ Write content:
 
 ### Step E: Generate Chapter Summary File (New)
 
-**Output path**: `.webnovel/summaries/ch{NNNN}.md`
+**Output path**: `.wordsmith/summaries/ch{NNNN}.md`
 
 **Chapter number rule**: 4-digit numbers like `0001`, `0099`, `0100`
 
@@ -161,7 +161,7 @@ hook_strength: "strong"
 ### Step G: Vector Embedding
 
 ```bash
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" rag index-chapter \
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" rag index-chapter \
   --chapter 100 \
   --scenes '[...]' \
   --summary "Chapter summary text"
@@ -182,14 +182,14 @@ if review_score >= 80:
 ```
 
 ```bash
-python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" style extract --chapter 100 --score 85 --scenes '[...]'
+python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" style extract --chapter 100 --score 85 --scenes '[...]'
 ```
 
 ### Step I: Debt Interest Calculation
 
 **Not triggered by default**. Only when "enable debt tracking" or user explicitly requests:
  ```bash
- python -X utf8 "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index accrue-interest --current-chapter {chapter}
+ python -X utf8 "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index accrue-interest --current-chapter {chapter}
  ```
 
 This step will:
@@ -212,7 +212,7 @@ This step will:
 - TOTAL Total elapsed
 
 **Performance log landing (new, required)**:
-- Script auto-writes: `.webnovel/observability/data_agent_timing.jsonl`
+- Script auto-writes: `.wordsmith/observability/data_agent_timing.jsonl`
 - Data Agent report still needs to return: `timing_ms` + `bottlenecks_top3`
 - Rules: `bottlenecks_top3` always returns in descending elapsed order; when `TOTAL > 30000ms`, need to attach reason explanation in report text section.
 

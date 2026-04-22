@@ -16,7 +16,7 @@ Project Root/
 ├── MainText/           # Chapter files (Chapter0001.md or Vol1/Chapter001-Title.md)
 ├── Outline/            # Volume outlines/Chapter outlines/Scene outlines
 ├── Settings/           # Worldbuilding/Power systems/Character cards/Item cards
-└── .webnovel/
+└── .wordsmith/
     ├── state.json          # Streamlined state (< 5KB): progress/protagonist/strand_tracker/disambiguation
     ├── index.db            # SQLite main storage: entities/aliases/relationships/state_changes/chapters/scenes
     ├── workflow_state.json # Workflow checkpoint (used for /wordsmith-resume)
@@ -63,7 +63,7 @@ Context Agent (read) = index.db + state.json = Data Agent (write)
 
 | Script | Input | Output |
 |--------|-------|--------|
-| `init_project.py` | Project info | Generate `.webnovel/state.json` + initialize `index.db` |
+| `init_project.py` | Project info | Generate `.wordsmith/state.json` + initialize `index.db` |
 | `update_state.py` | Parameters | Atomically update `state.json` fields (progress/protagonist/strand_tracker) |
 | `backup_manager.py` | Chapter number | Auto Git backup |
 | `status_reporter.py` | None | Generate health report/foreshadowing urgency |
@@ -270,7 +270,7 @@ Same alias can map to multiple entities; disambiguate according to type or conte
 
 ## Vietnamese Webnovel Writing Conventions
 
-When writing or reviewing Vietnamese webnovel content, apply these patterns from STYLE_GUIDE_VN.md:
+When writing or reviewing Vietnamese wordsmith content, apply these patterns from STYLE_GUIDE_VN.md:
 
 ### Pronoun Usage (Han Viet Roots)
 | Pronoun | Gender/Context | Example |

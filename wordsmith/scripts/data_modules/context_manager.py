@@ -218,8 +218,8 @@ class ContextManager:
             "style_contract_ref": self._load_setting("style_contract"),
         }
 
-        preferences = self._load_json_optional(self.config.webnovel_dir / "preferences.json")
-        memory = self._load_json_optional(self.config.webnovel_dir / "project_memory.json")
+        preferences = self._load_json_optional(self.config.wordsmith_dir / "preferences.json")
+        memory = self._load_json_optional(self.config.wordsmith_dir / "project_memory.json")
         story_skeleton = self._load_story_skeleton(chapter)
         alert_slice = max(0, int(self.config.context_alerts_slice))
         reader_signal = self._load_reader_signal(chapter)
@@ -686,7 +686,7 @@ class ContextManager:
         return excerpt
 
     def _load_summary_text(self, chapter: int, snippet_chars: Optional[int] = None) -> Optional[Dict[str, Any]]:
-        summary_path = self.config.webnovel_dir / "summaries" / f"ch{chapter:04d}.md"
+        summary_path = self.config.wordsmith_dir / "summaries" / f"ch{chapter:04d}.md"
         if not summary_path.exists():
             return None
         text = summary_path.read_text(encoding="utf-8")
@@ -739,7 +739,7 @@ def main():
 
     config = None
     if args.project_root:
-        # Allows passing "workspace root directory", resolves to actual book project_root (must contain .webnovel/state.json)
+        # Allows passing "workspace root directory", resolves to actual book project_root (must contain .wordsmith/state.json)
         from project_locator import resolve_project_root
         from .config import DataModulesConfig
 

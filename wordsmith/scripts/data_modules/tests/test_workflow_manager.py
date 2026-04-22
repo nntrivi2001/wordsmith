@@ -21,8 +21,8 @@ def test_workflow_lifecycle_and_trace(tmp_path, monkeypatch):
     module = _load_module()
     monkeypatch.setattr(module, "find_project_root", lambda: tmp_path)
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
 
     module.start_task("wordsmith-write", {"chapter_num": 7})
     module.start_step("Step 1", "Context")
@@ -48,8 +48,8 @@ def test_start_task_reentry_increments_retry(tmp_path, monkeypatch):
     module = _load_module()
     monkeypatch.setattr(module, "find_project_root", lambda: tmp_path)
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
 
     module.start_task("wordsmith-write", {"chapter_num": 8})
     module.start_task("wordsmith-write", {"chapter_num": 8})
@@ -65,8 +65,8 @@ def test_complete_step_rejects_mismatch_step_id(tmp_path, monkeypatch):
     module = _load_module()
     monkeypatch.setattr(module, "find_project_root", lambda: tmp_path)
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
 
     module.start_task("wordsmith-write", {"chapter_num": 9})
     module.start_step("Step 2A", "Draft")
@@ -83,8 +83,8 @@ def test_workflow_step_owner_and_order_violation_trace(tmp_path, monkeypatch):
     module = _load_module()
     monkeypatch.setattr(module, "find_project_root", lambda: tmp_path)
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
 
     assert module.expected_step_owner("wordsmith-write", "Step 1") == "context-agent"
     assert module.expected_step_owner("wordsmith-write", "Step 5") == "data-agent"
@@ -123,16 +123,16 @@ def test_get_workflow_paths_support_zero_arg_find_project_root(tmp_path, monkeyp
     monkeypatch.setattr(module, "_cli_project_root", None)
     monkeypatch.setattr(module, "find_project_root", lambda: tmp_path)
 
-    assert module.get_workflow_state_path() == tmp_path / ".webnovel" / "workflow_state.json"
-    assert module.get_call_trace_path() == tmp_path / ".webnovel" / "observability" / "call_trace.jsonl"
+    assert module.get_workflow_state_path() == tmp_path / ".wordsmith" / "workflow_state.json"
+    assert module.get_call_trace_path() == tmp_path / ".wordsmith" / "observability" / "call_trace.jsonl"
 
 
 def test_workflow_reentry_does_not_duplicate_history(tmp_path, monkeypatch):
     module = _load_module()
     monkeypatch.setattr(module, "find_project_root", lambda: tmp_path)
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
 
     module.start_task("wordsmith-write", {"chapter_num": 20})
     module.start_task("wordsmith-write", {"chapter_num": 20})
@@ -150,8 +150,8 @@ def test_cleanup_artifacts_requires_confirm(tmp_path, monkeypatch):
     module = _load_module()
     monkeypatch.setattr(module, "find_project_root", lambda: tmp_path)
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
 
     draft_path = module.default_chapter_draft_path(tmp_path, 7)
     draft_path.parent.mkdir(parents=True, exist_ok=True)
@@ -176,8 +176,8 @@ def test_cleanup_artifacts_confirm_deletes_with_backup(tmp_path, monkeypatch):
     module = _load_module()
     monkeypatch.setattr(module, "find_project_root", lambda: tmp_path)
 
-    webnovel_dir = tmp_path / ".webnovel"
-    webnovel_dir.mkdir(parents=True, exist_ok=True)
+    wordsmith_dir = tmp_path / ".wordsmith"
+    wordsmith_dir.mkdir(parents=True, exist_ok=True)
 
     draft_path = module.default_chapter_draft_path(tmp_path, 8)
     draft_path.parent.mkdir(parents=True, exist_ok=True)
@@ -199,6 +199,6 @@ def test_cleanup_artifacts_confirm_deletes_with_backup(tmp_path, monkeypatch):
     assert git_called["cmd"] == ["git", "reset", "HEAD", "."]
     assert any("Git staging area cleared" in item for item in cleaned)
 
-    backup_dir = tmp_path / ".webnovel" / "recovery_backups"
+    backup_dir = tmp_path / ".wordsmith" / "recovery_backups"
     backups = list(backup_dir.glob("ch0008-*"))
     assert backups

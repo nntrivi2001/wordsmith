@@ -466,7 +466,7 @@ class GoldenThreeChecker:
             print("\n--- PROMPT END ---\n")
 
             # Save full prompt
-            output_dir = Path(".webnovel")
+            output_dir = Path(".wordsmith")
             output_dir.mkdir(exist_ok=True)
             prompt_file = output_dir / "golden_three_prompt.md"
             with open(prompt_file, 'w', encoding='utf-8') as f:
@@ -478,7 +478,7 @@ class GoldenThreeChecker:
             print("   3. Run: python golden_three_checker.py --parse-response <response.xml>")
 
         # Save results
-        output_dir = Path(".webnovel")
+        output_dir = Path(".wordsmith")
         output_dir.mkdir(exist_ok=True)
         output_file = output_dir / "golden_three_report.json"
         with open(output_file, 'w', encoding='utf-8') as f:

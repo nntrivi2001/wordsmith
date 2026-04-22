@@ -25,8 +25,8 @@ model: inherit
 ```json
 {
   "project_root": "{PROJECT_ROOT}",
-  "storage_path": ".webnovel/",
-  "state_file": ".webnovel/state.json",
+  "storage_path": ".wordsmith/",
+  "state_file": ".wordsmith/state.json",
   "chapter_file": "Main/Ch{NNNN}-{title_safe}.md"
 }
 ```
@@ -35,12 +35,12 @@ model: inherit
 
 **Parallel reading**:
 1. Target chapters under `Main text/`
-2. `{project_root}/.webnovel/state.json` (strand_tracker history)
+2. `{project_root}/.wordsmith/state.json` (strand_tracker history)
 3. `Outline/` (understand expected arc structure)
 
 **Optional: Use status_reporter for automated analysis**:
 ```bash
-python -X utf8 "${CLAUDE_PLUGIN_ROOT:?CLAUDE_PLUGIN_ROOT is required}/scripts/webnovel.py" --project-root "${PROJECT_ROOT}" status -- --focus strand
+python -X utf8 "${CLAUDE_PLUGIN_ROOT:?CLAUDE_PLUGIN_ROOT is required}/scripts/wordsmith.py" --project-root "${PROJECT_ROOT}" status -- --focus strand
 ```
 
 ### Step 2: Chapter Plot Strand Classification

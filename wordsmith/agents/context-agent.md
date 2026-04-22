@@ -16,7 +16,7 @@ model: inherit
 - **Genre Profile**: `${CLAUDE_PLUGIN_ROOT}/references/genre-profiles.md`
 - **Context Contract**: `${CLAUDE_PLUGIN_ROOT}/skills/wordsmith-write/references/step-1.5-contract.md`
 - **Shared References**: `${CLAUDE_PLUGIN_ROOT}/references/shared/` as single source of truth; when need enumeration/scan reference files, skip any file with `<!-- DEPRECATED:`.
-- **Vietnamese Style Guide**: `${CLAUDE_PLUGIN_ROOT}/STYLE_GUIDE_VN.md` (Vietnamese webnovel writing patterns, pronouns, register, pacing)
+- **Vietnamese Style Guide**: `${CLAUDE_PLUGIN_ROOT}/STYLE_GUIDE_VN.md` (Vietnamese wordsmith writing patterns, pronouns, register, pacing)
 
 ## Input
 
@@ -24,8 +24,8 @@ model: inherit
 {
   "chapter": 100,
   "project_root": "D:/wk/battle-through-heavens",
-  "storage_path": ".webnovel/",
-  "state_file": ".webnovel/state.json"
+  "storage_path": ".wordsmith/",
+  "state_file": ".wordsmith/state.json"
 }
 ```
 
@@ -87,8 +87,8 @@ Requirements:
 
 - `state.json`: progress, protagonist state, strand_tracker, chapter_meta, project.genre, plot_threads.foreshadowing
 - `index.db`: entities/aliases/relationships/state changes/override_contracts/chase_debt/chapter_reading_power
-- `.webnovel/summaries/ch{NNNN}.md`: chapter summary (contains hook/ending state)
-- `.webnovel/context_snapshots/`: context snapshots (prefer reuse)
+- `.wordsmith/summaries/ch{NNNN}.md`: chapter summary (contains hook/ending state)
+- `.wordsmith/context_snapshots/`: context snapshots (prefer reuse)
 - `Outline/` and `Settings/`
 
 **Hook data source explanation**:
@@ -104,7 +104,7 @@ Requirements:
 ### Step -1: CLI Entry and Script Directory Verification (Required)
 
 To avoid `PYTHONPATH` / `cd` / parameter order causing hidden failures, all CLI calls unified through:
-- `${SCRIPTS_DIR}/webnovel.py`
+- `${SCRIPTS_DIR}/wordsmith.py`
 
 ```bash
 # Only use CLAUDE_PLUGIN_ROOT, avoid misdiagnosis from multi-path probing
@@ -115,17 +115,17 @@ fi
 SCRIPTS_DIR="${CLAUDE_PLUGIN_ROOT}/scripts"
 
 # Suggest confirming parsed project_root first, avoid writing to wrong directory
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" where
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" where
 ```
 
 ### Step 0: ContextManager Snapshot Priority
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" context -- --chapter {NNNN}
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" context -- --chapter {NNNN}
 ```
 
 ### Step 0.5: Context Contract Context Package (built-in)
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" extract-context --chapter {NNNN} --format json
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" extract-context --chapter {NNNN} --format json
 ```
 
 - Must read: `writing_guidance.guidance_items`
@@ -176,16 +176,16 @@ Generate time constraints output (must include in Mission Brief Section 5):
 
 ### Step 2: Reader Retention and Debt (as needed)
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index get-recent-reading-power --limit 5
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index get-pattern-usage-stats --last-n 20
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index get-hook-type-stats --last-n 20
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index get-debt-summary
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index get-recent-reading-power --limit 5
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index get-pattern-usage-stats --last-n 20
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index get-hook-type-stats --last-n 20
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index get-debt-summary
 ```
 
 ### Step 3: Entities and Recent Appearances + Foreshadowing Reading
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index get-core-entities
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index recent-appearances --limit 20
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index get-core-entities
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index recent-appearances --limit 20
 ```
 
 - Read from `state.json`:
@@ -209,7 +209,7 @@ python "${SCRIPTS_DIR}/webnovel.py" --project-root "{project_root}" index recent
 - When outputting to Section 7, list in `remaining` ascending order.
 
 ### Step 4: Summary and Inference Completion
-- Prioritize read `.webnovel/summaries/ch{NNNN-1}.md`
+- Prioritize read `.wordsmith/summaries/ch{NNNN-1}.md`
 - If missing, degrade to first 300-500 words overview of chapter body
 - Inference rules:
   - Motivation = character goal + current situation + last chapter hook pressure

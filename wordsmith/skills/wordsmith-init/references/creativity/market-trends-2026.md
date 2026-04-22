@@ -1,12 +1,12 @@
 # Market Scan Template
 
 > Update Date: 2026-04-21
-> Data Source: webnovel market observation, reader behavior analysis
+> Data Source: wordsmith market observation, reader behavior analysis
 > Note: Must update while connected to internet; record only tags/directions, do not excerpt specific plot details.
 
 ## Vietnamese Writing Patterns
 
-> Adapted from STYLE_GUIDE_VN.md for Vietnamese webnovel market focus.
+> Adapted from STYLE_GUIDE_VN.md for Vietnamese wordsmith market focus.
 
 ### VN.1 Reader-Preferred Vocabulary
 
@@ -100,7 +100,7 @@
 
 | Preference | Change | Observation Basis | Vietnamese Pattern Reference |
 |------------|--------|-------------------|------------------------------|
-| Underdog protagonist | ↑ | VN webnovel "Useless hero from another world" shows reader empathy for weak-but-growing main character | "Tanaka Akashi - Kẻ Vô Dụng" |
+| Underdog protagonist | ↑ | VN wordsmith "Useless hero from another world" shows reader empathy for weak-but-growing main character | "Tanaka Akashi - Kẻ Vô Dụng" |
 | System status cards | ↑ | UH Chương 1-4 demonstrates appeal of numerical visualization and skill descriptions | Thẻ trạng thái với cấu trúc [Tên], (Tình trạng), -Chủng loài, -Cấp |
 | Han Viet vernacular | ↑ | BNsr "Biên niên sử rồng" shows reader appreciation for authentic Vietnamese expression | hắn, tao, mày, ngài, tôi |
 | Action-compressed pacing | ↑ | Both reference novels use short punchy sentences during combat | "Jack xông ra!", "Bắn!", "Ầm!" |

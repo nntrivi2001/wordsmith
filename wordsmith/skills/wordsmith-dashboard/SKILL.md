@@ -40,7 +40,7 @@ Launch a **read-only** local web dashboard for visualizing the current novel pro
 - Chapter and outline content browser
 - Reader-pull analytics data
 
-The dashboard uses `watchdog` to monitor changes in the `.webnovel/` directory and refreshes in real time; it does not modify the project in any way.
+The dashboard uses `watchdog` to monitor changes in the `.wordsmith/` directory and refreshes in real time; it does not modify the project in any way.
 
 ## Execution Steps
 
@@ -66,7 +66,7 @@ python -m pip install -r "${DASHBOARD_DIR}/requirements.txt" --quiet
 
 ```bash
 export SCRIPTS_DIR="${CLAUDE_PLUGIN_ROOT}/scripts"
-export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/webnovel.py" --project-root "${WORKSPACE_ROOT}" where)"
+export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${WORKSPACE_ROOT}" where)"
 echo "Project path: ${PROJECT_ROOT}"
 
 # Ensure `python -m dashboard.server` can locate the plugin module from any working directory
@@ -103,4 +103,4 @@ python -m dashboard.server --project-root "${PROJECT_ROOT}" --no-browser
 - The Dashboard is a purely read-only panel; all APIs are GET-only with no write endpoints.
 - File access is strictly scoped to `PROJECT_ROOT` to prevent path traversal.
 - To use a custom port, add the `--port 9000` argument.
-- For Vietnamese webnovel writing patterns and methodology, refer to [STYLE_GUIDE_VN.md](../../STYLE_GUIDE_VN.md).
+- For Vietnamese wordsmith writing patterns and methodology, refer to [STYLE_GUIDE_VN.md](../../STYLE_GUIDE_VN.md).

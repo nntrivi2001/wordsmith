@@ -531,7 +531,7 @@ Sự Thật: A và B là cùng một người, cải trang
 | Mô tả bí ẩn | Văn chương, ẩn dụ | *"Bóng ma của sự thật lướt qua..."* |
 | Đối thoại căng thẳng | Câu cắt ngang, ít chủ ngữ | *"—Giết ai? —Tao đéo biết."* |
 
-**Pattern cho suspect trong webnovel VN:**
+**Pattern cho suspect trong wordsmith VN:**
 
 ```markdown
 # Khi giới thiệu suspect:
@@ -785,7 +785,7 @@ Loại bỏ. Tiếp theo.
 ---
 
 *Cập nhật: 2026-04-21*
-*Pattern từ STYLE_GUIDE_VN.md - Vietnamese webnovel conventions*
+*Pattern từ STYLE_GUIDE_VN.md - Vietnamese wordsmith conventions*
 
 ---
 

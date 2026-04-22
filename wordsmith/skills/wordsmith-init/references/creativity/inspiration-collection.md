@@ -8,7 +8,7 @@ Transform scattered ideas into actionable creative directions through systematic
 
 ## Vietnamese Writing Patterns
 
-> Adapted from STYLE_GUIDE_VN.md for Vietnamese webnovel creativity and character voice development.
+> Adapted from STYLE_GUIDE_VN.md for Vietnamese wordsmith creativity and character voice development.
 
 ### VN.1 Han Viet Pronoun System for Characters
 

@@ -2,7 +2,7 @@
 
 > **Purpose**: Let readers "slide through" more smoothly (mobile screen), avoid causing abandonment due to paragraph/dialogue/punctuation issues.
 
-> **Vietnamese webnovel patterns** from BNsr and UH:
+> **Vietnamese wordsmith patterns** from BNsr and UH:
 > - Em dash (—) for dialogue and inner thoughts: `"—Cô ấy đi rồi."`
 > - Ellipsis (...) for emotional pause: `"Cô ấy nghĩ... về những ký ức..."`
 > - Scene cuts: `***` for major transitions, `—0o0—` for minor shifts (UH style)

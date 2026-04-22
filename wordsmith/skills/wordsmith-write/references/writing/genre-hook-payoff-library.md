@@ -2,7 +2,7 @@
 
 Used in `wordsmith-write` Step 1.5: Quickly select one chapter-end hook + one micro-fulfillment to avoid homogenization.
 
-> **Vietnamese webnovel patterns** from BNsr and UH emphasize:
+> **Vietnamese wordsmith patterns** from BNsr and UH emphasize:
 > - Cliffhangers: Câu bỏ dở, twist bất ngờ, hành động dở dang
 > - Scene transitions: `***` for major cuts, `—0o0—` for minor shifts (UH style)
 > - Short punchy sentences at chapter end, longer descriptive for setup

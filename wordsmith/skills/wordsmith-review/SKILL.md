@@ -1,6 +1,6 @@
 ---
 name: wordsmith-review
-description: Reviews Vietnamese webnovel chapter quality with checker agents and generates reports. Use when the user asks for a chapter review or runs /wordsmith-review. Scoring and patterns follow STYLE_GUIDE_VN.md.
+description: Reviews Vietnamese wordsmith chapter quality with checker agents and generates reports. Use when the user asks for a chapter review or runs /wordsmith-review. Scoring and patterns follow STYLE_GUIDE_VN.md.
 allowed-tools: Read Grep Write Edit Bash Task AskUserQuestion
 ---
 
@@ -33,9 +33,9 @@ The STYLE_GUIDE_VN.md contains authoritative Vietnamese writing patterns that MU
 
 ## Vietnamese Review Methodology
 
-This skill evaluates Vietnamese webnovel content per STYLE_GUIDE_VN.md patterns:
+This skill evaluates Vietnamese wordsmith content per STYLE_GUIDE_VN.md patterns:
 
-### Review Dimensions (aligned with VN webnovel quality)
+### Review Dimensions (aligned with VN wordsmith quality)
 - **Cool-point density**: Action punch ("Ầm!", "Chết tiệt!"), emotional beats, status card reveals
 - **Setting consistency**: Pronoun usage (mày/tao vs tôi/ngài), formality levels maintained
 - **Pacing control**: Sentence length variation - fast for action, slow for emotional scenes
@@ -70,7 +70,7 @@ See `references/common-mistakes.md` for detailed SAI/ĐÚNG examples.
 ## Project Root Guard (must confirm first)
 
 - The Claude Code "workspace root" is not necessarily equal to the "book project root." A common structure: workspace is `D:\wk\xiaoshuo`, book project is `D:\wk\xiaoshuo\FanrenCapitalTheory`.
-- Must first resolve the true book project root (which must contain `.webnovel/state.json`); all subsequent read/write paths are relative to that directory.
+- Must first resolve the true book project root (which must contain `.wordsmith/state.json`); all subsequent read/write paths are relative to that directory.
 
 Environment setup (before executing bash commands):
 ```bash
@@ -88,7 +88,7 @@ if [ -z "${CLAUDE_PLUGIN_ROOT}" ] || [ ! -d "${CLAUDE_PLUGIN_ROOT}/scripts" ]; t
 fi
 export SCRIPTS_DIR="${CLAUDE_PLUGIN_ROOT}/scripts"
 
-export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/webnovel.py" --project-root "${WORKSPACE_ROOT}" where)"
+export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${WORKSPACE_ROOT}" where)"
 ```
 
 ## 0.5 Workflow Breakpoint (best-effort — must not block the main flow)
@@ -97,7 +97,7 @@ export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/webnovel.py" --project-root "${WOR
 
 Recommended (bash):
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" workflow start-task --command wordsmith-review --chapter {end} || true
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" workflow start-task --command wordsmith-review --chapter {end} || true
 ```
 
 Step mapping (must align with `workflow_manager.py get_pending_steps("wordsmith-review")`):
@@ -112,8 +112,8 @@ Step mapping (must align with `workflow_manager.py get_pending_steps("wordsmith-
 
 Step recording template (bash — failure does not block):
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" workflow start-step --step-id "Step 1" --step-name "Load references" || true
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" workflow complete-step --step-id "Step 1" --artifacts '{"ok":true}' || true
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" workflow start-step --step-id "Step 1" --step-name "Load references" || true
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" workflow complete-step --step-id "Step 1" --artifacts '{"ok":true}' || true
 ```
 
 ## Review depth
@@ -157,7 +157,7 @@ cat "${SKILL_ROOT}/references/pacing-control.md"
 ## Step 2: Load Project State (if it exists)
 
 ```bash
-cat "$PROJECT_ROOT/.webnovel/state.json"
+cat "$PROJECT_ROOT/.wordsmith/state.json"
 ```
 
 ## Step 3: Call Checkers in Parallel (Task)
@@ -223,14 +223,14 @@ Note: Only the review metrics JSON is generated here; persisting to the database
 ## Step 5: Save Review Metrics to index.db (required)
 
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" index save-review-metrics --data '@review_metrics.json'
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" index save-review-metrics --data '@review_metrics.json'
 ```
 
 ## Step 6: Write Review Record Back to state.json (required)
 
 Write the review report record back to `state.json.review_checkpoints` for subsequent tracking and tracing (depends on `update_state.py --add-review`):
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" update-state -- --add-review "{start}-{end}" "review-reports/ch{start}-{end}-review.md"
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" update-state -- --add-review "{start}-{end}" "review-reports/ch{start}-{end}-review.md"
 ```
 
 ## Step 7: Handle Critical Issues
@@ -249,7 +249,7 @@ If the user chooses B:
 ## Step 8: Wrap Up (Complete Task)
 
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" workflow start-step --step-id "Step 8" --step-name "Wrap up" || true
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" workflow complete-step --step-id "Step 8" --artifacts '{"ok":true}' || true
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" workflow complete-task --artifacts '{"ok":true}' || true
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" workflow start-step --step-id "Step 8" --step-name "Wrap up" || true
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" workflow complete-step --step-id "Step 8" --artifacts '{"ok":true}' || true
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" workflow complete-task --artifacts '{"ok":true}' || true
 ```

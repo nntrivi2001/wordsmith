@@ -1,6 +1,6 @@
 ---
 name: wordsmith-init
-description: Deep-initialize a webnovel project. Collects complete creative information through phased interaction, and generates a project skeleton and constraint files ready for planning and writing.
+description: Deep-initialize a wordsmith project. Collects complete creative information through phased interaction, and generates a project skeleton and constraint files ready for planning and writing.
 allowed-tools: Read Write Edit Grep Bash Task AskUserQuestion WebSearch WebFetch
 ---
 
@@ -34,7 +34,7 @@ The STYLE_GUIDE_VN.md contains authoritative Vietnamese writing patterns that MU
 ## Objective
 
 - Collect sufficient information through structured interaction to avoid "generate first, rework later."
-- Produce a deployable project skeleton: `.webnovel/state.json`, `Settings/*`, `Outline/master.md`, `.webnovel/idea_bank.json`.
+- Produce a deployable project skeleton: `.wordsmith/state.json`, `Settings/*`, `Outline/master.md`, `.wordsmith/idea_bank.json`.
 - Ensure that subsequent `/wordsmith-plan` and `/wordsmith-write` can run directly.
 
 ## Execution Principles
@@ -167,9 +167,9 @@ Required actions:
 - Confirm the current directory is writable.
 - Resolve the scripts directory and confirm the entry point exists (plugin directory only):
   - Fixed path: `${CLAUDE_PLUGIN_ROOT}/scripts`
-  - Entry script: `${SCRIPTS_DIR}/webnovel.py`
+  - Entry script: `${SCRIPTS_DIR}/wordsmith.py`
 - Recommended: print the resolved result to avoid writing to the wrong directory:
-  - `python "${SCRIPTS_DIR}/webnovel.py" --project-root "${WORKSPACE_ROOT}" where`
+  - `python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${WORKSPACE_ROOT}" where`
 - Load minimum references:
   - `references/system-data-flow.md` (for verifying the link between init output and plan/write input)
   - `references/genre-tropes.md`
@@ -359,7 +359,7 @@ Do not execute `init_project.py` until all of the following conditions are met:
 ### 1) Run the Initialization Script
 
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" init \
+python "${SCRIPTS_DIR}/wordsmith.py" init \
   "{project_root}" \
   "{title}" \
   "{genre}" \
@@ -399,7 +399,7 @@ python "${SCRIPTS_DIR}/webnovel.py" init \
 
 ### 2) Write `idea_bank.json`
 
-Write to `.webnovel/idea_bank.json`:
+Write to `.wordsmith/idea_bank.json`:
 
 ```json
 {
@@ -433,10 +433,10 @@ Must fill in:
 Run checks:
 
 ```bash
-test -f "{project_root}/.webnovel/state.json"
+test -f "{project_root}/.wordsmith/state.json"
 find "{project_root}/Settings" -maxdepth 1 -type f -name "*.md"
 test -f "{project_root}/Outline/master.md"
-test -f "{project_root}/.webnovel/idea_bank.json"
+test -f "{project_root}/.wordsmith/idea_bank.json"
 ```
 
 Success criteria:

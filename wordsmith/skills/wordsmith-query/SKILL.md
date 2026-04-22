@@ -34,7 +34,7 @@ The STYLE_GUIDE_VN.md contains authoritative Vietnamese writing patterns that MU
 ## Project Root Guard (must confirm first)
 
 - The Claude Code "workspace root" is not necessarily equal to the "book project root." A common structure: workspace is `D:\wk\xiaoshuo`, book project is `D:\wk\xiaoshuo\FanrenCapitalTheory`.
-- Must first resolve the true book project root (which must contain `.webnovel/state.json`); all subsequent read/write paths are relative to that directory.
+- Must first resolve the true book project root (which must contain `.wordsmith/state.json`); all subsequent read/write paths are relative to that directory.
 - **Prohibited**: reading from or writing project files under the plugin directory `${CLAUDE_PLUGIN_ROOT}/`
 
 Environment setup (before executing bash commands):
@@ -53,7 +53,7 @@ if [ -z "${CLAUDE_PLUGIN_ROOT}" ] || [ ! -d "${CLAUDE_PLUGIN_ROOT}/scripts" ]; t
 fi
 export SCRIPTS_DIR="${CLAUDE_PLUGIN_ROOT}/scripts"
 
-export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/webnovel.py" --project-root "${WORKSPACE_ROOT}" where)"
+export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${WORKSPACE_ROOT}" where)"
 ```
 
 ## Workflow Checklist
@@ -125,7 +125,7 @@ cat "${SKILL_ROOT}/references/tag-specification.md"
 ## Step 3: Load Project Data
 
 ```bash
-cat "$PROJECT_ROOT/.webnovel/state.json"
+cat "$PROJECT_ROOT/.wordsmith/state.json"
 ```
 
 ## Step 4: Confirm Sufficient Context
@@ -169,7 +169,7 @@ Urgency = (chapters_elapsed / target_chapter) × tier_weight
 
 **Quick analysis**:
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" status -- --focus urgency
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" status -- --focus urgency
 ```
 
 ### Golden Finger Status
@@ -186,7 +186,7 @@ Output includes:
 
 **Quick analysis**:
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" status -- --focus strand
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" status -- --focus strand
 ```
 
 **Check warnings**:
@@ -208,7 +208,7 @@ python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" status -- --f
 
 ### 1. Runtime State (state.json)
 {structured data}
-**Source**: `.webnovel/state.json` (lines XX-XX)
+**Source**: `.wordsmith/state.json` (lines XX-XX)
 
 ### 2. Settings File Match Results
 {matched content, with file path and line number}

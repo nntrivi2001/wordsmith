@@ -25,7 +25,7 @@ workspace-root/
 
 ```text
 project-root/
-├── .webnovel/            # Runtime data (state/index/vectors/summaries)
+├── .wordsmith/            # Runtime data (state/index/vectors/summaries)
 ├── Chapters/             # Main body chapters
 ├── Outline/              # Outline (general and volume-level)
 └── Settings/             # Settings (worldview, characters, power system)
@@ -67,28 +67,28 @@ Unified preamble (manual CLI scenario):
 ```bash
 export WORKSPACE_ROOT="${CLAUDE_PROJECT_DIR:-$PWD}"
 export SCRIPTS_DIR="${CLAUDE_PLUGIN_ROOT}/scripts"
-export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/webnovel.py" --project-root "${WORKSPACE_ROOT}" where)"
+export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${WORKSPACE_ROOT}" where)"
 ```
 
 ### Index Rebuild
 
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" index process-chapter --chapter 1
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" index stats
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" index process-chapter --chapter 1
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" index stats
 ```
 
 ### Health Report
 
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" status -- --focus all
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" status -- --focus urgency
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" status -- --focus all
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" status -- --focus urgency
 ```
 
 ### Vector Rebuild
 
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" rag index-chapter --chapter 1
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" rag stats
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" rag index-chapter --chapter 1
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" rag stats
 ```
 
 ### Test Entry Points

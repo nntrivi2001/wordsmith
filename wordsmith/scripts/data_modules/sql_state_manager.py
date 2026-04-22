@@ -528,7 +528,7 @@ def main():
     # Initialize
     config = None
     if args.project_root:
-        # Allow passing "workspace root directory", resolve to actual book project_root (must contain .webnovel/state.json)
+        # Allow passing "workspace root directory", resolve to actual book project_root (must contain .wordsmith/state.json)
         from project_locator import resolve_project_root
         from .config import DataModulesConfig
 

@@ -10,7 +10,7 @@
 ## Lệnh Thực Thi
 
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "${PROJECT_ROOT}" index accrue-interest --current-chapter {chapter_num}
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${PROJECT_ROOT}" index accrue-interest --current-chapter {chapter_num}
 ```
 
 ## Yêu Cầu Sau Thực Thi

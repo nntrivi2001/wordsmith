@@ -31,7 +31,7 @@ Used to save user preferences and writing constraints (can be set by `/wordsmith
 
 ## Vietnamese Style Alignment
 
-When configuring preferences, consider Vietnamese webnovel patterns:
+When configuring preferences, consider Vietnamese wordsmith patterns:
 
 | Element | Vietnamese Pattern | Reference |
 |---------|------------------|-----------|

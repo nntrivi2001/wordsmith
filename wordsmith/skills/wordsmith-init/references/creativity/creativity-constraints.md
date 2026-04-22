@@ -128,7 +128,7 @@ Cultivation (genre) + Sufficient resources (rule) + Pursuing crushing dominance 
 
 ### 3.3 Vietnamese Webnovel Anti-Trope Patterns
 
-Based on STYLE_GUIDE_VN.md analysis of Vietnamese webnovels (Biên niên sử rồng, Useless hero from another world):
+Based on STYLE_GUIDE_VN.md analysis of Vietnamese wordsmiths (Biên niên sử rồng, Useless hero from another world):
 
 | Pattern ID | Vietnamese Anti-Trope | Example from Source |
 |------------|---------------------|---------------------|
@@ -245,7 +245,7 @@ Before determining complete outline, must design:
 
 ### 6.3 Vietnamese Webnovel-Specific Constraints
 
-From VN webnovel analysis (Biên niên sử rồng, Useless hero):
+From VN wordsmith analysis (Biên niên sử rồng, Useless hero):
 
 | Constraint Type | Vietnamese Pattern | Narrative Effect |
 |-----------------|-------------------|------------------|

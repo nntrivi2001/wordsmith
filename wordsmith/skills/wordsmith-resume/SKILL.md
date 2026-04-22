@@ -1,6 +1,6 @@
 ---
 name: wordsmith-resume
-description: Recovers interrupted webnovel tasks with precise workflow state tracking. Detects interruption point and provides safe recovery options. Activates when user wants to resume or /wordsmith-resume.
+description: Recovers interrupted wordsmith tasks with precise workflow state tracking. Detects interruption point and provides safe recovery options. Activates when user wants to resume or /wordsmith-resume.
 allowed-tools: Read Bash AskUserQuestion
 ---
 
@@ -34,7 +34,7 @@ The STYLE_GUIDE_VN.md contains authoritative Vietnamese writing patterns that MU
 ## Project Root Guard (must confirm first)
 
 - The Claude Code "workspace root" is not necessarily equal to the "book project root." A common structure: workspace is `D:\wk\xiaoshuo`, book project is `D:\wk\xiaoshuo\FanrenCapitalTheory`.
-- Must first resolve the true book project root (which must contain `.webnovel/state.json`); all subsequent read/write paths are relative to that directory.
+- Must first resolve the true book project root (which must contain `.wordsmith/state.json`); all subsequent read/write paths are relative to that directory.
 
 Environment setup (before executing bash commands):
 ```bash
@@ -52,7 +52,7 @@ if [ -z "${CLAUDE_PLUGIN_ROOT}" ] || [ ! -d "${CLAUDE_PLUGIN_ROOT}/scripts" ]; t
 fi
 export SCRIPTS_DIR="${CLAUDE_PLUGIN_ROOT}/scripts"
 
-export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/webnovel.py" --project-root "${WORKSPACE_ROOT}" where)"
+export PROJECT_ROOT="$(python "${SCRIPTS_DIR}/wordsmith.py" --project-root "${WORKSPACE_ROOT}" where)"
 ```
 
 ## Workflow Checklist
@@ -128,7 +128,7 @@ cat "${SKILL_ROOT}/references/system-data-flow.md"
 ## Step 4: Detect Interruption State
 
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" workflow detect
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" workflow detect
 ```
 
 **Output scenarios**:
@@ -171,14 +171,14 @@ Please choose (A/B):
 
 **Option A — Delete and restart** (recommended):
 ```bash
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" workflow cleanup --chapter {N} --confirm
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" workflow clear
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" workflow cleanup --chapter {N} --confirm
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" workflow clear
 ```
 
 **Option B — Git rollback**:
 ```bash
 git -C "$PROJECT_ROOT" reset --hard ch{N-1:04d}
-python "${SCRIPTS_DIR}/webnovel.py" --project-root "$PROJECT_ROOT" workflow clear
+python "${SCRIPTS_DIR}/wordsmith.py" --project-root "$PROJECT_ROOT" workflow clear
 ```
 
 ## Step 7: Continue Task (optional)

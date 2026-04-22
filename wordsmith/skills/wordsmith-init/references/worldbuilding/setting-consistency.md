@@ -30,7 +30,7 @@ Các pattern tiếng Việt áp dụng khi kiểm tra tính nhất quán của s
 
 ---
 
-Tính nhất quán là yếu tố sống còn trong webnovel tiếng Việt. Pattern từ **Biên niên sử rồng** (BNsr) cho thấy tầm quan trọng của việc giữ logic xuyên suốt, đặc biệt trong các cảnh chiến đấu và hệ thống sức mạnh. **Useless hero from another world** (UH) thể hiện cách status card cần được dùng nhất quán để tránh inflation.
+Tính nhất quán là yếu tố sống còn trong wordsmith tiếng Việt. Pattern từ **Biên niên sử rồng** (BNsr) cho thấy tầm quan trọng của việc giữ logic xuyên suốt, đặc biệt trong các cảnh chiến đấu và hệ thống sức mạnh. **Useless hero from another world** (UH) thể hiện cách status card cần được dùng nhất quán để tránh inflation.
 
 ---
 
@@ -262,9 +262,9 @@ After generating chapters with `/wordsmith-write`, must pass the following check
 
 ---
 
-## 6. Vietnamese Consistency Patterns (Pattern từ webnovel Việt)
+## 6. Vietnamese Consistency Patterns (Pattern từ wordsmith Việt)
 
-Trong webnovel tiếng Việt, sự nhất quán phải được xây dựng theo pattern từ **Biên niên sử rồng** (BNsr) và **Useless hero from another world** (UH).
+Trong wordsmith tiếng Việt, sự nhất quán phải được xây dựng theo pattern từ **Biên niên sử rồng** (BNsr) và **Useless hero from another world** (UH).
 
 ### 6.1 Vietnamese Character Behavior Consistency
 

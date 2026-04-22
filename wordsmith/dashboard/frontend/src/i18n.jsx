@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback } from 'react'
 
-const STORAGE_KEY = 'webnovel_dashboard_locale'
+const STORAGE_KEY = 'wordsmith_dashboard_locale'
 
 const DEFAULT_LOCALE = 'zh-CN'
 

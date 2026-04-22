@@ -5,7 +5,7 @@
 
 ## Vietnamese Market Context
 
-Based on analysis of Vietnamese webnovels (Biên niên sử rồng, Useless hero from another world):
+Based on analysis of Vietnamese wordsmiths (Biên niên sử rồng, Useless hero from another world):
 
 ### Vietnamese Genre Patterns
 | Genre VN | English Equivalent | Key Selling Points |

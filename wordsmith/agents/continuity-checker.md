@@ -25,8 +25,8 @@ model: inherit
 ```json
 {
   "project_root": "{PROJECT_ROOT}",
-  "storage_path": ".webnovel/",
-  "state_file": ".webnovel/state.json",
+  "storage_path": ".wordsmith/",
+  "state_file": ".wordsmith/state.json",
   "chapter_file": "Main/Ch{NNNN}-{title_safe}.md"
 }
 ```
@@ -37,7 +37,7 @@ model: inherit
 1. Target chapters under `Main text/`
 2. Previous 2-3 chapters (transition context)
 3. `Outline/` (compare against outline - outline is law)
-4. `{project_root}/.webnovel/state.json` (plot thread tracker, if exists)
+4. `{project_root}/.wordsmith/state.json` (plot thread tracker, if exists)
 
 ### Step 2: Four-Layer Continuity Check (Kiểm Tra Liên Tục Bốn Lớp)
 
@@ -285,7 +285,7 @@ Judgment: ⚠️ Pronoun shift without emotional trigger - OOC risk
 | Time jump marker | "Sáu năm trước..." | No marker | Flashback |
 | Location change | "Ở trong khu rừng..." | Abrupt shift | Explicit |
 
-**Check**: Verify transitions use correct Vietnamese webnovel punctuation style.
+**Check**: Verify transitions use correct Vietnamese wordsmith punctuation style.
 
 ### Unit Consistency Check
 
@@ -316,7 +316,7 @@ Judgment: ⚠️ Pronoun shift without emotional trigger - OOC risk
 | Sợ | run bần bật, mặt tái mét | "Cô ấy sợ." |
 | Buồn | nước mắt lã chã, cười méo | "Cô ấy buồn." |
 
-**Violation in continuity**: Emotion told instead of shown breaks immersion and feels inconsistent with Vietnamese webnovel style.
+**Violation in continuity**: Emotion told instead of shown breaks immersion and feels inconsistent with Vietnamese wordsmith style.
 
 ### Vietnamese Sentence Order Check
 

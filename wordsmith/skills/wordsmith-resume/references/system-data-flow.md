@@ -27,7 +27,7 @@ Project Root/
 ├── MainText/           # Chapter files
 ├── Outline/            # Volume outlines/Chapter outlines
 ├── Settings/           # Worldbuilding/Power systems/Character sheets
-└── .webnovel/
+└── .wordsmith/
     ├── state.json          # Authoritative state
     ├── workflow_state.json # Workflow checkpoint
     ├── index.db            # SQLite index
@@ -42,7 +42,7 @@ Project Root/
 
 ### Vietnamese Webnovel Writing Conventions
 
-When writing or reviewing Vietnamese webnovel content, apply these patterns from STYLE_GUIDE_VN.md:
+When writing or reviewing Vietnamese wordsmith content, apply these patterns from STYLE_GUIDE_VN.md:
 
 #### Pronoun Usage (Han Viet Roots)
 | Pronoun | Gender/Context | Example |

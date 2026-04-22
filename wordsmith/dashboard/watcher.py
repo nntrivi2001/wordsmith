@@ -1,7 +1,7 @@
 """
 Watchdog file change listener + SSE push.
 
-Monitors state.json, index.db, and other key files in the PROJECT_ROOT/.webnovel/ directory,
+Monitors state.json, index.db, and other key files in the PROJECT_ROOT/.wordsmith/ directory,
 and notifies all connected frontend clients via SSE whenever changes occur.
 """
 
@@ -16,7 +16,7 @@ from watchdog.events import FileSystemEventHandler, FileModifiedEvent, FileCreat
 
 
 class _WebnovelFileHandler(FileSystemEventHandler):
-    """Monitor only modification/creation events of key files in the .webnovel/ directory."""
+    """Monitor only modification/creation events of key files in the .wordsmith/ directory."""
 
     WATCH_NAMES = {"state.json", "index.db", "workflow_state.json"}
 

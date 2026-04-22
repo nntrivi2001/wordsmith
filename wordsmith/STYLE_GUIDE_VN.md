@@ -492,9 +492,9 @@ Chương X
 |------|---------|-------|
 | First person | Gần gũi, dễ nhập tâm | BNsr (Rosa/Jack narration) |
 | Third person limited | Theo sát một nhân vật | UH (Tanaka) |
-| Third person omniscient | Bao quát tất cả | Không phổ biến trong webnovel |
+| Third person omniscient | Bao quát tất cả | Không phổ biến trong wordsmith |
 
-**Pattern trong webnovel VN:**
+**Pattern trong wordsmith VN:**
 - BNsr: Third person limited, theo Rosa và Jack luân phiên
 - UH: Third person limited, theo Tanaka (với inner monologue rõ ràng)
 
