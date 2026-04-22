@@ -1,0 +1,23 @@
+{
+  "name": "wordsmith-marketplace",
+  "description": "Marketplace for the wordsmith Claude Code plugin.",
+  "metadata": {
+    "description": "Marketplace for installing the wordsmith plugin."
+  },
+  "owner": {
+    "name": "nntrivi2001"
+  },
+  "plugins": [
+    {
+      "name": "wordsmith",
+      "description": "Long-form webnovel creation system with Vietnamese writing patterns (skills + agents + RAG)",
+      "version": "1.0.0",
+      "author": {
+        "name": "nntrivi2001"
+      },
+      "source": "./wordsmith",
+      "category": "productivity",
+      "homepage": "https://github.com/nntrivi2001/wordsmith"
+    }
+  ]
+}

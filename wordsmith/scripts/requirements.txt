@@ -1,0 +1,13 @@
+# Webnovel Writer - Python Dependencies
+# Python >= 3.10 required
+
+# Core dependencies
+aiohttp>=3.8.0          # Async HTTP client (API calls)
+filelock>=3.0.0         # File lock (state file concurrency control)
+pydantic>=2.0.0         # Schema validation
+
+# Optional dependencies (development/testing)
+pytest>=7.0.0           # Unit tests
+pytest-cov>=4.1.0       # Coverage statistics
+pytest-asyncio>=0.23.0  # Async test support
+pytest-timeout>=2.3.0   # Test timeout protection

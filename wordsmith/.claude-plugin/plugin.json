@@ -1,0 +1,20 @@
+{
+  "name": "wordsmith",
+  "version": "1.0.0",
+  "description": "Long-form webnovel creation system with Vietnamese writing patterns (skills + agents + RAG) - Fork từ lingfengQAQ với Vietnamese writing patterns tích hợp",
+  "author": {
+    "name": "nntrivi2001"
+  },
+  "homepage": "https://github.com/nntrivi2001/wordsmith",
+  "repository": "https://github.com/nntrivi2001/wordsmith",
+  "license": "GPL-3.0",
+  "keywords": [
+    "webnovel",
+    "vietnamese",
+    "claude-code",
+    "skills",
+    "agents",
+    "rag",
+    "writing"
+  ]
+}

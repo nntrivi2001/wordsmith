@@ -1,0 +1,12 @@
+[run]
+# Description:
+# - This config ensures consistent coverage statistics when running pytest inside the .claude/scripts directory,
+#   matching the repository root directory's coverage.
+# - If running pytest from the repository root, the .coveragerc in the root takes priority.
+source = data_modules
+omit =
+    */tests/*
+
+[report]
+show_missing = True
+
