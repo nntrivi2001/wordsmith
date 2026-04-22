@@ -22,8 +22,8 @@ Thumbs.db
 node_modules/
 .npm-cache/
 dist/
-!webnovel-writer/dashboard/frontend/dist/
-!webnovel-writer/dashboard/frontend/dist/**
+!wordsmith/dashboard/frontend/dist/
+!wordsmith/dashboard/frontend/dist/**
 nul
 .tmp/
 .tmp_*
@@ -40,7 +40,7 @@ novel-refined/
 
 # Local analysis snapshots and draft docs
 PROJECT_MINDMAP*.md
-webnovel-writer-v5*-architecture.svg
+wordsmith-v5*-architecture.svg
 _v52_*.json
 _v52_*.txt
 claude_inventory.csv

@@ -48,7 +48,7 @@ ${CLAUDE_PLUGIN_ROOT}/
 When no usable pointer exists in the workspace, the user-level registry is used for `workspace -> current_project_root` mapping:
 
 ```text
-${CLAUDE_HOME:-~/.claude}/webnovel-writer/workspaces.json
+${CLAUDE_HOME:-~/.claude}/wordsmith/workspaces.json
 ```
 
 ## Simulated Directory Test (2026-03-03)

@@ -1,2 +1,2 @@
--r webnovel-writer/scripts/requirements.txt
--r webnovel-writer/dashboard/requirements.txt
+-r wordsmith/scripts/requirements.txt
+-r wordsmith/dashboard/requirements.txt

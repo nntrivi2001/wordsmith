@@ -16,7 +16,7 @@ Default models:
 
 1. Process environment variables (highest priority)
 2. `.env` file in the book project root directory
-3. User-level global: `~/.claude/webnovel-writer/.env`
+3. User-level global: `~/.claude/wordsmith/.env`
 
 ## Minimal `.env` Configuration
 
