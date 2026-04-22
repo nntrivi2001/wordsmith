@@ -12,20 +12,22 @@ Hướng dẫn Phong cách Viết Webnovel Tiếng Việt
 
 ### 1.1 Han Viet Roots - Đại từ xưng hô
 
-| Từ | Giới | Ngữ cảnh sử dụng | Ví dụ |
+**QUY TẮC MỚI:** Các forms dưới đây chỉ là **ví dụ phổ biến**, không phải bảng quy đổi cố định. Xem `/references/shared/pronoun-context.md` cho hệ thống suy luận ngữ cảnh.
+
+| Từ | Giới | Ngữ cảnh | Ví dụ |
 |----|------|------------------|-------|
-| **hắn** | Thứ ba nam | Hành động/khích đối thủ | *"Hắn ta dám..."* (BNsr Chương 4) |
-| **tao** | Ngang hàng/bạn bè | Tính cách mạnh mẽ, tự tin | *"Tao cá là mày chưa từng..."* (UH Chương 4) |
-| **mày** | Ngang hàng/bạn bè | Đối đáp thân thiết | *"Mày nghĩ tao sợ mày à!"* (UH Chương 1) |
-| **tụi mày** | Đám đông | Gọi nhiều người | *"Tụi mày có thể sống..."* (BNsr Chương 5) |
-| **bọn tao** | Nhóm của ta | Nhóm nhân vật chính | *"Bọn tao sẽ không để mày..."* (BNsr Chương 5) |
-| **ta** | Cổ đại/nghi thức | Nhân vật quý tộc, phép lịch sự | *"Ta là Vincent..."* (BNsr Chương 3) |
-| **ngài** | Kính ngữ | Xưng hô với người có quyền | *"Ngài có thể để tôi..."* (UH Chương 1) |
-| **tôi** | Lịch sự | Ngữ cảnh nghiêm túc, xã giao | *"Tôi muốn gia nhập..."* (UH Chương 2) |
+| **hắn** | Thứ ba nam | Hành động/khích đối thủ | *"Hắn ta dám..."* |
+| **tao** | Ngang hàng/bạn bè | Tuỳ ngữ cảnh | *"Tao cá là..."* |
+| **mày** | Ngang hàng/bạn bè | Tuỳ ngữ cảnh | *"Mày nghĩ..."* |
+| **tụi mày** | Đám đông | Gọi nhiều người | *"Tụi mày..."* |
+| **bọn tao** | Nhóm của ta | Nhóm nhân vật chính | *"Bọn tao sẽ..."* |
+| **ta** | Cổ đại/nghi thức | Tuỳ thời kỳ | *"Ta là Vincent..."* |
+| **ngài** | Kính ngữ | Tuỳ thời kỳ | *"Ngài có thể..."* |
+| **tôi** | Lịch sự | Ngữ cảnh nghiêm túc | *"Tôi muốn..."* |
 
 **Pattern quan trọng:**
-- Đại từ xưng hô thay đổi theo cảm xúc: Bình thường dùng "mày/mày", khi giận dữ chuyển sang "thằng khốn", "con nhóc"
-- Nhân vật chính (Rosa, Jack) dùng "tao-mày" với nhau nhưng "tôi-ngài" với người lạ
+- Đại từ xưng hô thay đổi theo **ngữ cảnh**: thời kỳ, xuất thân, quyền lực, mối quan hệ, cảm xúc
+- KHÔNG cố định "mày/tao cho bạn bè" - hãy suy luận từ context
 - Đối thủ/hậu nhân thường bị gọi là "thằng nào", "con khốn" khi căng thẳng
 
 **Ví dụ cụ thể:**
@@ -65,18 +67,21 @@ BNsr Chương 2 (văn chương):
 
 ### 1.3 Formality Levels (Mức độ trang trọng)
 
-**Bảng phân loại ngôi xưng theo mức độ:**
+**QUY TẮC MỚI:** Bảng này chỉ là ví dụ, KHÔNG phải quy tắc cố định. Forms phụ thuộc vào ngữ cảnh (thời kỳ, power dynamic, relationship).
 
-| Mức độ | Ngôi xưng | Ngữ cảnh |
-|--------|-----------|----------|
-| Cao nhất | ngài, tôi | Vua, quý tộc, nghi lễ |
-| Cao | tôi, ông, bà | Người lạ, công việc |
-| Bình đẳng | mày, tao | Bạn bè thân, đồng đội |
-| Thấp | thằng/kẻ (khiếm khuyết) | Đối thủ, khinh bỉ |
+**Bảng ví dụ về các mức độ (KHÔNG cố định):**
+
+| Mức độ | Ví dụ Forms | Ngữ cảnh |
+|--------|-------------|----------|
+| Cao nhất | ngài, tôi, trẫm | Vua, quý tộc trong thời kỳ phù hợp |
+| Cao | tôi, ông, bà | Người lạ, công việc, ngữ cảnh formal |
+| Bình đẳng | tuỳ ngữ cảnh | Bạn bè, đồng đội - nhưng cần suy luận |
+| Thấp | thằng/kẻ | Đối thủ, khinh bỉ, cảm xúc mạnh |
 
 **Lưu ý quan trọng:**
-- Ngôn ngữ bạn bè thân: "mày/tao" nhưng khi giận chuyển sang "thằng chó"
+- KHÔNG cố định "mày/tao cho bạn bè" - cần suy luận từ context
 - Nhân vật yếu thường bị xưng "nó" thay vì "hắn"
+- Suy luận: thời kỳ hiện đại → tớ/cậu, thời kỳ cổ đại → ta/ngươi hoặc huynh/đệ
 
 ### 1.4 Slang và Vernacular Patterns (Tiếng lóng & Địa phương)
 
@@ -993,14 +998,57 @@ Cậu tự hỏi tại sao. Cậu không hiểu gì hết.
 | Minor | `——` | Nhấn mạnh trong cùng cảnh |
 | Chapter End | `*— Hết Chương X —*` | Kết chương |
 
-### 13.6 Pronoun System (Từ Ta Dung Nhin Vo Lam Toang)
+### 13.6 Pronoun System: Context-Only Selection
 
-| Mối quan hệ | Pronoun | Ví dụ |
-|-------------|---------|-------|
-| Thân mật (với Đụt AI) | tao/mày | "Tao cá là mày chưa từng..." |
-| Internal monologue | cậu/mình | "Mình vừa chết ở Sài Gòn..." |
-| Người lạ | tôi/ngài | Khi cần formal |
-| Antagonist | hắn/thằng | "Hắn ta dám..." |
+**QUY TẮC MỚI (2026-04-22):** Hệ thống pronoun cũ dùng bảng tĩnh (ví dụ: "mày/tao cho bạn bè thân") đã được thay thế bằng hệ thống suy luận dựa trên ngữ cảnh.
+
+**Xem thêm:** `/references/shared/pronoun-context.md` - Tài liệu đầy đủ về hệ thống suy luận ngữ cảnh.
+
+#### Yếu tố ngữ cảnh chính
+
+| Yếu tố | Câu hỏi cần hỏi |
+|--------|-----------------|
+| **1. Thời kỳ/Thể loại** | Truyện hiện đại hay cổ đại? Đây là yếu tố QUAN TRỌNG NHẤT. |
+| **2. Xuất thân nhân vật** | Nhân vật từ tradition nào? Martial, scholarly, merchant, street? |
+| **3. Quyền lực** | Ai có quyền trong tình huống này? |
+| **4. Mối quan hệ** | Hai người đang ở giai đoạn nào của mối quan hệ? |
+| **5. Cảm xúc ngầm** | Họ đang THỰC SỰ cảm thấy gì? |
+| **6. Cường độ chiến đấu** | Đang ở giai đoạn nào của combat? |
+| **7. Tên ở đỉnh cảm xúc** | Đây có phải là khoảnh khắc cảm xúc đỉnh cao không? |
+
+#### Ví dụ suy luận theo ngữ cảnh
+
+**Ví dụ 1: Nhân vật hiện đại (isekai)**
+```
+Context: Học sinh high school thời hiện đại xuyên sang fantasy world
+Hỏi: Người này sẽ nói gì một cách tự nhiên?
+Đáp: tớ - cậu, tôi - bạn (vì xuất thân hiện đại)
+```
+
+**Ví dụ 2: Huynh đệ kết làm anh em (wuxia)**
+```
+Context: Hai kiếm khách kết huynh đệ trong giang hồ
+Hỏi: Họ sẽ xưng hô thế nào?
+Đáp: huynh - đệ (vì brotherhood + equals + martial tradition)
+```
+
+**Ví dụ 3: Sư phụ - đệ tử**
+```
+Context: Môn chủ phạt đệ tử
+Hỏi: Môn chủ sẽ dùng form nào?
+Đáp: bổn tọa - ngươi (vì power dynamic + authority)
+Đệ tử sẽ đáp: tại hạ - (vì power dynamic + respect)
+```
+
+#### NHỮNG GÌ KHÔNG NÊN LÀM
+
+❌ **KHÔNG** dùng bảng tĩnh như "sword wanderer → ta/ngươi"
+❌ **KHÔNG** dùng "mày/tao cho tất cả bạn thân" một cách phổ quát
+❌ **KHÔNG** để thời kỳ hiện đại dùng forms cổ đại một cách bất thường
+
+✅ **NÊN** hỏi: "Trong tình huống này, người này sẽ nói gì tự nhiên?"
+✅ **NÊN** để thời kỳ/genre là yếu tố chính định hình
+✅ **NÊN** cân nhắc tất cả các yếu tố ngữ cảnh cùng lúc
 
 ### 13.7 Combat Rhythm (Từ Con Duong Ba Chu)
 

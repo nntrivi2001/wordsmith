@@ -54,30 +54,44 @@ Chapter 45 - Lin Tian behavior sample:
 [Emotion] Giận dữ, không kiểm soát
 ```
 
-### Step 3 Supplement: Vietnamese Pronoun & Speech Patterns
+### Step 3 Supplement: Vietnamese Pronoun Selection (Context-Based)
 
-**Vietnamese pronouns affect character consistency check**:
+**QUY TẮC MỚI (2026-04-22):** Pronoun selection dựa trên ngữ cảnh, KHÔNG phải bảng tĩnh. Xem `/references/shared/pronoun-context.md` cho chi tiết.
 
-| Character Type | Expected Pronouns | OOC Violations |
-|---------------|-------------------|----------------|
-| **Bạn thân (close friend)** | mày/tao | Using ngài/tôi to each other (too formal) |
-| **Kẻ thù (enemy)** | thằng chó/con khốn | Suddenly polite (hắn ta) |
-| **Quý tộc/Cổ đại (noble/ancient)** | ta/ngài | Using mày/tao (too casual) |
-| **Người lạ (stranger)** | ông/bà/tôi | Using mày/tao without reason |
+**Context Factors cho OOC Check:**
 
-**Speech pattern signals by emotion**:
+1. **Time Period/Genre** - Modern stories use modern forms; period/ancient use archaic
+2. **Character Background** - Education, tradition, social class
+3. **Power Dynamics** - Authority vs subordinate in THIS moment
+4. **Relationship Arc** - Where are they in their relationship?
+5. **Emotional State** - What are they REALLY feeling?
+6. **Combat Phase** - Pre-duel, battle, or desperate?
+7. **Name at Peaks** - Emotional peak moments use name, not pronoun
+
+**OOC Check Questions:**
+
+| Check | Question | Violation if |
+|-------|----------|--------------|
+| Time Period | Does pronoun match story era? | Modern character using feudal forms |
+| Background | Does pronoun match character's origin? | Scholarly character using street-level forms |
+| Power | Does authority use dominant forms? | Master using submissive forms |
+| Relationship | Does pronoun match arc stage? | Brothers still using formal strangers |
+| Emotion | Does pronoun match emotional state? | Rage using calm formal forms |
+| Combat | Does pronoun match combat phase? | Pre-duel using desperate forms |
+
+**Speech pattern signals by emotion (examples only):**
 
 | Emotion State | Vietnamese Indicators | Example |
 |---------------|------------------------|---------|
-| Bình thường (calm) | mày/tao, câu ngắn gọn | *"Mày đi đâu?"* |
+| Bình thường (calm) | forms phù hợp context, câu ngắn gọn | *"Cậu đi đâu?"* (modern) |
 | Giận dữ (angry) | thằng khốn/con nhóc, hét | *"Thằng chó đó!"* |
-| Căng thẳng (tense) | ngắt quãng..., chần chừ | *"Tao... không biết..."* |
-| Kính trọng (respectful) | ngài/tôi/ông | *"Ngài có thể giúp tôi..."* |
+| Căng thẳng (tense) | ngắt quãng..., chần chừ | *"Tôi... không biết..."* |
+| Kính trọng (respectful) | forms phù hợp context | *"Ngài có thể giúp..."* (formal setting) |
 
-**Character voice consistency rules (VN)**:
-- Nhân vật chính (Rosa, Jack) dùng "tao-mày" với nhau nhưng "tôi-ngài" với người lạ
+**Character voice consistency rules (VN) - Context-based:**
+- Suy luận từ context, KHÔNG cố định "tao-mày cho tất cả bạn thân"
 - Đối thủ/hậu nhân thường bị gọi là "thằng nào", "con khốn" khi căng thẳng
-- Đại từ xưng hô thay đổi theo cảm xúc: Bình thường dùng "mày/mày", khi giận dữ chuyển sang "thằng khốn", "con nhóc"
+- Đại từ xưng hô thay đổi theo ngữ cảnh: thời kỳ, xuất thân, quyền lực, mối quan hệ, cảm xúc
 
 ### Step 4: OOC Detection (Three-Level Judgment)
 
@@ -137,14 +151,16 @@ Judgment: ❌ Complete personality change without explanation, core character co
 
 ### Step 5: Dialogue Style Check
 
-**Verify dialogue consistency**:
+**Verify dialogue consistency (context-based):**
 
 | Character Type | Expected Style | OOC Examples |
 |---------------|----------------|--------------|
-| **Protagonist (calm type)** | Concise, flat tone, uses mày/tao with friends | "Hahaha! Hôm nay tao cho mày biết tao là ai!" (overly swaggering - should be more subdued) |
-| **Antagonist (arrogant type)** | Mocking, disdainful, confident | "Xin lỗi... tao sai rồi..." (suddenly timid - should stay arrogant) |
-| **Quý tộc/Noble** | ta/ngài, formal structure | "Awesome / 666 / OMG" (modern internet slang - out of character for ancient setting) |
-| **Bạn thân (close friends)** | mày/tao, casual | Using ngài/tôi between close friends (too formal breaks intimacy) |
+| **Protagonist (calm type)** | Concise, flat tone, forms phù hợp context | Overly swaggering in calm situation |
+| **Antagonist (arrogant type)** | Mocking, disdainful, confident | Suddenly timid (needs reason) |
+| **Quý tộc/Noble** | forms phù hợp thời kỳ, formal structure | Modern internet slang (out of character for ancient setting) |
+| **Close friends** | forms phù hợp context (không cố định mày/tao) | Using ngài/tôi between close friends (too formal breaks intimacy) |
+
+**Note:** "mày/tao for close friends" is NOT a universal rule. Suy luận từ context.
 
 ### Step 5 Supplement: Vietnamese Colloquial vs Literary Register
 
@@ -257,31 +273,38 @@ Chapter {N} - Chapter {M}
 
 ## 8. Vietnamese Writing Patterns for OOC Detection
 
-### Pronoun System for Character Consistency
+### Pronoun System (Context-Based)
 
-**Core pronouns by relationship and formality**:
+**QUY TẮC MỚI (2026-04-22):** Pronoun selection dựa trên ngữ cảnh. Xem `/references/shared/pronoun-context.md`.
 
-| Register Level | Pronouns | Usage Context |
-|---------------|----------|---------------|
-| **Cao cấp (Formal/古代)** | ta, ngài | Nobles, ancient settings, formal situations |
-| **Thân mật (Close friends)** | mày, tao, tụi mày | Equals, close relationship |
-| **Bình thường (Neutral)** | tôi, ông, bà | Strangers, formal situations |
-| **Thù địch (Hostile)** | thằng chó, con khốn, chết mẹ | Angry state, enemy |
-| **Third person male antagonist** | hắn, hắn ta | Narrating about antagonist |
+**7 Context Factors cho OOC Check:**
 
-**OOC Check Examples**:
+| Factor | Check | Violation if |
+|--------|-------|--------------|
+| 1. Time Period | Pronoun matches story era? | Modern char using feudal forms |
+| 2. Background | Pronoun matches origin? | Scholarly using street-level forms |
+| 3. Power | Authority uses dominant forms? | Master using submissive forms |
+| 4. Relationship | Pronoun matches arc stage? | Brothers still using formal strangers |
+| 5. Emotion | Pronoun matches emotional state? | Rage using calm formal forms |
+| 6. Combat | Pronoun matches combat phase? | Pre-duel using desperate forms |
+| 7. Peaks | Name used at emotional moments? | Pronoun instead of name at peak |
+
+**OOC Check Examples (Context-Based)**:
 ```
-✓ Correct: Close friends (Rosa and Jack) use mày/tao in conversation
-   "Ê mày, đi đâu đấy?" - consistent with relationship
+✓ Correct: Modern isekai characters use tớ/cậu
+   "Ê cậu, đi đâu đấy?" - consistent with modern background
 
-❌ OOC Violation: Close friends suddenly use ngài/tôi
-   "Ngài có thể giúp tôi không?" - breaks intimacy
+✓ Correct: Wuxia brothers use huynh/đệ
+   "Huynh đi đâu?" - consistent with brotherhood + martial tradition
 
-✓ Correct: Antagonist in hostile state uses thằng chó/con khốn
+❌ OOC Violation: Modern character suddenly uses ngài/tôi to friend
+   "Ngài có thể giúp tôi không?" - breaks context (modern setting, close relationship)
+
+✓ Correct: Angry character uses hostile forms
    "Thằng chó đó mà dám..." - consistent with emotion
 
-❌ OOC Violation: Antagonist becomes polite without trigger
-   "Xin lỗi, tôi sai rồi." - breaks character
+❌ OOC Violation: Calm character uses hostile forms without trigger
+   "Thằng chó đó!" - no emotional justification
 ```
 
 ### Sentence Structure Check (Subject + Predicate Required)
@@ -370,10 +393,10 @@ Chapter {N} - Chapter {M}
 7. Missing subject in descriptions
 8. Non-natural Vietnamese words
 
-### Pronoun System:
-- Close relationships: mày/tao
-- Formal/strangers: tôi/ngài
-- Antagonist: hắn/thằng
+### Pronoun System (Context-Based):
+- Suy luận từ context: thời kỳ, xuất thân, quyền lực, mối quan hệ, cảm xúc
+- KHÔNG cố định "mày/tao cho bạn thân"
+- Xem `/references/shared/pronoun-context.md` cho chi tiết
 - Internal monologue: cậu/mình
 
 ### Show-Don't-Tell Emotion Markers:

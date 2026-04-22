@@ -239,30 +239,57 @@ Cool-point placement: Mỗi 500-800 words có 1 cool-point
 
 ---
 
-## 13.5 PRONOUN SYSTEM (Đại từ xưng hô)
+## 13.5 PRONOUN SYSTEM (Đại từ xưng hô - Context-Based)
 
-### 13.5.1 Relationship-Based Pronouns
+**QUY TẮC MỚI (2026-04-22):** Hệ thống pronoun cũ dùng bảng tĩnh đã được thay thế bằng hệ thống suy luận ngữ cảnh.
+
+**Xem chi tiết:** `/references/shared/pronoun-context.md`
+
+### 13.5.1 7 Context Factors (Primary)
+
+| Factor | Question | Base Forms |
+|--------|----------|------------|
+| **1. Time Period** | Modern or ancient? | Modern: tớ/cậu, Ancient: ta/ngươi |
+| **2. Background** | Martial vs scholarly vs street? | Natural speech patterns |
+| **3. Power** | Authority in this moment? | bổn tọa vs tại hạ |
+| **4. Relationship** | Where in arc? | Formal strangers → intimate brothers |
+| **5. Emotion** | Hidden feeling? | Formality shift for subtext |
+| **6. Combat** | Pre-duel vs battle vs desperate? | Courtesy → challenge → hostile |
+| **7. Peak** | Emotional peak? | Use name, not pronoun |
+
+### 13.5.2 Why Context-Based?
+
+**Old approach (static):**
+- "Bạn thân → mày/tao" (cố định cho mọi trường hợp)
+- Problem: Modern isekai character và wuxia swordsman đều dùng "mày/tao" = unnatural
+
+**New approach (context-based):**
+- Modern character → tớ/cậu (vì xuất thân hiện đại)
+- Wuxia swordsman → huynh/đệ (vì brotherhood + martial tradition)
+- Suy luận từ: thời kỳ, xuất thân, quyền lực, mối quan hệ
+
+### 13.5.3 Examples of Context-Based Selection
+
+| Context | Character | Natural Forms | Why |
+|---------|-----------|---------------|-----|
+| Modern isekai | Student | tớ/cậu | Xuất thân hiện đại |
+| Wuxia brotherhood | Sword brothers | huynh/đệ | Brotherhood + martial |
+| Feudal lord | Sect master | bổn tọa/ngươi | Authority + formal |
+| Palace | Emperor | trẫm | Royal tradition |
+
+### 13.5.4 Pronoun Shifting with Context
 ```
-Bạn thân / Đồng đội: mày / tao
-Người lạ / Công việc: tôi / ngài
-Antagonist / Khinh bỉ: hắn / nó / thằng
-Quý tộc / Cổ đại: ta / ngài
+Bình thường: forms phù hợp context
+Khi giận: shift thành hostile forms (thằng khốn, con nhóc)
+Khi sợ: primitive forms (nó thay vì hắn)
+Khi c.tình peak: tên riêng thay vì pronoun
 ```
 
-### 13.5.2 First-Person in Internal Monologue
+### 13.5.5 Internal Monologue
 ```
-Từ Ta Dung Nhin Vo Lam Toang:
-"Cậu" - dùng cho self-reference trong thoughts
-"Tao" - dùng khi đối thoại với thân mật (Đụt)
-
-Pattern: Nội tâm dùng "cậu/mình", đối thoại dùng "tao/mày"
-```
-
-### 13.5.3 Pronoun Shifting with Emotion
-```
-Bình thường: mày / tao
-Khi giận: thằng khốn / con nhóc / khốn nạn
-Khi sợ: nó (yếu thế)
+"Cậu" - self-reference trong thoughts (phổ biến)
+"Tao" - chỉ khi đối thoại với người thân mật có cùng background
+Pattern: Nội tâm dùng "cậu/mình", đối thoại suy luận từ context
 ```
 
 ---

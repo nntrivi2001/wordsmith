@@ -10,21 +10,42 @@ Vietnamese web novel dialogue follows specific patterns: casual vs literary regi
 
 <instructions>
 
-## 1. Vietnamese Pronoun System (Đại từ xưng hô)
+## 1. Vietnamese Pronoun System (Đại từ xưng hô - Context-Based)
 
-### Pronoun Patterns by Relationship
-| Pronoun | Usage | Context |
-|---------|-------|---------|
-| **mày/tao** | Equal/friends | Intimate, confident characters; between close friends or protagonist pairs |
-| **tụi mày/bọn tao** | Group addressing | "You all" / "our group" |
-| **hắn/hắn ta** | Third person male | Actions toward/opposing enemies |
-| **ta/ngài** | Archaic/noble | Aristocratic characters, formal occasions |
-| **tôi/ngài** | Polite/formal | Formal situations, strangers, official contexts |
+**QUY TẮC MỚI (2026-04-22):** Pronoun selection dựa trên ngữ cảnh, KHÔNG phải bảng tĩnh. Xem `/references/shared/pronoun-context.md`.
 
-### Emotion-Based Pronoun Shifts
-- Normal mood → use "mày/mày"
-- Angry → shift to "thằng khốn", "con nhóc", "thằng chó"
-- Desperate/weak → "nó" instead of "hắn"
+**7 Context Factors cho Dialogue:**
+
+| Factor | Question | Affects |
+|--------|----------|---------|
+| 1. Time Period | Modern or ancient setting? | Base forms (tớ/cậu vs ta/ngươi) |
+| 2. Background | What tradition shaped this character? | Natural speech patterns |
+| 3. Power | Who has power in THIS moment? | Dominant vs submissive |
+| 4. Relationship | Where in arc? (strangers → brothers) | Formality level |
+| 5. Emotion | What is REALLY being felt? | Subtext through form |
+| 6. Combat | What phase? | Courtesy → challenge → hostile |
+| 7. Peak | Emotional peak? | Name instead of pronoun |
+
+### Context-Based Selection Examples
+
+| Context | Character Type | Forms |
+|---------|---------------|-------|
+| Modern isekai | Student transmigrated | tớ/cậu, tôi/bạn |
+| Wuxia | Sword wanderer brothers | huynh/đệ, ta/ngươi |
+| Palace | Emperor addressing servant | trẫm (self), ngài not for servant |
+| Sect master | Disciplining disciple | bổn tọa (self), ngươi |
+| Pre-duel | Before combat | các hạ, mời |
+| Battle | Active combat | ngươi, ngươi hả |
+| Desperate | Survival mode | tên khốn |
+
+**Suy luận thay vì bảng tĩnh:**
+- KHÔNG cố định "mày/tao cho bạn thân"
+- Hỏi: "Trong tình huống này, người này sẽ nói gì tự nhiên?"
+
+### Emotion-Based Pronoun Shifts (Context examples)
+- Normal → forms phù hợp context
+- Angry → shift to hostile forms (thằng khốn, con nhóc)
+- Desperate/weak → primitive forms (nó instead of hắn)
 
 ### Vietnamese Dialogue Characteristics
 - **Colloquial dialogue**: Short, direct, everyday language

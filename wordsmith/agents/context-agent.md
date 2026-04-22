@@ -216,21 +216,36 @@ python "${SCRIPTS_DIR}/wordsmith.py" --project-root "{project_root}" index recen
   - Emotional undertone = last chapter ending emotion + event trend
   - Available abilities = current realm + recently gained + setting disabled items
 
-### Step 4 Supplement: Vietnamese Character Voice Inference
+### Step 4 Supplement: Vietnamese Character Voice Inference (Context-Based)
 
-**Pronoun and speech patterns (from STYLE_GUIDE_VN.md)**:
+**QUY TẮC MỚI (2026-04-22):** Pronoun selection dựa trên ngữ cảnh. Xem `/references/shared/pronoun-context.md`.
 
-| Character Relationship | Pronoun Usage | Emotional Shift |
-|----------------------|---------------|-----------------|
-| Bạn thân (close friends) | mày/tao | Giận → thằng chó, con khốn |
-| Kẻ thù (enemies) | thằng nào, con khốn | Hòa hoãn → hắn ta, ngài |
-| Quý tộc/Cổ đại | ta/ngài | Always formal |
-| Người lạ | ông/bà/tôi | Context-dependent |
+**7 Context Factors cho Voice Inference:**
 
-**Speech style inference**:
-- Nhân vật chính (Rosa, Jack) dùng "tao-mày" với nhau nhưng "tôi-ngài" với người lạ
+1. **Time Period/Genre** - Modern stories use modern forms; period/ancient use archaic
+2. **Character Background** - Martial vs scholarly vs street vs noble tradition
+3. **Power Dynamics** - Authority vs subordinate in THIS moment
+4. **Relationship Arc** - Where are they? (strangers → brothers → rift)
+5. **Emotional State** - What are they REALLY feeling?
+6. **Combat Phase** - Pre-duel vs battle vs desperate
+7. **Name at Peaks** - Emotional peak moments use name, not pronoun
+
+**Pronoun Selection Questions:**
+
+| Check | Question | Influences |
+|-------|----------|------------|
+| Time Period | Is this modern or ancient setting? | Base form (tớ/cậu vs ta/ngươi) |
+| Background | What tradition shaped this character? | Natural speech patterns |
+| Power | Who has power in this moment? | Dominant vs submissive forms |
+| Relationship | Where are they in their arc? | Formal vs intimate forms |
+| Emotion | What emotion is hidden? | Formality shift for effect |
+| Combat | What phase? | Courtesy → challenge → hostile |
+| Peak | Is this emotional peak? | Name instead of pronoun |
+
+**Speech style inference (context-based):**
+- KHÔNG cố định "tao-mày cho bạn thân" - suy luận từ context
 - Đối thủ/hậu nhân thường bị gọi là "thằng nào", "con khốn" khi căng thẳng
-- Nội tâm suy nghĩ dùng ngôn ngữ bình thường, ít tục tĩu hơn lời nói
+- Nội tâm suy nghĩ dùng ngôn ngữ phù hợp với xuất thân nhân vật
 
 **Emotion expression signals**:
 | Emotion | Vietnamese Body Language |
@@ -270,7 +285,7 @@ Do consistency self-check on execution package, any fail → back to Step 5 reor
 - Red line 4: Character motivation break (behavior obviously conflicts with recent goal and no trigger)
 - Red line 5: Contract and mission brief conflict (e.g., "transition chapter=true" but require high-intensity climax payoff)
 - **Red line 6: Time logic error** (time regression, countdown jump, large span without transition)
-- **Red line 7: Vietnamese pronoun inconsistency** (character using wrong pronouns for relationship/emotional state)
+- **Red line 7: Vietnamese pronoun inconsistency** (character using pronouns that don't match context: time period, background, power dynamics, relationship arc, emotional state, or combat phase)
 - **Red line 8: Register mismatch** (colloquial speech in formal narration, or vice versa)
 
 ### Step 6 Supplement: Vietnamese Style Red Lines
@@ -328,15 +343,25 @@ Pass standard:
 - Traditional units may be used but must be consistent
 - Must specify in mission brief if traditional units are in effect
 
-### Vietnamese Pronoun System (for character voice inference)
+### Vietnamese Pronoun System (Context-Based, for character voice inference)
 
-| Character Relationship | Pronoun Usage | Example |
-|----------------------|---------------|---------|
-| Close friends/equals | mày/tao/tụi mày | "Ê mày, đi đâu?" |
-| Formal/贵族 | ta/ngài | "Ngài có thể giúp tôi..." |
-| Enemies (angry state) | thằng chó/con khốn | "Thằng chó đó!" |
-| Strangers | ông/bà/tôi | "Ông ơi, làm ơn..." |
-| Third-person male antagonist | hắn/hắn ta | "Hắn ta đi ra ngoài." |
+**QUY TẮC MỚI (2026-04-22):** Xem `/references/shared/pronoun-context.md` cho chi tiết.
+
+**7 Context Factors (Primary):**
+
+| Factor | Question | Base Form |
+|--------|----------|-----------|
+| Time Period | Modern or ancient? | Modern: tớ/cậu, Ancient: ta/ngươi |
+| Background | What tradition? | Martial vs scholarly vs street |
+| Power | Authority? | bổn tọa vs tại hạ |
+| Relationship | Where in arc? | Formal strangers → intimate brothers |
+| Emotion | Hidden feeling? | Formal forms for sarcasm |
+| Combat | Phase? | Courtesy → challenge → hostile |
+| Peak | Emotional peak? | Name instead of pronoun |
+
+**Suy luận thay vì bảng tĩnh:**
+- KHÔNG cố định "mày/tao cho bạn thân"
+- Suy luận: "Trong context này, người này sẽ nói gì tự nhiên?"
 
 ### Sentence Structure (Subject + Predicate Required)
 
@@ -404,19 +429,26 @@ Pass standard:
 - Câu ngắn → xen kẽ sound effects → escalation
 - Minimal punctuation, strong verbs
 
-### Formality Level Inference
+### Formality Level Inference (Context-Based)
 
-**Character speech register should match context**:
-- Close friends use casual register (mày/tao)
-- Formal situations use polite register (ngài/tôi)
-- Angry state drops formality (thằng chó, con khốn)
-- Third-person narration uses hắn/hắn ta for antagonist
+**Character speech register should match context:**
+- Suy luận từ context: thời kỳ, xuất thân, quyền lực, mối quan hệ
+- KHÔNG cố định "mày/tao cho bạn thân"
+- Xem `/references/shared/pronoun-context.md` cho chi tiết
 
-### Red Line 8 Check (Vietnamese pronoun inconsistency)
+### Red Line 7 Check (Vietnamese pronoun inconsistency - Context-Based)
 
 When checking execution package, verify:
-- Pronoun usage matches character relationship
-- Emotional shifts trigger pronoun changes
+- Pronoun usage matches context (time period, character background, power dynamics)
+- Emotional shifts trigger appropriate pronoun changes
+- No OOC pronoun shifts without justification
+
+**Questions to ask:**
+1. Does pronoun match story era (modern vs ancient)?
+2. Does pronoun match character's background?
+3. Does pronoun match power dynamic in this scene?
+4. Does pronoun match relationship arc stage?
+5. Is pronoun shift justified by emotion or combat phase?
 - No OOC pronoun shifts without trigger
 
 ## Vietnamese Writing Patterns (STYLE_GUIDE_VN.md Section 13)

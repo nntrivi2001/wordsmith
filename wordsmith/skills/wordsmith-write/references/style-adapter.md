@@ -57,13 +57,31 @@ Default word count target:
 
 ## Vietnamese Anti-AI Patterns
 
-### Pronoun System (Đại từ xưng hô)
-| Tình huống | Dùng | Tránh |
-|------------|------|-------|
-| Bạn bè thân | mày, tao | hắn, nó (khi đang nói chuyện) |
-| Khi giận dữ | thằng khốn, con nhóc | hắn ta (quá bình thản) |
-| Quý tộc/cổ đại | ta, ngài | mày, tao |
-| Lạnh lùng/khinh bỉ | nó, thằng đó | tên đó (quá bình thường) |
+### Pronoun System (Đại từ xưng hô - Context-Based)
+
+**QUY TẮC MỚI (2026-04-22):** Xem `/references/shared/pronoun-context.md` cho hệ thống suy luận ngữ cảnh.
+
+**7 Context Factors cho pronoun selection:**
+
+| Factor | Question | Influences |
+|--------|----------|------------|
+| Time Period | Modern or ancient? | Base form |
+| Background | Martial vs scholarly vs street? | Natural speech |
+| Power | Authority in this moment? | Dominant vs submissive |
+| Relationship | Where in arc? | Formal vs intimate |
+| Emotion | Hidden feeling? | Formality shift |
+| Combat | Pre-duel vs battle vs desperate? | Forms change |
+| Peak | Emotional peak? | Use name, not pronoun |
+
+**Examples of context-based selection:**
+- Modern isekai character → tớ/cậu
+- Wuxia brothers → huynh/đệ
+- Sect master → bổn tọa/ngươi
+- Pre-duel → các hạ
+- Battle → ngươi
+- Desperate → tên khốn
+
+**Suy luận thay vì bảng tĩnh:** KHÔNG cố định "mày/tao cho bạn thân"
 
 ### Sentence Variety (Đa dạng câu)
 - **Action nhanh**: Câu đơn ngắn "Jack xông ra!", "Một con Goblin rơi xuống."
