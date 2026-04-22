@@ -465,6 +465,11 @@ Chương X
 - Không có full resolution - tạo tension
 - Để lại câu hỏi trong đầu người đọc
 
+**Lỗi CẦN TRÁNH:**
+- KHÔNG thêm meta-commentary kiểu "Câu chuyện kết thúc ở đây" hoặc "Đây mới là sự khởi đầu"
+- KHÔNG có đoạn dẫn qua chương mới ở cuối - để người đọc tự suy luận
+- Chỉ kết thúc bằng `*— Hết Chương X —*` (nếu có) hoặc để trống
+
 ### 6.3 Opening Hooks
 
 **Các loại hook hiệu quả:**
@@ -812,15 +817,18 @@ Cô ấy nghĩ... về những ký ức...
 **Quy tắc:**
 - Câu mô tả phải có chủ ngữ cụ thể
 - KHÔNG được để câu mô tả thiếu chủ ngữ chính
+- Trong dialogue, phải rõ AI đang nói/act - tránh ambiguous pronoun
 
-**Ví dụ SAI:**
+**Ví dụ SAI (thiếu chủ ngữ):**
 ```
 "Mỗi lần bám vào vách đá là một vết xước mới." (Thiếu chủ ngữ ai)
+"Đầy như con nhím rồi!" (Không rõ ai bị bắn)
 ```
 
 **Ví dụ ĐÚNG:**
 ```
 "Mỗi lần tay hắn bám vào vách đá và dùng sức thì da của hắn lại có thêm một vết xước mới."
+"Người em bị tụi nó bắn đầy như con nhím rồi, Thắng ca!" (Rõ chủ ngữ)
 ```
 
 ---
@@ -1200,12 +1208,13 @@ SAI:
 □ Dùng: — (single em-dash) hoặc "" (quotes)
 □ Không dùng: . . . (phải là ...)
 □ Câu phải có: Chủ ngữ + Vị ngữ
+□ Chủ ngữ rõ ràng trong dialogue - tránh ambiguous như "Đầy như con nhím rồi!" (phải nói rõ AI)
 □ Không fragmented sentences: "Được. Thở được." = SAI
 □ Từ nối: và, nhưng, nên, vì, sau đó, rồi, thì, mà
 □ Đại từ xưng hô phù hợp theo relationship
 □ Show-don't-tell: nghiến răng, run bần bật, nước mắt
 □ Cool-point: Mỗi 500-800 words
-□ Cliffhanger cuối chương
+□ Cliffhanger cuối chương - KHÔNG thêm meta-commentary kiểu "Câu chuyện kết thúc ở đây"
 □ Scene breaks: *** major, —0o0— minor
 □ First-person "cậu" trong internal monologue
 □ System notification: "Keng!" + message
