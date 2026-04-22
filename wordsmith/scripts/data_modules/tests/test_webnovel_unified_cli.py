@@ -140,7 +140,7 @@ def test_quality_trend_report_writes_to_book_root_when_input_is_workspace_root(t
     book_root = (workspace_root / "Ordinary Capital Theory").resolve()
 
     (workspace_root / ".claude").mkdir(parents=True, exist_ok=True)
-    (workspace_root / ".claude" / ".webnovel-current-project").write_text(str(book_root), encoding="utf-8")
+    (workspace_root / ".claude" / ".wordsmith-current-project").write_text(str(book_root), encoding="utf-8")
 
     (book_root / ".webnovel").mkdir(parents=True, exist_ok=True)
     (book_root / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")

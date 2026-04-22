@@ -14,7 +14,7 @@ This directory contains detailed documentation beyond `README.md`, organized by 
 
 ## Command Reference
 
-- `commands.md`: Detailed documentation for `/webnovel-*` commands
+- `commands.md`: Detailed documentation for `/wordsmith-*` commands
 
 ## RAG & Configuration
 

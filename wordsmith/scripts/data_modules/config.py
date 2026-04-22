@@ -332,7 +332,7 @@ def get_config(project_root: Optional[Path] = None) -> DataModulesConfig:
         # By default, do not blindly use CWD as project_root (easily writes to wrong directory).
         # Use unified project_locator for auto-detection:
         # - Supports WEBNOVEL_PROJECT_ROOT
-        # - Supports `.claude/.webnovel-current-project` pointer file
+        # - Supports `.claude/.wordsmith-current-project` pointer file
         # - Supports searching for `.webnovel/state.json` from current/parent directories
         from project_locator import resolve_project_root
 

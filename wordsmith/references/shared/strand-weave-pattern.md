@@ -4,7 +4,7 @@ purpose: Check three-strand balance during chapter planning to avoid monotonous 
 ---
 
 <context>
-This file is used for plot strand balance control. Claude already knows multi-strand narrative techniques; this only supplements the webnovel-specific three-strand weaving mechanism and the tracker structure in state.json.
+This file is used for plot strand balance control. Claude already knows multi-strand narrative techniques; this only supplements the wordsmith-specific three-strand weaving mechanism and the tracker structure in state.json.
 Note: This file is the shared single source of truth; copying or modifying it in individual Skill's references is prohibited. To update, modify this file.
 </context>
 

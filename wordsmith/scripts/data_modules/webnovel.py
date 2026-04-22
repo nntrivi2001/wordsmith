@@ -109,7 +109,7 @@ def cmd_where(args: argparse.Namespace) -> int:
 def _build_preflight_report(explicit_project_root: Optional[str]) -> dict:
     scripts_dir = _scripts_dir().resolve()
     plugin_root = scripts_dir.parent
-    skill_root = plugin_root / "skills" / "webnovel-write"
+    skill_root = plugin_root / "skills" / "wordsmith-write"
     entry_script = scripts_dir / "webnovel.py"
     extract_script = scripts_dir / "extract_chapter_context.py"
 

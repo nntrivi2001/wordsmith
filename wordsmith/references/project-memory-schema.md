@@ -1,6 +1,6 @@
 # project_memory.json Design
 
-Used to save long-term reusable writing patterns; written by `/webnovel-learn`.
+Used to save long-term reusable writing patterns; written by `/wordsmith-learn`.
 
 ## Example
 

@@ -4,7 +4,7 @@ purpose: Load before every chapter writing to ensure the three laws are executed
 ---
 
 <context>
-This file is used for core constraint checking during chapter writing. Claude already knows general writing standards; this only supplements the webnovel-specific anti-hallucination protocol.
+This file is used for core constraint checking during chapter writing. Claude already knows general writing standards; this only supplements the wordsmith-specific anti-hallucination protocol.
 Note: This file is the shared single source of truth; copying or modifying it in individual Skill's references is prohibited. To update, modify this file.
 </context>
 

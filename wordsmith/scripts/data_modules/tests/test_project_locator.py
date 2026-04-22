@@ -54,7 +54,7 @@ def test_resolve_project_root_finds_default_subdir_within_git_root(tmp_path):
     repo_root = tmp_path / "repo"
     (repo_root / ".git").mkdir(parents=True, exist_ok=True)
 
-    default_project = repo_root / "webnovel-project"
+    default_project = repo_root / "wordsmith-project"
     (default_project / ".webnovel").mkdir(parents=True, exist_ok=True)
     (default_project / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")
 
@@ -93,11 +93,11 @@ def test_resolve_project_root_ignores_stale_pointer_and_fallbacks(tmp_path):
     workspace = tmp_path / "workspace"
     (workspace / ".claude").mkdir(parents=True, exist_ok=True)
     # stale pointer
-    (workspace / ".claude" / ".webnovel-current-project").write_text(
+    (workspace / ".claude" / ".wordsmith-current-project").write_text(
         str(workspace / "missing-project"), encoding="utf-8"
     )
 
-    default_project = workspace / "webnovel-project"
+    default_project = workspace / "wordsmith-project"
     (default_project / ".webnovel").mkdir(parents=True, exist_ok=True)
     (default_project / ".webnovel" / "state.json").write_text("{}", encoding="utf-8")
 

@@ -4,12 +4,12 @@
 Web novel project initialization script
 
 Goals:
-- Generate a runnable project structure (webnovel-project)
+- Generate a runnable project structure (wordsmith-project)
 - Create/update .webnovel/state.json (runtime truth)
-- Generate base settings collection and outline template files (for use by /webnovel-plan and /webnovel-write)
+- Generate base settings collection and outline template files (for use by /wordsmith-plan and /wordsmith-write)
 
 Notes:
-- This script is the "sole allowed file generation entry point" for the command /webnovel-init (consistent with command documentation).
+- This script is the "sole allowed file generation entry point" for the command /wordsmith-init (consistent with command documentation).
 - Generated content is primarily "template skeletons" for AI/author to fill in later; ensures all key files exist.
 """
 
@@ -175,7 +175,7 @@ def _build_master_outline(target_chapters: int, *, chapters_per_volume: int = 50
     lines: list[str] = [
         "# Master Outline",
         "",
-        "> This file is the 'master outline skeleton', to be refined into volume outlines and chapter outlines by /webnovel-plan.",
+        "> This file is the 'master outline skeleton', to be refined into volume outlines and chapter outlines by /wordsmith-plan.",
         "",
         "## Volume Structure",
         "",
@@ -756,7 +756,7 @@ __pycache__/
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Web novel project initialization script (generate project structure + state.json + base templates)")
-    parser.add_argument("project_dir", help="Project directory (recommended: ./webnovel-project)")
+    parser.add_argument("project_dir", help="Project directory (recommended: ./wordsmith-project)")
     parser.add_argument("title", help="Novel title")
     parser.add_argument(
         "genre",

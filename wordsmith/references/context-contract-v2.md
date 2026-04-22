@@ -53,8 +53,8 @@
 
 ## Recommended Call Points
 - `Context Agent` calls this when aggregating context in Step 1.
-- `webnovel-write` and `webnovel-review` call this at the start of each run.
-- Recovery workflow (`webnovel-resume`) calls this to rebuild context after `detect`.
+- `wordsmith-write` and `wordsmith-review` call this at the start of each run.
+- Recovery workflow (`wordsmith-resume`) calls this to rebuild context after `detect`.
 
 ## Configuration Options (DataModulesConfig)
 - `context_ranker_enabled`

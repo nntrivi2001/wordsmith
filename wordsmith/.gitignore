@@ -27,7 +27,7 @@ Thumbs.db
 .ace-tool/
 
 # Workspace pointer (local only)
-.webnovel-current-project
+.wordsmith-current-project
 
 # Local test scratch (do not commit)
 scripts/.tmp_pytest/

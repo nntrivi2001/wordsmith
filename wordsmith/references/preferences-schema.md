@@ -1,6 +1,6 @@
 # preferences.json Design
 
-Used to save user preferences and writing constraints (can be set by `/webnovel-init` or edited manually by users).
+Used to save user preferences and writing constraints (can be set by `/wordsmith-init` or edited manually by users).
 
 ## Example
 

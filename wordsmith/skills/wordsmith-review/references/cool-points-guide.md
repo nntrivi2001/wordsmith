@@ -10,6 +10,36 @@ Note: This file is the shared single source of truth; copying or modifying it in
 
 <instructions>
 
+## Vietnamese Cool-Point Patterns (from STYLE_GUIDE_VN.md)
+
+### Key Patterns from Biên niên sử rồng & Useless hero from another world:
+
+**1. Ngạo Khự (Face-Slapping):**
+- Địch khinh thường → Protagonist bộc lộ sức mạnh → Địch sững sờ
+- Ví dụ BNsr: Jack nghiến răng, kiếm bổ xuống, Rosa bị hất văng
+- Ví dụ UH: "Hả? Thật thế sao? Giám Định!" - Tekuzu vs Endou
+
+**2. Trù Phu Ngụy Trang (Underdog Reveal):**
+- Tỏ ra yếu → Bộc phát đúng lúc → Đám đông kinh ngạc
+- Ví dụ UH: Tanaka "vô dụng" nhưng có skill Độc Nhất
+- Ví dụ BNsr: Rosa tỏ ra yếu, thực ra lớn lên bằng thịt sống với rồng
+
+**3. Suppression-to-Release (BNsr vs UH rhythm):**
+- BNsr: 5:5 suppression (hardcore drama) - câu dài, descriptive
+- UH: 3:7 suppression - nhẹ nhàng hơn, system description nhanh
+
+### Sentence Patterns:
+- Action: Câu ngắn, dồn dập: "Ầm!" "Chết tiệt!" "Bắn!"
+- Emotional: Câu dài, ẩn dụ: "Có một nụ cười làm tuyết tan"
+- Inner thoughts: Dùng '...' hoặc "—": "—Mình sẽ không chết đâu"
+
+### Character Emotion Triggers:
+| Cảm xúc | Biểu hiện |
+|---------|-----------|
+| Giận | nghiến răng, nổ gân, mặt đỏ, hét lên |
+| Sợ | run bần bật, mặt tái mét, đứng không vững |
+| Bất ngờ | tròn mắt, há hốc, giật mình |
+
 ## 1. Six Cool-Point Execution Patterns
 
 ### 1. Flex & Counter (Ngạo Khự / Phản Diện)
@@ -101,7 +131,7 @@ Plain daily life → Unexpected surprise → Emotional escalation
 | Genre Type | Ratio | Description |
 |---------|---------|------|
 | Traditional power fantasy | 3:7 suppression | Light suppression, quick release |
-| Hardcore drama | 5:5 suppression | Balanced narrative |
+| Hardcore drama (BNsr style) | 5:5 suppression | Balanced narrative |
 | Angst / dark and grim | 7:3 suppression | Long-term suppression, bigger payoff |
 
 ### Rhythm Control
@@ -259,120 +289,6 @@ Must follow when writing:
 | Subplot | 30–100 chapters | Supporting character's motivation / mysterious item / sect secrets |
 | Decorative | 10–30 chapters | Scene details / small habits / casual mentions |
 
----
-
-## 12. Con Duong Ba Chu Pacing Patterns
-
-Based on analysis of "Ta Dung Nhin Võ Lâm Toang" (Con Duong Ba Chu) — a Vietnamese webnovel with distinct pacing methodology.
-
-### 12.1 Cool-Point Density Classification
-
-| Type | Triggers | Density Target |
-|------|----------|----------------|
-| **Action Punch** | "Ầm!", "Chết tiệt!", combat impacts | High — 2-4 per action sequence |
-| **Emotional Beat** | Internal monologue, status reveals | Medium — 1-2 per emotional scene |
-| **Status Reveal** | Power display, skill unveiling | Per milestone — 1 per major arc |
-| **Combo** | Combination of above types | Rolling 5-chapter window |
-
-### 12.2 Cool-Point Density Calculation Methodology
-
-**Formula (per chapter):**
-```
-Cool-Point Density = (Action_Punches × 1.0) + (Emotional_Beats × 0.8) + (Status_Reveals × 1.5)
-```
-
-**Benchmark targets:**
-| Chapter Type | Minimum Density | Maximum Density |
-|--------------|------------------|------------------|
-| Transition chapter | 2.0 | 4.0 |
-| Standard chapter | 4.0 | 7.0 |
-| Milestone chapter | 6.0 | 10.0+ |
-
-**Rolling window check (5 chapters):**
-- If average density drops below 3.0 for 3 consecutive chapters → flag for combo cool-point
-- If average exceeds 8.0 for 5 consecutive chapters → reduce intensity to prevent fatigue
-
-### 12.3 Strand-Specific Cool-Point Distribution
-
-| Strand | Primary Cool-Point Type | Sentence Length | Density |
-|--------|-------------------------|-----------------|---------|
-| **Quest** | Action punch, overlevel counter | 1-5 words | High (1.0x) |
-| **Fire** | Emotional beat, sweet exceeded | 10-20 words | Medium (0.8x) |
-| **Constellation** | Status reveal, authority challenge | 5-15 words | Medium (0.9x) |
-
-### 12.4 Pacing Control by Scene Type
-
-**Fast Pacing (Action Scenes):**
-- Short sentences: 1-5 words
-- Sound effects: "Ầm!", "Bốp!", "Choang!"
-- Minimal conjunctions
-- Example: "Hắn xông ra. Kiếm chém xuống. Máu bắn."
-
-**Slow Pacing (Emotional Scenes):**
-- Longer sentences: 15-30 words
-- Descriptive imagery
-- Internal monologue with colloquial language
-- Example: "Rosa ngồi trong bóng tối, suy nghĩ về những gì vừa xảy ra. Làm sao cô có thể giải thích?"
-
-**Mixed Pacing (Chapter Arc):**
-```
-1. Opening (slow): Descriptive scene-setting → 50-100 words
-2. Rising (accelerate): Action builds → sentences shorten
-3. Peak (fast): Cool-point delivery → 1-5 word sentences
-4. Release (decelerate): Aftermath → longer descriptive
-5. Hook (slow): Cliffhanger setup → single dramatic sentence
-```
-
-### 12.5 Con Duong Ba Chu Specific Patterns
-
-**Chapter Opening Pattern:**
-- Descriptive, setting the scene
-- Establishes location/atmosphere before action
-- 2-4 sentences of world-building before hook
-
-**Action Sequence Pattern:**
-1. Short sentence (1-3 words): Initial impact
-2. Longer explanatory (10-15 words): Context/reaction
-3. Short punch (1-2 words): Confirmation
-4. Repeat for intensity
-
-Example:
-```
-"Ầm!"
-Hắn ta bị hất văng ra sau, đập vào tường.
-"Bốp."
-Một tiếng vỡ xương.
-"Chết tiệt!"
-```
-
-**Emotional Beat Pattern:**
-- Internal monologue
-- Colloquial language ("tao", "mày", "thằng khốn")
-- Physical manifestation (nghiến răng, nắm chặt tay)
-- 2-4 sentences per beat
-
-**Cliffhanger Pattern:**
-- Single dramatic sentence
-- Creates curiosity without resolution
-- No period at end (implied continuation)
-- Often subverts expectation
-
-Examples:
-- "Hắn ta nhìn thẳng vào mắt tôi. Đó là..."
-- "Cô ấy biết. Nhưng mà..."
-- "Thật ra, ta chưa bao giờ..."
-
-### 12.6 Rhythm Variation Guidelines
-
-| Scene Type | Short Sentence % | Long Sentence % | Purpose |
-|------------|-------------------|-----------------|---------|
-| Combat | 70-80% | 20-30% | Build tension, rapid pacing |
-| Emotional | 20-30% | 70-80% | Deepen connection, slower reveal |
-| Status reveal | 40-50% | 50-60% | Balance impact with explanation |
-| Cliffhanger | 80-90% | 10-20% | Quick hook, mystery |
-
-**Rhythm Warning:** If short sentences exceed 85% for more than 3 consecutive paragraphs → reader fatigue. If long sentences exceed 80% for more than 2 paragraphs → lose momentum.
-
 </instructions>
 
 <examples>
@@ -414,7 +330,7 @@ Examples:
 【Fast Release】
 Xiao Yan moved.
 One step.
-Wang Hao's smile froze.
+Wang Hao's smile freezes.
 Two steps.
 His pupils constricted.
 Three steps.

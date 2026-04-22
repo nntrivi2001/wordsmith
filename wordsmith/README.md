@@ -24,13 +24,13 @@ Add to `CLAUDE_PLUGIN_PATHS` in your Claude Code settings:
 ## Usage
 
 ```bash
-/webnovel-write        # Write a new chapter
-/webnovel-write --fast # Fast mode
-/webnovel-plan         # Plan plot/outline
-/webnovel-review       # Review written chapter
-/webnovel-init         # Initialize new project
-/webnovel-dashboard    # Open visual dashboard
-/webnovel-learn        # Extract patterns from session
+/wordsmith-write        # Write a new chapter
+/wordsmith-write --fast # Fast mode
+/wordsmith-plan         # Plan plot/outline
+/wordsmith-review       # Review written chapter
+/wordsmith-init         # Initialize new project
+/wordsmith-dashboard    # Open visual dashboard
+/wordsmith-learn        # Extract patterns from session
 ```
 
 ## Vietnamese Writing Rules

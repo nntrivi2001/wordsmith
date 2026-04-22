@@ -6,7 +6,7 @@ Under a Claude Code + Marketplace installation, there are at least 4 conceptual 
 
 1. `WORKSPACE_ROOT` (Claude workspace root, typically `${CLAUDE_PROJECT_DIR}`)
 2. `WORKSPACE_ROOT/.claude/` (workspace-level pointer and configuration)
-3. `PROJECT_ROOT` (the actual novel project root, created by `/webnovel-init` under the book title)
+3. `PROJECT_ROOT` (the actual novel project root, created by `/wordsmith-init` under the book title)
 4. `CLAUDE_PLUGIN_ROOT` (plugin cache directory, not inside the project)
 
 ### A) Workspace Directory (including `.claude`)
@@ -14,7 +14,7 @@ Under a Claude Code + Marketplace installation, there are at least 4 conceptual 
 ```text
 workspace-root/
 ├── .claude/
-│   ├── .webnovel-current-project   # Points to the current novel project root
+│   ├── .wordsmith-current-project   # Points to the current novel project root
 │   └── settings.json
 ├── NovelA/
 ├── NovelB/
@@ -56,7 +56,7 @@ ${CLAUDE_HOME:-~/.claude}/wordsmith/workspaces.json
 Based on actual results from `D:\wk\novel skill\plugin-sim-20260303-012048`:
 
 - `WORKSPACE_ROOT`: `D:\wk\novel skill\plugin-sim-20260303-012048`
-- Pointer file: `D:\wk\novel skill\plugin-sim-20260303-012048\.claude\.webnovel-current-project`
+- Pointer file: `D:\wk\novel skill\plugin-sim-20260303-012048\.claude\.wordsmith-current-project`
 - Pointer content: `D:\wk\novel skill\plugin-sim-20260303-012048\MortalityCapitalism-SecondTest`
 - Example created projects: `MortalityCapitalism/`, `MortalityCapitalism-SecondTest/`
 

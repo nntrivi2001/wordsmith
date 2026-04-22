@@ -425,7 +425,7 @@ Examples:
     parser.add_argument(
         '--project-root',
         default=None,
-        help='Project root directory (containing .webnovel/state.json). Auto-searched if not provided (supports webnovel-project/ and parent directories).'
+        help='Project root directory (containing .webnovel/state.json). Auto-searched if not provided (supports wordsmith-project/ and parent directories).'
     )
 
     parser.add_argument(

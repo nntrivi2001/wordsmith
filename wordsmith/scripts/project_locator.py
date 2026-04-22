@@ -5,7 +5,7 @@ Project location helpers for wordsmith scripts.
 Problem this solves:
 - Many scripts assumed CWD is the project root and used relative paths like `.webnovel/state.json`.
 - In this repo, commands/scripts are often invoked from the repo root, while the actual project lives
-  in a subdirectory (default: `webnovel-project/`).
+  in a subdirectory (default: `wordsmith-project/`).
 
 These helpers provide a single, consistent way to locate the active project root.
 """
@@ -21,8 +21,8 @@ from typing import Iterable, Optional
 from runtime_compat import normalize_windows_path
 
 
-DEFAULT_PROJECT_DIR_NAMES: tuple[str, ...] = ("webnovel-project",)
-CURRENT_PROJECT_POINTER_REL: Path = Path(".claude") / ".webnovel-current-project"
+DEFAULT_PROJECT_DIR_NAMES: tuple[str, ...] = ("wordsmith-project",)
+CURRENT_PROJECT_POINTER_REL: Path = Path(".claude") / ".wordsmith-current-project"
 
 # User-level global mapping (when skills/agents are installed in ~/.claude, project directories may be on arbitrary drives)
 # This file is used to locate the correct project_root when "no context + CWD not in project".
@@ -337,7 +337,7 @@ def resolve_project_root(explicit_project_root: Optional[str] = None, *, cwd: Op
     Resolution order:
     1) explicit_project_root (if provided)
     2) env var WEBNOVEL_PROJECT_ROOT (if set)
-    3) Search from cwd and parents, including common subdir `webnovel-project/`
+    3) Search from cwd and parents, including common subdir `wordsmith-project/`
 
     Search safety:
     - If current location is inside a Git repo, parent search stops at the repo root.
@@ -351,7 +351,7 @@ def resolve_project_root(explicit_project_root: Optional[str] = None, *, cwd: Op
         if _is_project_root(root):
             return root
 
-        # Compatibility: explicitly passed "workspace root" (containing `.claude/.webnovel-current-project` pointer)
+        # Compatibility: explicitly passed "workspace root" (containing `.claude/.wordsmith-current-project` pointer)
         # Example: D:\wk\xiaoshuo is not the project root, but its pointer points to D:\wk\xiaoshuo\<book_name>
         pointer_root = _resolve_project_root_from_pointer(root, stop_at=_find_git_root(root))
         if pointer_root is not None:
@@ -402,7 +402,7 @@ def resolve_project_root(explicit_project_root: Optional[str] = None, *, cwd: Op
 
     raise FileNotFoundError(
         "Unable to locate webnovel project root. Expected `.webnovel/state.json` under the current directory, "
-        "a parent directory, or `webnovel-project/`. Run /webnovel-init first or pass --project-root / set "
+        "a parent directory, or `wordsmith-project/`. Run /wordsmith-init first or pass --project-root / set "
         "WEBNOVEL_PROJECT_ROOT."
     )
 

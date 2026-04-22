@@ -108,10 +108,10 @@ def expected_step_owner(command: str, step_id: str) -> str:
     Returns concise owner tags to align with
     `.claude/references/claude-code-call-matrix.md`.
     """
-    if command == "webnovel-write":
+    if command == "wordsmith-write":
         mapping = {
             "Step 1": "context-agent",
-            "Step 1.5": "webnovel-write-skill",
+            "Step 1.5": "wordsmith-write-skill",
             "Step 2A": "writer-draft",
             "Step 2B": "style-adapter",
             "Step 3": "review-agents",
@@ -119,10 +119,10 @@ def expected_step_owner(command: str, step_id: str) -> str:
             "Step 5": "data-agent",
             "Step 6": "backup-agent",
         }
-        return mapping.get(step_id, "webnovel-write-skill")
+        return mapping.get(step_id, "wordsmith-write-skill")
 
-    if command == "webnovel-review":
-        return "webnovel-review-skill"
+    if command == "wordsmith-review":
+        return "wordsmith-review-skill"
 
     return "unknown"
 
@@ -492,7 +492,7 @@ def analyze_recovery_options(interrupt_info):
                 "option": "B",
                 "label": "Skip review and polish directly",
                 "risk": "low",
-                "description": "Can use /webnovel-review to supplement review later",
+                "description": "Can use /wordsmith-review to supplement review later",
                 "actions": ["Mark review as skipped", "Continue to Step 4 polishing"],
             },
         ]
@@ -713,10 +713,10 @@ def save_state(state):
 
 def get_pending_steps(command):
     """Get command pending step list."""
-    if command == "webnovel-write":
+    if command == "wordsmith-write":
         # v2: Step 1 has built-in Contract v2, no longer separately record Step 1.5, to avoid step_order_violation noise.
         return ["Step 1", "Step 2A", "Step 2B", "Step 3", "Step 4", "Step 5", "Step 6"]
-    if command == "webnovel-review":
+    if command == "wordsmith-review":
         return ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5", "Step 6", "Step 7", "Step 8"]
     return []
 

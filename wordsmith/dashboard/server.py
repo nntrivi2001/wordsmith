@@ -24,7 +24,7 @@ def _resolve_project_root(cli_root: str | None) -> Path:
 
     # Attempt to read from the .claude pointer file
     cwd = Path.cwd()
-    pointer = cwd / ".claude" / ".webnovel-current-project"
+    pointer = cwd / ".claude" / ".wordsmith-current-project"
     if pointer.is_file():
         target = pointer.read_text(encoding="utf-8").strip()
         if target:

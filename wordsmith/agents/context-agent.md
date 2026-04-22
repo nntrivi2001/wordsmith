@@ -14,7 +14,7 @@ model: inherit
 
 - **Taxonomy**: `${CLAUDE_PLUGIN_ROOT}/references/reading-power-taxonomy.md`
 - **Genre Profile**: `${CLAUDE_PLUGIN_ROOT}/references/genre-profiles.md`
-- **Context Contract**: `${CLAUDE_PLUGIN_ROOT}/skills/webnovel-write/references/step-1.5-contract.md`
+- **Context Contract**: `${CLAUDE_PLUGIN_ROOT}/skills/wordsmith-write/references/step-1.5-contract.md`
 - **Shared References**: `${CLAUDE_PLUGIN_ROOT}/references/shared/` as single source of truth; when need enumeration/scan reference files, skip any file with `<!-- DEPRECATED:`.
 - **Vietnamese Style Guide**: `${CLAUDE_PLUGIN_ROOT}/STYLE_GUIDE_VN.md` (Vietnamese webnovel writing patterns, pronouns, register, pacing)
 

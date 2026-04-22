@@ -24,7 +24,7 @@ def test_workflow_lifecycle_and_trace(tmp_path, monkeypatch):
     webnovel_dir = tmp_path / ".webnovel"
     webnovel_dir.mkdir(parents=True, exist_ok=True)
 
-    module.start_task("webnovel-write", {"chapter_num": 7})
+    module.start_task("wordsmith-write", {"chapter_num": 7})
     module.start_step("Step 1", "Context")
     module.complete_step("Step 1", json.dumps({"state_json_modified": True}, ensure_ascii=False))
     module.complete_task(json.dumps({"review_completed": True}, ensure_ascii=False))
@@ -51,8 +51,8 @@ def test_start_task_reentry_increments_retry(tmp_path, monkeypatch):
     webnovel_dir = tmp_path / ".webnovel"
     webnovel_dir.mkdir(parents=True, exist_ok=True)
 
-    module.start_task("webnovel-write", {"chapter_num": 8})
-    module.start_task("webnovel-write", {"chapter_num": 8})
+    module.start_task("wordsmith-write", {"chapter_num": 8})
+    module.start_task("wordsmith-write", {"chapter_num": 8})
 
     state = module.load_state()
     task = state["current_task"]
@@ -68,7 +68,7 @@ def test_complete_step_rejects_mismatch_step_id(tmp_path, monkeypatch):
     webnovel_dir = tmp_path / ".webnovel"
     webnovel_dir.mkdir(parents=True, exist_ok=True)
 
-    module.start_task("webnovel-write", {"chapter_num": 9})
+    module.start_task("wordsmith-write", {"chapter_num": 9})
     module.start_step("Step 2A", "Draft")
     module.complete_step("Step 2B")
 
@@ -86,10 +86,10 @@ def test_workflow_step_owner_and_order_violation_trace(tmp_path, monkeypatch):
     webnovel_dir = tmp_path / ".webnovel"
     webnovel_dir.mkdir(parents=True, exist_ok=True)
 
-    assert module.expected_step_owner("webnovel-write", "Step 1") == "context-agent"
-    assert module.expected_step_owner("webnovel-write", "Step 5") == "data-agent"
+    assert module.expected_step_owner("wordsmith-write", "Step 1") == "context-agent"
+    assert module.expected_step_owner("wordsmith-write", "Step 5") == "data-agent"
 
-    module.start_task("webnovel-write", {"chapter_num": 12})
+    module.start_task("wordsmith-write", {"chapter_num": 12})
     module.start_step("Step 3", "Review")
 
     trace_path = module.get_call_trace_path()
@@ -134,9 +134,9 @@ def test_workflow_reentry_does_not_duplicate_history(tmp_path, monkeypatch):
     webnovel_dir = tmp_path / ".webnovel"
     webnovel_dir.mkdir(parents=True, exist_ok=True)
 
-    module.start_task("webnovel-write", {"chapter_num": 20})
-    module.start_task("webnovel-write", {"chapter_num": 20})
-    module.start_task("webnovel-write", {"chapter_num": 20})
+    module.start_task("wordsmith-write", {"chapter_num": 20})
+    module.start_task("wordsmith-write", {"chapter_num": 20})
+    module.start_task("wordsmith-write", {"chapter_num": 20})
 
     state = module.load_state()
     assert isinstance(state.get("history"), list)

@@ -14,7 +14,7 @@ Why choose Git:
 4. Branch management: Naturally supports "parallel world" creation
 
 Features:
-1. Auto Git commit: Auto commit after each /webnovel-write completion
+1. Auto Git commit: Auto commit after each /wordsmith-write completion
 2. Atomic rollback: git checkout rolls back all files simultaneously
 3. Version history: git log views complete history
 4. Diff comparison: git diff views differences between any two versions
@@ -83,7 +83,7 @@ class GitBackupManager:
 
         # Check if Git is initialized
         if not self.git_dir.exists():
-            print("Git not initialized, please run /webnovel-init or manually execute git init")
+            print("Git not initialized, please run /wordsmith-init or manually execute git init")
             print("Now auto-initializing Git...")
             self._init_git()
 

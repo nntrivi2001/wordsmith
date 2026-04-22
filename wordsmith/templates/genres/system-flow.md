@@ -74,7 +74,7 @@
 
 ## 5. Task Generator (Task Generator Prompt)
 
-In `/webnovel-write`, if needing to generate system tasks, use this Prompt:
+In `/wordsmith-write`, if needing to generate system tasks, use this Prompt:
 
 ```text
 Please generate a [type] task for the MC.
