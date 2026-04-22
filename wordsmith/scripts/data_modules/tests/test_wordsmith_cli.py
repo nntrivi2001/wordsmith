@@ -33,7 +33,7 @@ def test_init_does_not_resolve_existing_project_root(monkeypatch):
     def _fail_resolve(_explicit_project_root=None):
         raise AssertionError("init subcommand should not trigger project_root resolution")
 
-    monkeypatch.setenv("WEBNOVEL_PROJECT_ROOT", r"D:\invalid\root")
+    monkeypatch.setenv("WORDSMITH_PROJECT_ROOT", r"D:\invalid\root")
     monkeypatch.setattr(module, "_run_script", _fake_run_script)
     monkeypatch.setattr(module, "_resolve_root", _fail_resolve)
     monkeypatch.setattr(sys, "argv", ["wordsmith", "init", "proj-dir", "Test book", "Cultivation"])

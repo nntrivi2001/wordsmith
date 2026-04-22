@@ -18,7 +18,7 @@ def _resolve_project_root(cli_root: str | None) -> Path:
     if cli_root:
         return Path(cli_root).resolve()
 
-    env = os.environ.get("WEBNOVEL_PROJECT_ROOT")
+    env = os.environ.get("WORDSMITH_PROJECT_ROOT")
     if env:
         return Path(env).resolve()
 

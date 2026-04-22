@@ -18,7 +18,7 @@ from runtime_compat import normalize_windows_path
 from .context_weights import TEMPLATE_WEIGHTS_DYNAMIC_DEFAULT
 
 def _get_user_claude_root() -> Path:
-    raw = os.environ.get("WEBNOVEL_CLAUDE_HOME") or os.environ.get("CLAUDE_HOME")
+    raw = os.environ.get("WORDSMITH_CLAUDE_HOME") or os.environ.get("CLAUDE_HOME")
     if raw:
         try:
             return normalize_windows_path(raw).expanduser().resolve()
@@ -331,7 +331,7 @@ def get_config(project_root: Optional[Path] = None) -> DataModulesConfig:
     if _default_config is None:
         # By default, do not blindly use CWD as project_root (easily writes to wrong directory).
         # Use unified project_locator for auto-detection:
-        # - Supports WEBNOVEL_PROJECT_ROOT
+        # - Supports WORDSMITH_PROJECT_ROOT
         # - Supports `.claude/.wordsmith-current-project` pointer file
         # - Supports searching for `.wordsmith/state.json` from current/parent directories
         from project_locator import resolve_project_root

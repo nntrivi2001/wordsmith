@@ -140,10 +140,10 @@ class StatusReporter:
         self._index_manager = IndexManager(self.config)
 
     def _extract_stats_field(self, content: str, field_name: str) -> str:
-        “””
-        Extract field value from “chapter stats” block, for example:
+        """
+        Extract field value from "chapter stats" block, for example:
         - **Dominant Strand**: quest
-        “””
+        """
         pattern = rf"^\s*-\s*\*\*{re.escape(field_name)}\*\*\s*:\s*(.+?)\s*$"
         for line in content.splitlines():
             m = re.match(pattern, line)
@@ -532,22 +532,22 @@ class StatusReporter:
             for item in records
         ]
 
-        # Sort by “calculability” first, then by urgency descending
+        # Sort by "calculability" first, then by urgency descending
         return sorted(
             urgency_list,
-            key=lambda x: (x[“urgency”] is None, -(x[“urgency”] if x[“urgency”] is not None else -1)),
+            key=lambda x: (x["urgency"] is None, -(x["urgency"] if x["urgency"] is not None else -1)),
         )
 
     def _get_urgency_status(self, urgency: float, remaining: int) -> str:
-        “””Determine urgency status”””
+        """Determine urgency status"""
         if remaining < 0:
-            return “🔴 overdue”
+            return "🔴 overdue"
         elif urgency >= self.config.foreshadowing_tier_weight_sub:
-            return “🔴 critical”
+            return "🔴 critical"
         elif urgency >= 1.0:
-            return “🟡 warning”
+            return "🟡 warning"
         else:
-            return “🟢 normal”
+            return "🟢 normal"
 
     def analyze_strand_weave(self) -> Dict:
         """
@@ -1154,7 +1154,7 @@ Examples:
 
   # Analyze cool point rhythm only
   python status_reporter.py --focus pacing
-        “””
+        """
     )
 
     parser.add_argument('--output', default='.wordsmith/health_report.md',
@@ -1167,11 +1167,11 @@ Examples:
 
     args = parser.parse_args()
 
-    # Resolve project root (allows passing “workspace root”, resolves to actual book project_root)
+    # Resolve project root (allows passing "workspace root", resolves to actual book project_root)
     try:
         project_root = str(resolve_project_root(args.project_root))
     except FileNotFoundError as exc:
-        print(f”❌ Cannot locate project root (need .wordsmith/state.json): {exc}”, file=sys.stderr)
+        print(f"❌ Cannot locate project root (need .wordsmith/state.json): {exc}", file=sys.stderr)
         sys.exit(1)
 
     # Create report generator
@@ -1181,12 +1181,12 @@ Examples:
     if not reporter.load_state():
         sys.exit(1)
 
-    print(“📖 Scanning chapter files...”)
+    print("📖 Scanning chapter files...")
     reporter.scan_chapters()
 
-    print(f”✅ Scanned {len(reporter.chapters_data)} chapters”)
+    print(f"✅ Scanned {len(reporter.chapters_data)} chapters")
 
-    print(“\n📊 Analyzing...”)
+    print("\n📊 Analyzing...")
 
     # Generate report
     report = reporter.generate_report(args.focus)
@@ -1200,14 +1200,14 @@ Examples:
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(report)
 
-    print(f”\n✅ Health report generated: {output_file}”)
+    print(f"\n✅ Health report generated: {output_file}")
 
     # Preview report (first 30 lines)
-    print(“\n” + “=”*60)
-    print(“📄 Report preview:\n”)
-    print(“\n”.join(report.split(“\n”)[:30]))
-    print(“\n...”)
-    print(“=”*60)
+    print("\n" + "="*60)
+    print("📄 Report preview:\n")
+    print("\n".join(report.split("\n")[:30]))
+    print("\n...")
+    print("="*60)
 
 if __name__ == "__main__":
     main()

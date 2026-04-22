@@ -31,7 +31,7 @@ GLOBAL_REGISTRY_REL: Path = Path("wordsmith") / "workspaces.json"
 # Claude Code common environment variables (used as "workspace root directory" hint when present)
 ENV_CLAUDE_PROJECT_DIR = "CLAUDE_PROJECT_DIR"
 ENV_CLAUDE_HOME = "CLAUDE_HOME"
-ENV_WEBNOVEL_CLAUDE_HOME = "WEBNOVEL_CLAUDE_HOME"
+ENV_WORDSMITH_CLAUDE_HOME = "WORDSMITH_CLAUDE_HOME"
 
 
 def _find_git_root(cwd: Path) -> Optional[Path]:
@@ -60,7 +60,7 @@ def _normcase_path_key(p: Path) -> str:
 
 
 def _get_user_claude_root() -> Path:
-    raw = os.environ.get(ENV_WEBNOVEL_CLAUDE_HOME) or os.environ.get(ENV_CLAUDE_HOME)
+    raw = os.environ.get(ENV_WORDSMITH_CLAUDE_HOME) or os.environ.get(ENV_CLAUDE_HOME)
     if raw:
         try:
             return normalize_windows_path(raw).expanduser().resolve()
@@ -336,7 +336,7 @@ def resolve_project_root(explicit_project_root: Optional[str] = None, *, cwd: Op
 
     Resolution order:
     1) explicit_project_root (if provided)
-    2) env var WEBNOVEL_PROJECT_ROOT (if set)
+    2) env var WORDSMITH_PROJECT_ROOT (if set)
     3) Search from cwd and parents, including common subdir `wordsmith-project/`
 
     Search safety:
@@ -369,12 +369,12 @@ def resolve_project_root(explicit_project_root: Optional[str] = None, *, cwd: Op
 
         raise FileNotFoundError(f"Not a wordsmith project root (missing .wordsmith/state.json): {root}")
 
-    env_root = os.environ.get("WEBNOVEL_PROJECT_ROOT")
+    env_root = os.environ.get("WORDSMITH_PROJECT_ROOT")
     if env_root:
         root = normalize_windows_path(env_root).expanduser().resolve()
         if _is_project_root(root):
             return root
-        raise FileNotFoundError(f"WEBNOVEL_PROJECT_ROOT is set but invalid (missing .wordsmith/state.json): {root}")
+        raise FileNotFoundError(f"WORDSMITH_PROJECT_ROOT is set but invalid (missing .wordsmith/state.json): {root}")
 
     base = (cwd or Path.cwd()).resolve()
     git_root = _find_git_root(base)
@@ -403,7 +403,7 @@ def resolve_project_root(explicit_project_root: Optional[str] = None, *, cwd: Op
     raise FileNotFoundError(
         "Unable to locate wordsmith project root. Expected `.wordsmith/state.json` under the current directory, "
         "a parent directory, or `wordsmith-project/`. Run /wordsmith-init first or pass --project-root / set "
-        "WEBNOVEL_PROJECT_ROOT."
+        "WORDSMITH_PROJECT_ROOT."
     )
 
 

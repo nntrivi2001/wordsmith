@@ -54,7 +54,7 @@ def find_project_root(override: Optional[Path] = None) -> Path:
         override: If provided, use this path directly instead of auto-detecting.
     """
     if override is not None:
-        # Allow passing “workspace root”, resolve to actual book project_root (must contain .wordsmith/state.json)
+        # Allow passing "workspace root", resolve to actual book project_root (must contain .wordsmith/state.json)
         return resolve_project_root(str(override))
     return resolve_project_root()
 
@@ -64,7 +64,7 @@ _cli_project_root: Optional[Path] = None
 
 
 def _get_active_project_root() -> Path:
-    “””Resolve workflow paths while compatible with test parameterless monkeypatch.”””
+    """Resolve workflow paths while compatible with test parameterless monkeypatch."""
     if _cli_project_root is not None:
         return find_project_root(_cli_project_root)
     return find_project_root()
